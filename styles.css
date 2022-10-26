@@ -4,3 +4,18 @@
     align-items: center;
     height: 75px;
 }
+.Registrierungsheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+.Log_Inheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+.Passwordcontainer{
+    margin-bottom: 25px;
+}

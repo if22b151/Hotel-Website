@@ -4,7 +4,7 @@
     align-items: center;
     height: 75px;
 }
-.Registrierungsheader{
+.Registrierungheader{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,4 +18,8 @@
 }
 .Passwordcontainer{
     margin-bottom: 25px;
+    margin-top: 25px;
+}
+.RegisterButton{
+    margin-top: 25px;
 }

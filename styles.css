@@ -23,3 +23,21 @@
 .RegisterButton{
     margin-top: 25px;
 }
+.Impressumheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+.ContainerImp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    margin-top: 75px;
+    border-color: grey;
+}
+.Images{
+    margin-top: 90px;
+    
+}

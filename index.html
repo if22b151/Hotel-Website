@@ -6,12 +6,56 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-      @media screen and (min-width: 992px){  /* 992px == Breakpoint md */
+      p.room_title{
+        font-weight: bold;
+        font-size: x-large;
+        text-align: center;
+      }
+
+      .room img{
+      }
+      
+      .btn_booking_row{
+        display: flex;
+        align-items: flex-end;
+      }
+      
+      .btn_booking{
+        padding: 5px;
+        border-style: solid;
+        border-color:rgb(187, 159, 0);
+        text-align: center;
+      }
+
+      .btn_booking a{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 5px;
+        color:rgb(187, 159, 0);
+        text-decoration: none;
+      }
+
+      footer{
+        text-align: center;
+      }
+      footer a{
+        color: white;
+        text-decoration: none;
+      }
+      footer a:hover{
+        color:lightgrey;
+      }
+
+      .site_content{
+        padding: 5%;
+      }
+
+      /* Breakpoint md */
+      @media screen and (min-width: 992px){
         .site_content{
           padding: 0 15%;
         }
       }
-    </style>
+      </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -96,21 +140,99 @@
   </div>
 
   <!-- Zimmer -->
-  <div class="site_content container-sm">
-    <div class="row">
+  <div class="container site_content mt-5">
+    <!-- Suite -->
+    <div class="row room">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Suite</p>
+        </div>
+      </div>
       <div class="col-md-4">
         <div class="row">
-          <p><strong>Suite</strong></p>
-        </div>
-        <div class="row">
-          <img src="img/paul.jpeg" alt="" width="10">
+          <img src="img/black_square.png" class="img-fluid" alt="">
         </div>
       </div>
       <div class="col-md-8">
-        Description
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+        <div class="row btn_booking_row">
+          <div class="btn_booking">
+            <a href="#">BUCHEN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Double Bedroom -->
+    <div class="row room mt-5">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Doppelbett</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <img src="img/black_square.png" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+        <div class="row">
+          <div class="btn_booking">
+            <a href="#">BUCHEN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIngle Bedroom-->
+    <div class="row room mt-5">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Einzelbett</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <img src="img/black_square.png" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+        <div class="row">
+          <div class="btn_booking">
+            <a href="#">BUCHEN</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <footer class="container-fluid mt-5 py-3 bg-dark">
+    <div class="row">
+      <div class="col-3">
+        <a href="#">Twitter</a>
+      </div>
+      <div class="col-3">
+        <a href="#">Facebook</a>
+      </div>
+      <div class="col-3">
+        <a href="#">Instagram</a>
+      </div>
+      <div class="col-3">
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Bootstrap Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -61,3 +61,21 @@
       width: 100%;
     }
   }
+.accordion-item{
+   margin: 30px;
+  
+}
+.Log-InContainer{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 5px solid green;
+   padding-bottom: 50px;
+   margin-top: 10px;
+   padding-top: 20px;
+}
+
+/* Button unter Passwort bekommen */
+.Button{
+   
+}

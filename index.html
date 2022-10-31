@@ -11,27 +11,30 @@
         font-size: x-large;
         text-align: center;
       }
-
-      .room img{
-      }
       
       .btn_booking_row{
         display: flex;
         align-items: flex-end;
       }
       
-      .btn_booking{
+      a.btn_booking{
+        text-decoration: none;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 5px;
+        color:rgb(187, 159, 0);
+      }
+      div.btn_booking{
         padding: 5px;
         border-style: solid;
         border-color:rgb(187, 159, 0);
         text-align: center;
       }
+      div.btn_booking p{
+        display: inline;
+      }
 
-      .btn_booking a{
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        letter-spacing: 5px;
-        color:rgb(187, 159, 0);
-        text-decoration: none;
+      div.black_background{
+        background-color: rgb(82, 82, 82);
       }
 
       footer{
@@ -45,62 +48,64 @@
         color:lightgrey;
       }
 
-      .site_content{
-        padding: 5%;
+      header.logo_bar{
+        text-align: center;
+      }
+      header.logo_bar img{
+        display: inline;
+        margin: 5px 10px;
+      }
+      header.logo_bar p{
+        font-family: var(--bs-font-sans-serif);
+        display: inline;
+        color: rgba(255,255,255,.90);
+        font-size: 20px;
       }
 
-      /* Breakpoint md */
-      @media screen and (min-width: 992px){
+      .site_content{
+        background-color: white;
+        padding: 5%;  /* Only applies when smaller than sm */
+      }
+      
+      /* When larger than sm */
+      @media screen and (mind-width: 576px){
         .site_content{
-          padding: 0 15%;
+          padding: 10%;
+        }
+      }
+
+      /* When larger than md */
+      @media screen and (min-width: 768px){
+        div.black_background{
+          padding: 0% 15%;
+        }
+      }
+      
+      /* When larger than lg */
+      @media screen and (min-width: 992px){
+        div.black_background{
+          padding: 0% 15%;
+        }
+      }
+
+      /* When larger than xl */
+      @media screen and (min-width: 1200px){
+        div.black_background{
+          padding: 0% 25%;
         }
       }
       </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark p-3" id="headerNav">
-      <div class="container-fluid">
-        <a class="navbar-brand d-block d-lg-none" href="#">
-          <img src="img/hotel_logo.png" height="30"></svg>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-     
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto ">
-            <li class="nav-item">
-              <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-2" href="#">Booking</a>
-            </li>
-            <li class="nav-item d-none d-lg-block">
-              <a class="nav-link mx-2" href="#">
-                <img src="img/hotel_logo.png" height="80" />
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-2" href="#">Login</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mehr
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Blog</a></li>
-                <li><a class="dropdown-item" href="#">FAQ</a></li>
-                <li><a class="dropdown-item" href="#">Kontakt</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <!-- Header -->
+  <header class="container-fluid py-3 bg-dark logo_bar d-none d-xl-block">
+    <p>Vienna</p>
+    <img src="img/hotel_logo.png" height="30" />
+    <p>Hotel</p>
+  </header>
 
-   <!-- Carousel -->
-  <div id="carousel_homepage" class="carousel slide" data-bs-ride="carousel">
+  <!-- Carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -108,21 +113,21 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img/index_preview_1.jpg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_3.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Erleben Sie die Sights</h5>
-          <p>Tourenguides an der Rezeption erhätlich</p>
+          <p>Eine Stadt voller Abenteuer</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/index_preview_2.jpg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_2.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Hauseigene Bar</h5>
           <p>Zur Erfrischung nach einem langen Tag</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/index_preview_3.jpg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_1.jpeg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Ruhige Lage</h5>
           <p>Zur Entspannung nach der hauseigenen Bar</p>
@@ -139,11 +144,54 @@
     </button>
   </div>
 
+  <!-- Navbar -->
+  <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark p-3" id="headerNav">
+    <div class="container-fluid">
+      <a class="navbar-brand d-block d-lg-none" href="#">
+        <img src="img/hotel_logo.png" height="30"></svg>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Booking</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link mx-2" href="#">
+                <img src="img/hotel_logo.png" height="30" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="#">Login</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mehr
+              </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Blog</a></li>
+              <li><a class="dropdown-item" href="#">FAQ</a></li>
+              <li><a class="dropdown-item" href="#">Kontakt</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
   <!-- Zimmer -->
-  <div class="container site_content mt-5">
+  <div class="black_background">
+  <div class="container site_content">
     <!-- Suite -->
     <div class="row room">
-      <div class="row">
+      <div class="row"> <!-- Placement of mt-lg-5 important -->
         <div class="col-md-4"></div>
         <div class="col-md-8">
           <p class="room_title">Suite</p>
@@ -154,15 +202,20 @@
           <img src="img/black_square.png" class="img-fluid" alt="">
         </div>
       </div>
-      <div class="col-md-8">
+      
+      <div class="col-md-8 mt-3 mt-md-0">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
-        <div class="row btn_booking_row">
-          <div class="btn_booking">
-            <a href="#">BUCHEN</a>
-          </div>
+
+        <div class="row">
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
         </div>
+
       </div>
     </div>
 
@@ -174,24 +227,30 @@
           <p class="room_title">Doppelbett</p>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="row">
           <img src="img/black_square.png" class="img-fluid" alt="">
         </div>
       </div>
-      <div class="col-md-8">
+
+      <div class="col-md-8 mt-3 mt-md-0">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
+
         <div class="row">
-          <div class="btn_booking">
-            <a href="#">BUCHEN</a>
-          </div>
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
         </div>
+
       </div>
     </div>
 
-    <!-- SIngle Bedroom-->
+    <!-- Single Bedroom-->
     <div class="row room mt-5">
       <div class="row">
         <div class="col-md-4"></div>
@@ -199,37 +258,48 @@
           <p class="room_title">Einzelbett</p>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="row">
           <img src="img/black_square.png" class="img-fluid" alt="">
         </div>
       </div>
-      <div class="col-md-8">
+
+      <div class="col-md-8 mt-3 mt-md-0">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
+
         <div class="row">
-          <div class="btn_booking">
-            <a href="#">BUCHEN</a>
-          </div>
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
         </div>
+
       </div>
+
     </div>
   </div>
+  </div>
 
-  <footer class="container-fluid mt-5 py-3 bg-dark">
-    <div class="row">
-      <div class="col-3">
-        <a href="#">Twitter</a>
-      </div>
-      <div class="col-3">
-        <a href="#">Facebook</a>
-      </div>
-      <div class="col-3">
-        <a href="#">Instagram</a>
-      </div>
-      <div class="col-3">
-        <a href="#">TikTok</a>
+  <!-- Footer -->
+  <footer class="container-fluid py-4 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <a href="#">Twitter</a>
+        </div>
+        <div class="col-3">
+          <a href="#">Facebook</a>
+        </div>
+        <div class="col-3">
+          <a href="#">Instagram</a>
+        </div>
+        <div class="col-3">
+          <a href="#">TikTok</a>
+        </div>
       </div>
     </div>
   </footer>

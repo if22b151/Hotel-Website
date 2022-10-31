@@ -29,15 +29,35 @@
     align-items: center;
     height: 75px;
 }
+/* Border soll links und rechts näher zum Content -> Border soll aussehen wie ein Handy ungefähr */
 .ContainerImp{
+    border: 10px solid green;
+
+
+    
+}
+.TableContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75px;
-    margin-top: 75px;
-    border-color: grey;
-}
-.Images{
-    margin-top: 90px;
     
+   
+
 }
+.Row{
+    display: flex;
+    justify-content: center;
+}
+.Fotos{
+    margin-top: 30px;
+    padding: 10px;
+    
+  
+}
+
+/* noch nicht richtig */
+@media screen and (max-width: 500px) {
+    .Row {
+      width: 100%;
+    }
+  }

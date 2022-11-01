@@ -6,72 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <title>Impressum</title>
+    <title>Log-In</title>
 </head>
 <body>
     <!--Nav Bar-->
 
-<!--Impressum soll in einem horizontalen Rechteck sein -->
-<!--Daten schöner darstellen-->
-<!--Impressum Box ist noch nicht richtig-->
-
-    <div class="Impressumheader">
-        <h1>Impressum</h1>
+    <div class="Log_Inheader">
+        <h1>Log-In</h1>
     </div>
-    <div class="ContainerImp">
-        <div class="TableContainer">
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>Hotel Mustermann</td>
-            </tr>
-            <tr>
-                <td>Inhaber</td>
-                <td>Andretsch Adrian <br> Paul Felgitsch</td>
-            </tr>
-            <tr>
-                <td>Firmenart</td>
-                <td>Hotellerie</td>
-            </tr>
-            <tr>
-                <td>Anschrift</td>
-                <td>Mustestraße 9, 1220 Wien</td>
-            </tr>
-            <tr>
-                <td>Tel. Nr.</td>
-                <td>0660 7048700</td>
-            </tr>
-            <tr>
-                <td>E-Mail</td>
-                <td>admin@hotel-mustermann.at</td>
-            </tr>
-            <tr>
-                <td>Privacy</td>
-                <td><a href="/datenschutz.html">Siehe Datenschutzerklärung</a></td>
-            </tr>
-        </table>
-    </div>
-   
-    <!--Bilder nebeneinander stellen-->
-        <div class="Row">
-            <div class="Fotos">
-            <div class="mx-auto" style="width: 110px;">
-                <img src="img/paul.jpeg" class="img-fluid" alt="Paul Felgitsch">
-                Paul Felgitsch
-            </div>
-        </div>
-            <div class="Fotos">
-                <div class="mx-auto" style="width: 125px;">
-                <img src="img/adrian.jpg" class="img-fluid" alt="Adrian Andretsch">
-                Adrian Andretsch
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-   
-   
     
+   <div class="Log-InContainer">
+    <!--Anfang des E-mail Containers-->
+    <div class="col-sm-3">
+    <div class="E-mailContainer">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">E-mail Adresse :</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="example@gmail.com" required>
+    </div>
+  </div>
+    <!--Ende E-mail Container-->
+
+    <!--Anfang des Passwort Containers-->
+    <div class="PasswortContainer">
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Passwort :</label>
+      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Passwort" required>
+    </div>
+  </div>
+</div>
+
+  <!--Ende Passwort Container-->
+  
+  <!--Button-->
+  <div class="Button" id="ButtonID">
+    <button class="btn btn-primary" type="submit">Log-In</button>
+<!--Button Ende-->
+
+</div>
+<!--ImpContainer Ende-->
+
   <!-- Bootstrap Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

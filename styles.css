@@ -1,21 +1,10 @@
-.FAQheader{
+.Header{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75px;
 }
-.Registrierungheader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-}
-.Log_Inheader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-}
+
 .Passwordcontainer{
     margin-bottom: 25px;
     margin-top: 25px;
@@ -23,12 +12,7 @@
 .RegisterButton{
     margin-top: 25px;
 }
-.Impressumheader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 75px;
-}
+
 .ContainerImp{
     border: 5px;
     margin-right: 500px;
@@ -63,19 +47,36 @@
    margin: 30px;
   
 }
-.Log-InContainer{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   padding-bottom: 50px;
-   margin-top: 50px;
-   padding-top: 20px;
-}
 
-/* Button unter Passwort bekommen ? */
-#ButtonID{
+.Log-InContainer{
+    /* Button!! */
+    border: 5px solid rgb(112, 102, 102);
+  
+ }
+
+.User_Passwort{
     display: flex;
-    height: 130px;
     justify-content: center;
     align-items: center;
+}
+ 
+
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 992px){
+    .Button{
+        padding-right: 285px;
+    }
+}
+@media screen and (min-width: 992px) {
+    .Button {
+        
+    }
+}
+.Sign-UpContainer{
+  border: 5px solid grey;
+  
 }

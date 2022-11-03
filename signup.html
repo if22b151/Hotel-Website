@@ -51,46 +51,52 @@
     </div>
   </nav>
 
-    <div class="Registrierungheader">
+    <div class="Header">
         <h1>Registrierung</h1>
     </div>    
 
+    <div class="Sign-UpContainer">
     <form>
         <!--Vorname-->
-         <div class="col-12">
-          <label for="validationDefault01" class="form-label">Vorname</label>
-          <input type="text" class="form-control" id="validationDefault01" placeholder="Max" required>
+         <div class="col-sm-5">
+          <label for="validationVorname" class="form-label">Vorname</label>
+          <input type="text" name="validationVorname" class="form-control" id="validationDefault01" placeholder="Max" required>
         </div>
 
 
           <!--Nachname-->
-          <div class="col-12">
-          <label for="validationDefault02" class="form-label">Nachname</label>
-          <input type="text" class="form-control" id="validationDefault02" placeholder="Mustermann" required>
+          <div class="col-sm-5">
+          <label for="validationNachname" class="form-label">Nachname</label>
+          <input type="text" name="validationNachname" class="form-control" id="validationDefault02" placeholder="Mustermann" required>
         </div>
         
 
         <!--Username-->
-          <div class="col-12">
-          <label for="validationDefaultUsername" class="form-label">Username</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
-          </div>
+          <div class="col-sm-5">
+          <label for="validationUsername" class="form-label">Username</label>
+            <input type="text" name="validationUsername" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
         </div>
 
 
         <!--E-mail Adresse-->
-          <div class="col-12">
-          <label for="validationDefault03" class="form-label">E-mail Adresse</label>
-          <input type="text" class="form-control" id="validationDefault03" placeholder="example@gmail.com" required>
+          <div class="col-sm-7">
+          <label for="validationEmail" class="form-label">E-mail Adresse</label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input type="text" name="validationEmail" class="form-control" id="validationDefault03" placeholder="example@gmail.com" required>
+          </div>
         </div>
 
+        <!--Passwort-->
+         <div class="col-sm-5">
+          <label for="validationPasswort" class="form-label">Passwort</label>
+          <input type="password" name="validationPasswort" class="form-control" id="validationDefault03" required>
+         </div> 
 
         <!--Geschlecht-->
-          <div class="col-12">
-          <label for="validationDefault04" class="form-label">Geschlecht</label>
-          <select class="form-select" id="validationDefault04" required>
+          <div class="col-sm-2">
+          <label for="validationGeschlecht" class="form-label">Geschlecht</label>
+          <select class="form-select" name="validationGeschlecht" id="validationDefault04" required>
             <option selected disabled value="">Auswählen</option>
             <option>Mann</option>
             <option>Frau</option>
@@ -102,11 +108,13 @@
 
        <!--Button-->
        <div class="RegisterButton">
-        <div class="col-12">
+        <div class="col-sm-5">
           <button class="btn btn-primary" type="submit">Register</button>
         </div>
-    </div>
-      </form>
+      </div>
+  </form>
+</div>
+  
 
   <!-- Bootstrap Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

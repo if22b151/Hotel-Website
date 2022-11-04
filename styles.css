@@ -14,21 +14,22 @@
 }
 
 .ContainerImp{
+    box-sizing: border-box;
+    width: 500px;
     border: 5px;
-    margin-right: 500px;
-    margin-left: 500px;
-    padding-bottom: 100px;
     border-style: double;
-    margin-top: 30px;
     backdrop-filter: contrast(0.5);
-    padding-top: 30px;
+    margin-top: 50px;
+    margin-left: 500px;
+
+   
 }
 .TableContainer{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Row{
+.Rowpictures{
     display: flex;
     justify-content: center;
 }
@@ -37,50 +38,46 @@
     padding: 10px;
 }
 
-/* noch nicht richtig */
-@media screen and (max-width: 500px) {
-    .Row {
-      width: 100%;
-    }
-  }
 .accordion-item{
-   margin: 30px;
+   margin: 60px;
   
 }
 
 .Log-InContainer{
-    border: 5px solid rgb(112, 102, 102);
- }
-
-.User_Passwort{
     display: flex;
+    box-sizing: border-box;
+    width: 500px;
+    border: 5px solid rgb(112, 102, 102); 
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
 }
- 
 
-.Button{
-     /* Button!! */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@media screen and (max-width: 992px) and (min-width: 768px){
-    .Button{
-        padding-right: 285px;
-    }
-}
-@media screen and (min-width: 992px){
-    .Button {
-        padding-right: 565px;
-    }
-}
-@media screen and (max-width: 768px) and (min-width: 300px) {
-    .Button{
-        padding-right: 135px;
-    }
-}
 .Sign-UpContainer{
   border: 5px solid grey;
-  
+  box-sizing: border-box;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.OverallContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#RegistrierungFAQ{
+    border: 3px solid grey;
+}
+#ZahlungsmethodeFAQ{
+    border: 3px solid grey;
+}
+#Passwort_vergessenFAQ{
+    border: 3px solid grey;
+}
+#RegistrierungbearbeitenFAQ{
+    border: 3px solid grey;
 }

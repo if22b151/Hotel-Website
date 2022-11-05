@@ -16,31 +16,32 @@
 .ContainerImp{
     box-sizing: border-box;
     width: 500px;
+    height: 550px;
     border: 5px;
     border-style: double;
-    backdrop-filter: contrast(0.5);
-    margin-top: 50px;
-    margin-left: 500px;
-
-   
+    background-color: ivory;
 }
 .TableContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 40px;
 }
 .Rowpictures{
     display: flex;
     justify-content: center;
 }
 .Fotos{
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 10px;
 }
 
 .accordion-item{
    margin: 50px;
   
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    /* ?? */
 }
 
 .Log-InContainer{
@@ -71,7 +72,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 #RegistrierungFAQ{

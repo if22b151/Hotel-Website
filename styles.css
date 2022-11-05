@@ -39,7 +39,7 @@
 }
 
 .accordion-item{
-   margin: 60px;
+   margin: 50px;
   
 }
 
@@ -47,10 +47,12 @@
     display: flex;
     box-sizing: border-box;
     width: 500px;
+    height: 300px;
     border: 5px solid rgb(112, 102, 102); 
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: bisque;
     
 }
 
@@ -58,17 +60,20 @@
   border: 5px solid grey;
   box-sizing: border-box;
   width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: bisque;
 }
+
+
 .OverallContainer{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px;
 }
+
 #RegistrierungFAQ{
     border: 3px solid grey;
 }
@@ -81,3 +86,4 @@
 #RegistrierungbearbeitenFAQ{
     border: 3px solid grey;
 }
+

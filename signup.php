@@ -10,46 +10,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark p-3" id="headerNav">
-    <div class="container-fluid">
-      <a class="navbar-brand d-block d-lg-none" href="#">
-        <img src="img/hotel_logo.png" height="30"></svg>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto ">
-            <li class="nav-item">
-              <a class="nav-link mx-2" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-2" href="#">Booking</a>
-            </li>
-            <li class="nav-item d-none d-lg-block">
-              <a class="nav-link mx-2" href="index.html">
-                <img src="img/hotel_logo.png" height="30" />
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mx-2 active" href="signup.html">Registrieren</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mehr
-              </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="login.html">Login</a></li>
-              <li><a class="dropdown-item" href="#">Blog</a></li>
-              <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-              <li><a class="dropdown-item" href="impressum.html">Kontakt</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include 'php/navbar.php' ?>
 
     <div class="Header">
         <h1>Registrierung</h1>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vienna City "Vienna City Hotel" Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      p.room_title{
+        font-weight: bold;
+        font-size: x-large;
+        text-align: center;
+      }
+      
+      .btn_booking_row{
+        display: flex;
+        align-items: flex-end;
+      }
+      
+      a.btn_booking{
+        text-decoration: none;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 5px;
+        color:rgb(187, 159, 0);
+      }
+      div.btn_booking{
+        padding: 5px;
+        border-style: solid;
+        border-color:rgb(187, 159, 0);
+        text-align: center;
+      }
+      div.btn_booking p{
+        display: inline;
+      }
+
+      div.black_background{
+        background-color: rgb(82, 82, 82);
+      }
+
+      footer{
+        text-align: center;
+      }
+      footer a{
+        color: white;
+        text-decoration: none;
+      }
+      footer a:hover{
+        color:lightgrey;
+      }
+
+      header.logo_bar{
+        text-align: center;
+      }
+      header.logo_bar img{
+        display: inline;
+        margin: 5px 10px;
+      }
+      header.logo_bar p{
+        font-family: var(--bs-font-sans-serif);
+        display: inline;
+        color: rgba(255,255,255,.90);
+        font-size: 20px;
+      }
+
+      .site_content{
+        background-color: white;
+        padding: 5%;  /* Only applies when smaller than sm */
+      }
+      
+      /* When larger than sm */
+      @media screen and (min-width: 576px){
+        .site_content{
+          padding: 10%;
+        }
+      }
+
+      /* When larger than md */
+      @media screen and (min-width: 768px){
+        div.black_background{
+          padding: 0% 15%;
+        }
+      }
+      
+      /* When larger than lg */
+      @media screen and (min-width: 992px){
+        div.black_background{
+          padding: 0% 15%;
+        }
+      }
+
+      /* When larger than xl */
+      @media screen and (min-width: 1200px){
+        div.black_background{
+          padding: 0% 25%;
+        }
+      }
+      </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container-fluid py-3 bg-dark logo_bar d-none d-xl-block">
+    <p>Vienna</p>
+    <img src="img/hotel_logo.png" height="30" />
+    <p>Hotel</p>
+  </header>
+
+  <!-- Carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/index_preview_3.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Erleben Sie die Sights</h5>
+          <p>Eine Stadt voller Abenteuer</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/index_preview_2.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Hauseigene Bar</h5>
+          <p>Zur Erfrischung nach einem langen Tag</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/index_preview_1.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Ruhige Lage</h5>
+          <p>Zur Entspannung nach der hauseigenen Bar</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <?php include 'php/navbar.php' ?>
+  
+  <!-- Zimmer -->
+  <div class="black_background">
+  <div class="container site_content">
+    <!-- Suite -->
+    <div class="row room">
+      <div class="row"> <!-- Placement of mt-lg-5 important -->
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Suite</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <img src="img/black_square.png" class="img-fluid" alt="">
+        </div>
+      </div>
+      
+      <div class="col-md-8 mt-3 mt-md-0">
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+
+        <div class="row">
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Double Bedroom -->
+    <div class="row room mt-5">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Doppelbett</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <img src="img/black_square.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-3 mt-md-0">
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+
+        <div class="row">
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Single Bedroom-->
+    <div class="row room mt-5">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <p class="room_title">Einzelbett</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="row">
+          <img src="img/black_square.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-3 mt-md-0">
+        <div class="row">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+        </div>
+
+        <div class="row">
+          <a href="#" class="btn_booking">
+            <div class="btn_booking">
+              <p>BUCHEN</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid py-4 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <a href="#">Twitter</a>
+        </div>
+        <div class="col-3">
+          <a href="#">Facebook</a>
+        </div>
+        <div class="col-3">
+          <a href="#">Instagram</a>
+        </div>
+        <div class="col-3">
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

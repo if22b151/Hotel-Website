@@ -9,7 +9,8 @@
     <title>Impressum</title>
 </head>
 <body>
-    <!--Nav Bar-->
+  <!-- Navbar -->
+  <?php include 'php/navbar.php' ?>
 
     <div class="Header">
         <h1>Impressum</h1>

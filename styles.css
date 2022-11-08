@@ -29,14 +29,6 @@ footer a:hover{
     height: 75px;
 }
 
-.Passwordcontainer{
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-.RegisterButton{
-    margin-top: 25px;
-}
-
 .ContainerImp{
     box-sizing: border-box;
     width: 500px;

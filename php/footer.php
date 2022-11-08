@@ -1,7 +1,7 @@
 <?php
   $current_url = htmlspecialchars($_SERVER["PHP_SELF"]);
-  
-  if (strpos($current_url, "index.php")){
+
+  if (strpos($current_url, "index.php") || strpos($current_url, "signup.php")){
     $fixation = '';
   } else {
     $fixation = 'fixed-bottom';

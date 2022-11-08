@@ -1,5 +1,5 @@
 html{
-    background-color: rgb(82, 82, 82);
+  background-color: rgb(82, 82, 82);
 }
 
 div.black_background{
@@ -8,7 +8,18 @@ div.black_background{
 
 .site_content{
   background-color: white;
-  padding: 0% 50%;  /* Only applies when smaller than sm */
+  padding: 0% 5%;  /* Only applies when smaller than sm */
+}
+
+footer{
+  text-align: center;
+}
+footer a{
+  color: white;
+  text-decoration: none;
+}
+footer a:hover{
+  color:lightgrey;
 }
 
 .Header{
@@ -53,10 +64,6 @@ div.black_background{
    margin: 50px;
   
 }
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-    /* ?? */
-}
-
 .Log-InContainer{
     display: flex;
     box-sizing: border-box;
@@ -133,17 +140,6 @@ div.black_background{
   background-color: rgb(82, 82, 82);
 }
 
-footer{
-  text-align: center;
-}
-footer a{
-  color: white;
-  text-decoration: none;
-}
-footer a:hover{
-  color:lightgrey;
-}
-
 header.logo_bar{
   text-align: center;
 }
@@ -165,17 +161,13 @@ header.logo_bar p{
   .site_content{
     padding: 0 10%;
   }
-
-  .form_content{
-    padding: 0 30%;
-  }
 }
 
 /* When larger than md */
 @media screen and (min-width: 768px){
   div.black_background{
     padding: 0% 15%;
-}
+  }
 }
 
 /* When larger than lg */

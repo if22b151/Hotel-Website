@@ -5,96 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      p.room_title{
-        font-weight: bold;
-        font-size: x-large;
-        text-align: center;
-      }
-      
-      .btn_booking_row{
-        display: flex;
-        align-items: flex-end;
-      }
-      
-      a.btn_booking{
-        text-decoration: none;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        letter-spacing: 5px;
-        color:rgb(187, 159, 0);
-      }
-      div.btn_booking{
-        padding: 5px;
-        border-style: solid;
-        border-color:rgb(187, 159, 0);
-        text-align: center;
-      }
-      div.btn_booking p{
-        display: inline;
-      }
-
-      div.black_background{
-        background-color: rgb(82, 82, 82);
-      }
-
-      footer{
-        text-align: center;
-      }
-      footer a{
-        color: white;
-        text-decoration: none;
-      }
-      footer a:hover{
-        color:lightgrey;
-      }
-
-      header.logo_bar{
-        text-align: center;
-      }
-      header.logo_bar img{
-        display: inline;
-        margin: 5px 10px;
-      }
-      header.logo_bar p{
-        font-family: var(--bs-font-sans-serif);
-        display: inline;
-        color: rgba(255,255,255,.90);
-        font-size: 20px;
-      }
-
-      .site_content{
-        background-color: white;
-        padding: 5%;  /* Only applies when smaller than sm */
-      }
-      
-      /* When larger than sm */
-      @media screen and (min-width: 576px){
-        .site_content{
-          padding: 10%;
-        }
-      }
-
-      /* When larger than md */
-      @media screen and (min-width: 768px){
-        div.black_background{
-          padding: 0% 15%;
-        }
-      }
-      
-      /* When larger than lg */
-      @media screen and (min-width: 992px){
-        div.black_background{
-          padding: 0% 15%;
-        }
-      }
-
-      /* When larger than xl */
-      @media screen and (min-width: 1200px){
-        div.black_background{
-          padding: 0% 25%;
-        }
-      }
-      </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
@@ -149,10 +60,10 @@
   
   <!-- Zimmer -->
   <div class="black_background">
-  <div class="container site_content">
+  <div class="container site_content py-5">
     <!-- Suite -->
     <div class="row room">
-      <div class="row"> <!-- Placement of mt-lg-5 important -->
+      <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-8">
           <p class="room_title">Suite</p>

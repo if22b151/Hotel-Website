@@ -19,7 +19,7 @@
     }
 ?>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark p-3 <?php print(($current_page == "index") ? "sticky-top" : "fixed-top") ?>" id="headerNav">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark p-3 <?php print(($current_page == "index") ? "sticky-top" : "") ?>" id="headerNav">
     <div class="container-fluid">
       <a class="navbar-brand d-block d-lg-none" href="#">
         <img src="img/hotel_logo.png" height="30"></svg>

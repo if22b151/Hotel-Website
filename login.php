@@ -11,44 +11,36 @@
 <body>
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
-
-    <div class="Header">
-        <h1>Log-In</h1>
-    </div>
     
-   <div class="OverallContainer">
-   <div class="Log-InContainer">
-    <!--Anfang des E-mail Containers-->
-    <div class="col-md-7">
-    <div class="E-mailContainer">
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">E-mail Adresse :</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="example@gmail.com" required>
-    </div>
+  <div class="flex-container black_background">
+  <div class="container py-3 px-3 site_content">
+   <h1>Login</h1>
+
+    <form action="">
+      <!-- E-mail -->
+      <div class="col E-mailContainer">
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail Adresse :</label>
+        <input type="text" class="form-control" id="email" placeholder="example@gmail.com" required>
+      </div>
+      </div>
+
+      <!-- Passwort -->
+      <div class="mb-3 PasswortContainer">
+        <label for="password" class="form-label">Passwort :</label>
+        <input type="password" class="form-control" id="password" placeholder="Passwort" required>
+      </div>
+
+      <!--Button-->
+      <div class="Button">
+        <button class="btn btn-secondary" type="submit">Einloggen</button>
+      </div>
+    </form>
+
   </div>
-    <!--Ende E-mail Container-->
-
-    <!--Anfang des Passwort Containers-->
-    <div class="PasswortContainer">
-    <div class="mb-3">
-      <label for="formGroupExampleInput2" class="form-label">Passwort :</label>
-      <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Passwort" required>
-    </div>
   </div>
-</div>
-
-  <!--Ende Passwort Container-->
-
-  <!--Button-->
-  <div class="Button">
-    <button class="btn btn-secondary" type="submit">Log-In</button>
-<!--Button Ende-->
-</div>
-</div>
-<!--ImpContainer Ende-->
 
 </div>
-
   <!-- Bootstrap Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

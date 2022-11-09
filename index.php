@@ -60,7 +60,7 @@
   
   <!-- Zimmer -->
   <div class="black_background">
-  <div class="container site_content pt-4 pb-5">
+  <div class="container site_content py-5 pt-4 pb-5">
     <!-- Suite -->
     <div class="row room">
       <div class="row">

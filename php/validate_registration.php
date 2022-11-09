@@ -21,6 +21,10 @@ if(empty($first_name) || empty($last_name) || empty($username) || empty($email) 
     return;
 }
 
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    array_push($errors, "Keine valide E-Mail Addresse");
+}
+
 if(strlen($password) <= 8){
     array_push($errors, "Passwort muss länger als 8 Zeichen sein");
 }
@@ -31,10 +35,6 @@ if($password !== $password2){
 
 if(empty($gdpr)){
     array_push($errors, "Datenschutzerklärung muss akzeptiert werden");
-}
-
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-    array_push($errors, "Keine valide E-Mail Addresse");
 }
 
 

@@ -9,15 +9,21 @@
     <link rel="stylesheet" href="styles.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Registrierung</title>
+
+    <style>
+      .black_background{
+        background-image: url('img/background.jpg');
+      }
+    </style>
 </head>
 <body>
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
 
   <div class="flex-container black_background">
-  <div class="container pt-3 pb-4 site_content">
+  <div class="container pt-3 pb-4 px-3 site_content">
 
-    <h1>Registrierung</h1>
+    <h1>Registrieren</h1>
 
     <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
       <?php 
@@ -102,7 +108,7 @@
       <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
       <br>
       <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" <?php echo ($newsletter) ? 'checked':'' ?>>
-      <label for="newsletter">Ich möchte per E-Mail über Nachrichten und Angebote des Hotels benachrichtigt werden.</label>
+      <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
 
       <!--Button-->
       <div class="RegisterButton mt-3">

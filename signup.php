@@ -1,4 +1,4 @@
-<?php include 'php/validate_registration.php' ?>
+<?php include 'php/signup_logic.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@
     </div>
 
     <div class="alert alert-success mt-3 <?php echo ($success) ? '' : 'd-none' ?>" role="alert">
-      Sie sind nun registriert!
+      Sie sind nun registriert!<br>
     </div>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

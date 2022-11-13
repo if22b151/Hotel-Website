@@ -16,11 +16,11 @@
   </header>
 
   <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -75,7 +75,7 @@
         </div>
       </div>
       
-      <div class="col-md-8 mt-3 mt-md-0">
+      <div class="col-md-8 mt-3 mt-md-0 col_booking">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
@@ -106,7 +106,7 @@
         </div>
       </div>
 
-      <div class="col-md-8 mt-3 mt-md-0">
+      <div class="col-md-8 mt-3 mt-md-0 col_booking">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
@@ -137,7 +137,7 @@
         </div>
       </div>
 
-      <div class="col-md-8 mt-3 mt-md-0">
+      <div class="col-md-8 mt-3 mt-md-0 col_booking">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>

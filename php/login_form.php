@@ -11,7 +11,9 @@
   <!-- E-mail -->
   <div class="mb-3">
     <label for="email" class="form-label">E-mail Adresse:</label>
-    <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" required>
+    <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" required 
+      value="<?php echo (!empty($_POST['email'])) ? $_POST('email') : ''?>"
+    >
   </div>
 
   <!-- Passwort -->

@@ -107,6 +107,12 @@ p.room_title{
   text-align: center;
 }
 
+.col_booking{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
 .btn_booking_row{
   display: flex;
   align-items: flex-end;

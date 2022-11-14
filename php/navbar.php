@@ -1,21 +1,17 @@
 <?php
-    $current_url = htmlspecialchars($_SERVER["PHP_SELF"]);
-    $current_page = "";
+    $current_url = htmlspecialchars($_SERVER['PHP_SELF']);
+    $current_page = '';
 
     // So current page can be highlighted in Navbar; a bit overkill for now as there might still be some changes to the navbar
     // (Looking at you, login function...)
-    if (strpos($current_url, "index.php")) {
-        $current_page = "index";
-    } elseif (strpos($current_url, "login.php")) {
-        $current_page = "login";
-    } elseif(strpos($current_url, "signup.php")){
-        $current_page = "signup";
-    } elseif(strpos($current_url, "impressum.php")){
-        $current_page = "impressum";
-    } elseif(strpos($current_url, "faq.php")){
-        $current_page = "faq";
-    } elseif(strpos($current_url, "booking.php")){
-        $current_page = "booking";
+    if (strpos($current_url, 'index.php')) {
+        $current_page = 'index';
+    } elseif (strpos($current_url, 'login.php')) {
+        $current_page = 'login';
+    } elseif(strpos($current_url, 'signup.php')){
+        $current_page = 'signup';
+    } elseif(strpos($current_url, 'booking.php')){
+        $current_page = 'booking';
     }
 ?>
 
@@ -31,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto ">
             <li class="nav-item">
-              <a class="nav-link mx-2 <?php print(($current_page == "index") ? "active" : "")?>" aria-current="page" href="index.php">Home</a>
+              <a class="nav-link mx-2 <?php print(($current_page == 'index') ? 'active' : '')?>" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2 <?php print(($current_page == "booking") ? "active" : "")?>" href="booking.php">Booking</a>
+              <a class="nav-link mx-2 <?php print(($current_page == 'booking') ? 'active' : '')?>" href="booking.php">Booking</a>
             </li>
             <li class="nav-item d-none d-lg-block">
               <a class="nav-link mx-2" href="index.php">
@@ -42,7 +38,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2 <?php print(($current_page == "signup") ? "active" : "")?>" href="signup.php">Registrieren</a>
+              <a class="nav-link mx-2 <?php print(($current_page == 'signup') ? 'active' : '')?>" href="signup.php">Registrieren</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

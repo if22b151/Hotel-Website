@@ -1,10 +1,10 @@
 <?php 
   session_start();
   if(isset($_SESSION['name'])){
-    require 'php/logout_logic.php';
+    require '/php/scripts/logout_logic.php';
     print($debug);
   } else {
-    require 'php/login_logic.php';
+    require '/php/scripts/login_logic.php';
     print($debug);
   }
 ?>

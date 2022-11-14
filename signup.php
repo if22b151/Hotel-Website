@@ -1,4 +1,4 @@
-<?php include 'php/signup_logic.php' ?>
+<?php include '/php/scripts/signup_logic.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +35,7 @@
 
     <div class="alert alert-success mt-3 <?php echo ($success) ? '' : 'd-none' ?>" role="alert">
       Sie sind nun registriert!<br>
+      <a href="/login.php">Hier</a> geht's zum Login.
     </div>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">

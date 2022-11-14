@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if(isset($_SESSION['name'])){
+  if(isset($_SESSION['name'])){  // If there's an active session
     require 'php/scripts/logout_logic.php';
     print($debug);
   } else {
@@ -28,7 +28,7 @@
     <h1>Login</h1>
 
     <?php
-      print($output);
+      // Serve login or logout form depending on whether user is currently logged in
       if(isset($_SESSION['name'])){
         require 'php/logout_form.php';
       } else {

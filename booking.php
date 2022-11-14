@@ -18,37 +18,7 @@
 
     <!-- Current Bookings -->
     <h4 class="mt-3">Aktuelle Buchungen</h3>
-    <p>Noch keine Buchungen getätigt.</p>
-
-    <table class="table">
-      <thead>
-        <th scope="col">Nr</th>
-        <th scope="col">Details</th>
-        <th scope="col"></th>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="bottom_border_none" scope="row">ABC6183</th>
-          <td>Typ</td>
-          <td>Suite</td>
-        </tr>
-        <tr>
-          <td class="bottom_border_none"></td>
-          <td>Anfang</td>
-          <td>18.09.2003</td>
-        </tr>
-        <tr>
-          <td class="bottom_border_none"></td>
-          <td>Ende</td>
-          <td>26.09.2003</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Gebucht</td>
-          <td>01.09.2003</td>
-        </tr>
-      </tbody>
-    </table>
+    <?php include 'php/current_bookings.php'; ?>
     
     <!-- New Booking -->
     <h4 class="mt-5">Neue Buchung</h3>

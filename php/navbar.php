@@ -34,7 +34,7 @@
               <a class="nav-link mx-2 <?php print(($current_page == "index") ? "active" : "")?>" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mx-2 <?php print(($current_page == "booking") ? "active" : "")?>" href="#">Booking</a>
+              <a class="nav-link mx-2 <?php print(($current_page == "booking") ? "active" : "")?>" href="booking.php">Booking</a>
             </li>
             <li class="nav-item d-none d-lg-block">
               <a class="nav-link mx-2" href="index.php">

@@ -152,6 +152,11 @@ header.logo_bar p{
   font-size: 20px;
 }
 
+/* Booking */
+table > tbody > tr > .bottom_border_none{
+  border-bottom: none;
+}
+
 /* Media queries */
 
 /* When larger than sm: Mobile */

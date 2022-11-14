@@ -25,6 +25,8 @@ if($email == $valid_user['email'] && $pw == $valid_user['pw']){
     // Clear errors
     $errors = array();
 } else {
-    array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
+    if(!empty($email) && !empty($pw)){  // As pressing logout would otherwise make error show up
+        array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
+    }
 }
 ?>

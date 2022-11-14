@@ -1,4 +1,4 @@
-<?php include '/php/scripts/signup_logic.php' ?>
+<?php include 'php/scripts/signup_logic.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">

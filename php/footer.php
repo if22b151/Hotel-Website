@@ -9,20 +9,18 @@
 ?>
 
 <footer class="container-fluid py-4 bg-dark <?php print($fixation)?>">
-  <div class="container">
-    <div class="row">
-    <div class="col-3">
-        <a href="#">Twitter</a>
-    </div>
-    <div class="col-3">
-        <a href="#">Facebook</a>
-    </div>
-    <div class="col-3">
+  <ul>
+    <li>
+      <a href="#">Twitter</a>
+    </li>
+    <li>
+      <a href="#">Facebook</a>
+    </li>
+    <li>
         <a href="#">Instagram</a>
-    </div>
-    <div class="col-3">
+    </li>
+    <li>
         <a href="#">TikTok</a>
-    </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </footer>

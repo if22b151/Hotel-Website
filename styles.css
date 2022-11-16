@@ -1,27 +1,38 @@
+/* Global */
 html{
   background-color: rgb(82, 82, 82);
 }
-
 div.black_background{
   background-color: rgb(82, 82, 82);
 }
-
 .site_content{
   background-color: white;
   padding: 0% 5%;
 }
 
 footer{
+  display: flexbox;
+  flex-direction: row;
+  justify-content: center;
+
   text-align: center;
 }
+footer ul{
+  margin-bottom: 0px !important;
+}
+footer li{
+  margin: 0px 1rem;
+  display: inline;
+}
 footer a{
-  color: white;
+  color: rgba(255,255,255,.55);
   text-decoration: none;
 }
 footer a:hover{
-  color:lightgrey;
+  color:rgba(255,255,255,.75);
 }
 
+/* idk if needed anymore */
 .Header{
     display: flex;
     justify-content: center;
@@ -86,17 +97,18 @@ footer a:hover{
   margin-top: 60px;
 }
 
+/* FAQ */
 #RegistrierungFAQ{
-    border: 3px solid grey;
+  border: 3px solid grey;
 }
 #ZahlungsmethodeFAQ{
-    border: 3px solid grey;
+  border: 3px solid grey;
 }
 #Passwort_vergessenFAQ{
-    border: 3px solid grey;
+  border: 3px solid grey;
 }
 #RegistrierungbearbeitenFAQ{
-    border: 3px solid grey;
+  border: 3px solid grey;
 }
 
 /* Index */
@@ -112,12 +124,10 @@ p.room_title{
   flex-direction: column !important;
   justify-content: space-between !important;
 }
-
 .btn_booking_row{
   display: flex;
   align-items: flex-end;
 }
-
 a.btn_booking{
   text-decoration: none;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

@@ -30,9 +30,9 @@
         <label for="form-label">Zimmer</label>
         <select class="form-select mt-2" name="room" id="room" required>
           <option value="">Bitte auswählen</option>
-          <option value="suite">Suite</option>
-          <option value="double_bedroom">Doppelzimmer</option>
-          <option value="single_bedroom">Einzelzimmer</option>
+          <option value="suite" <?php echo ($room == 'suite') ? 'selected' : ''?>>Suite</option>
+          <option value="double" <?php echo ($room == 'double') ? 'selected' : ''?>>Doppelzimmer</option>
+          <option value="single" <?php echo ($room == 'single') ? 'selected' : ''?>>Einzelzimmer</option>
         </select>
       </div>
       
@@ -58,7 +58,7 @@
         </div>
 
         <div class="mt-2">
-          <input class="form-check-input" type="checkbox" name="late_check_out" id="late_check_out">
+          <input class="form-check-input" type="checkbox" name="late_check_out" id="late_check_out" <?php echo ($late_check_out) ? 'selected' : '' ?>>
           <label class="form-label mx-1" for="late_check_out">Late check-out bis 15 Uhr</label>
         </div>
       </div>
@@ -76,10 +76,10 @@
 
         <div class="row" role="input_fields">
           <div class="col-9">
-            <input type="text" class="form-control" name="street" id="street" placeholder="Mustergasse" required>
+            <input type="text" class="form-control" name="street" id="street" placeholder="Mustergasse" value="<?php echo $street ?>" required>
           </div>
           <div class="col-3">
-            <input type="text" class="form-control" id="street_nr" name="street_nr" placeholder="43" required>
+            <input type="text" class="form-control" id="street_nr" name="street_nr" placeholder="43" value="<?php echo $street_nr ?>" required>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
       <!-- City -->
       <div class="mb-2">
         <label class="form-label" for="city">Stadt</label>
-        <input class="form-control" type="text" name="city" id="city" placeholder="Wien" required>
+        <input class="form-control" type="text" name="city" id="city" placeholder="Musterstadt" value="<?php echo $city ?>" required>
       </div>
           
       <!-- Post Code & Country -->
@@ -102,11 +102,11 @@
         </div>
         <div class="row" role="input_fields">
           <div class="col-4">
-            <input class="form-control" type="number" name="plz" id="plz" placeholder="1090" required>
+            <input class="form-control" type="number" name="plz" id="plz" placeholder="1090" value="<?php echo $plz ?>" required>
           </div>
           
           <div class="col-8">
-            <select class="form-select" id="country" name="country" value="Austria" required>
+            <select class="form-select" id="country" name="country" value="Austria" value="<?php echo $country ?>" required>
               <option>Bitte auswählen</option>
               <option value="Afghanistan">Afghanistan</option>
               <option value="Aland Islands">Aland Islands</option>
@@ -368,7 +368,7 @@
       <!-- Phone Number-->
       <div class="mb-2">
         <label class="form-label" for="phone">Telefonnummer</label>
-        <input class="form-control" type="tel" name="phone" id="phone" placeholder="+43 664 8081233" required>
+        <input class="form-control" type="tel" name="phone" id="phone" placeholder="+43 664 8081233" value="<?php echo $phone ?>" required>
       </div>
 
       <div class="mt-3">

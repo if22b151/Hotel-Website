@@ -10,9 +10,11 @@
 <body>
   <!-- Header -->
   <header class="container-fluid py-3 bg-dark logo_bar d-none d-xl-block">
-    <p>Vienna</p>
-    <img src="img/hotel_logo.png" height="30" />
-    <p>Hotel</p>
+    <a href="/index.php">
+      <p>Vienna</p>
+      <img src="img/hotel_logo.png" height="30" />
+      <p>Hotel</p>
+    </a>
   </header>
 
   <!-- Carousel -->

@@ -3,6 +3,8 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST'){
     return;
 }
 
+require 'funcs.php';
+
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $username = $_POST['username'];
@@ -16,7 +18,7 @@ $newsletter = $_POST['newsletter'];
 $errors = array();
 $success = false;
 
-if(empty($first_name) || empty($last_name) || empty($username) || empty($email) || empty($password) || empty($password2) || empty($gender)) {
+if(is_empty_any($first_name, $last_name, $username, $email, $password, $password2, $gender)){
     array_push($errors, "Alle Felder müssen ausgefüllt sein");
     return;
 }

@@ -1,12 +1,6 @@
 <?php 
   session_start();
-  if(isset($_SESSION['name'])){  // If there's an active session
-    require 'php/scripts/logout_logic.php';
-    print($debug);
-  } else {
-    require 'php/scripts/login_logic.php';
-    print($debug);
-  }
+  require 'php/scripts/login_logic.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,19 +20,45 @@
   <div class="flex-container black_background">
   <div class="container py-3 px-3 site_content">
     <h1>Login</h1>
+    
+    <?php if(isset($_SESSION['name'])): ?>
+      <p>
+        Sie sind eingeloggt als <?php echo $_SESSION['name']?>.
+      </p>
+      <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
 
-    <?php
-      // Serve login or logout form depending on whether user is currently logged in
-      if(isset($_SESSION['name'])){
-        require 'php/logout_form.php';
-      } else {
-        require 'php/login_form.php';
-      }
-    ?>
+    <?php else: ?>
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <!-- Error banner; shows up if anything in $errors array -->
+        <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
+        <?php 
+          foreach ($errors as $err){
+            print($err . "<br>");
+          } 
+        ?>
+        </div>
 
+        <!-- E-mail -->
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail Adresse:</label>
+          <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" required 
+            value="<?php echo $_POST['email'] ?>"
+          >
+        </div>
+
+        <!-- Passwort -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Passwort:</label>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Passwort" required>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-secondary" type="submit">Einloggen</button>
+      </form>
+    <?php endif ?>
   </div>
   </div>
-
+  
   <!-- Footer -->
   <?php include 'php/footer.php' ?>
 

@@ -40,60 +40,48 @@
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
       <!--Vorname-->
-      <div class="row">
-        <div class="col">
+      <div class="input-field">
         <label for="first_name" class="form-label">Vorname</label>
         <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Vorname" value="<?php echo $first_name ?>" required>
-        </div>
       </div>
 
 
       <!--Nachname-->
-      <div class="row mt-3">
-        <div class="col">
+      <div class="input-field mt-3">
         <label for="last_name" class="form-label">Nachname</label>
         <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" value="<?php echo $last_name ?>"required>
-        </div>
       </div>
       
 
       <!--Username-->
-      <div class="row mt-3">
-        <div class="col">
+      <div class="input-field mt-3">
         <label for="username" class="form-label">Nutzername</label>
         <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" placeholder="Benutzername" value="<?php echo $username ?>" required>
-        </div>
       </div>
 
       <!--E-mail Adresse-->
-      <div class="row mt-3">
-        <div class="col">
-          <label for="email" class="form-label">E-Mail Addresse</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-            <input type="text" name="email" class="form-control" id="email" placeholder="E-Mail Addresse" value="<?php echo $email ?>" required>
-          </div>
+      <div class="input-field mt-3">
+        <label for="email" class="form-label">E-Mail Addresse</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+          <input type="text" name="email" class="form-control" id="email" placeholder="E-Mail Addresse" value="<?php echo $email ?>" required>
         </div>
       </div>
 
       <!--Passwort-->
-      <div class="row mt-3">
-        <div class="col">
+      <div class="input-field mt-3">
         <label for="password" class="form-label">Passwort</label>
         <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" minlength="8" required>
-        </div>
       </div>
       
       <!--Passwort wiederholen-->
-      <div class="row mt-3">
-        <div class="col">
+      <div class="input-field mt-3">
         <label for="password2" class="form-label">Passwort wiederholen</label>
         <input type="password" name="password2" class="form-control" id="password2" placeholder="Passwort wiederholen" minlength="8" required>
-        </div>
       </div>
 
       <!--Geschlecht-->
-      <div class="row">
+      <div class="input-field">
         <div class="col-3 mt-3">
         <label for="gender" class="form-label">Geschlecht</label>
         <select class="form-select" name="gender" id="gender" required>
@@ -104,18 +92,21 @@
         </select>
         </div>
       </div>
-
-      <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" <?php echo ($gdpr) ? 'checked':''?> required>
-      <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
-      <br>
-      <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" <?php echo ($newsletter) ? 'checked':'' ?>>
-      <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
+      
+      <!-- Checkboxes -->
+      <div class="input-field">
+        <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" <?php echo ($gdpr) ? 'checked':''?> required>
+        <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
+      </div>
+      
+      <div class="input-field">
+        <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" <?php echo ($newsletter) ? 'checked':'' ?>>
+        <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
+      </div>
 
       <!--Button-->
-      <div class="RegisterButton mt-3">
-        <div class="col-5">
-          <button class="btn btn-secondary" type="submit">Registrieren</button>
-        </div>
+      <div class="mt-3">
+        <button class="btn btn-secondary" type="submit">Registrieren</button>
       </div>
     </form>
     </div>

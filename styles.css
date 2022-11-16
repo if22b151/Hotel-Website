@@ -51,6 +51,8 @@ footer a:hover{
     height: 75px;
 }
 
+
+
 .ContainerImp{
     box-sizing: border-box;
     width: 500px;
@@ -105,7 +107,6 @@ footer a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
 }
 
 /* FAQ */
@@ -200,3 +201,12 @@ table > tbody > tr > .bottom_border_none{
     padding: 0% 25%;
   }
 }
+
+@media screen and (max-width: 576px) {
+    .OverallContainer {
+        margin-left:30px;
+        display: block;
+        position: absolute;
+    }
+}
+

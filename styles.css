@@ -4,25 +4,35 @@ html{
 }
 div.black_background{
   background-color: rgb(82, 82, 82);
+  padding: 0% 0%; /* Gets expanded in media queries */
 }
 .site_content{
   background-color: white;
-  padding: 0% 5%;
+  padding: 0% 5%; /* Gets expanded in media queries */
 }
+
 
 footer{
-  display: flexbox;
-  flex-direction: row;
-  justify-content: center;
-
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 footer ul{
-  margin-bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+
+  /* Overwriting some strange defaults */
+  margin-bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
 }
-footer li{
+footer li.footer-item{
   margin: 0px 1rem;
   display: inline;
+}
+
+footer .text-follow-us{
+  color:rgba(255,255,255,.90);
 }
 footer a{
   color: rgba(255,255,255,.55);
@@ -31,6 +41,7 @@ footer a{
 footer a:hover{
   color:rgba(255,255,255,.75);
 }
+
 
 /* idk if needed anymore */
 .Header{
@@ -112,6 +123,9 @@ footer a:hover{
 }
 
 /* Index */
+header > a{
+  text-decoration: none;
+}
 
 p.room_title{
   font-weight: bold;

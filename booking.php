@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php require 'php/scripts/booking_logic.php' ?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -34,6 +35,7 @@
       <!-- Error banner; shows up if anything in $errors array -->
       <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
         <?php 
+          print $debug;
           foreach ($errors as $err){
             print($err . "<br>");
           } 
@@ -59,7 +61,7 @@
           <span class="text-muted">check-in ab 9 uhr</span>
           <div class="col-12">
             <input class="form-control" type="date" name="date_start" id="date_start"
-              min="<?php echo date('m-d-Y', time()); ?>" required>
+              min="<?php echo date('Y-m-d', time()); ?>" required>
           </div>
         </div>
         
@@ -69,7 +71,7 @@
           <span class="text-muted">check-out bis 12 uhr</span>
           <div class="col-12">
             <input class="form-control" type="date" name="date_end" id="date_end"
-              min="<?php echo date('m-d-Y', time()); ?>" required>
+              min="<?php echo date('Y-m-d', time()); ?>" required>
           </div>
 
           <div class="mt-2">
@@ -389,8 +391,8 @@
         <!-- Phone Number-->
         <div class="mb-2">
           <label class="form-label" for="phone_nr">Telefonnummer</label>
-          <input class="form-control" type="tel" name="phone" id="phone" placeholder="+43 664 8081233" 
-            value="<?php echo $phone ?>" required>
+          <input class="form-control" type="tel" name="phone_nr" id="phone_nr" placeholder="+43 664 8081233" 
+            value="<?php echo $phone_nr ?>" required>
         </div>
 
         <div class="mt-3">

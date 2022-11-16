@@ -61,7 +61,7 @@
           <span class="text-muted">check-in ab 9 uhr</span>
           <div class="col-12">
             <input class="form-control" type="date" name="date_start" id="date_start"
-              min="<?php echo date('Y-m-d', time()); ?>" required>
+              min="<?php echo date('Y-m-d', time()); ?>" value="<?php echo $date_start?>" required>
           </div>
         </div>
         
@@ -71,7 +71,7 @@
           <span class="text-muted">check-out bis 12 uhr</span>
           <div class="col-12">
             <input class="form-control" type="date" name="date_end" id="date_end"
-              min="<?php echo date('Y-m-d', time()); ?>" required>
+              min="<?php echo date('Y-m-d', time()); ?>" value="<?php echo $date_end?>" required>
           </div>
 
           <div class="mt-2">

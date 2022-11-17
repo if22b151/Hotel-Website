@@ -17,6 +17,9 @@ $city = $_POST['city'];
 $plz = $_POST['plz'];
 $country = $_POST['country'];
 $phone_nr = $_POST['phone_nr'];
+$breakfast = $_POST['breakfast'];
+$parking = $_POST['parking'];
+$animals = $_POST['animals'];
 
 if(is_empty_any($room, $date_start, $date_end, $street, $street_nr, $city, $plz, $country, $phone_nr)){
     array_push($errors, 'Alle Felder müssen ausgefüllt sein');

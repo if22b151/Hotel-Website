@@ -1,6 +1,4 @@
 <?php
-$debug = "login_logic.php loaded";
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     // Placeholder
     $valid_user = array(
@@ -30,8 +28,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
     }
     
-} elseif($_GET['logout'] == TRUE){
+} elseif($_GET['logout']){
     session_destroy();
+    header('location: /login.php');
 }
 
 ?>

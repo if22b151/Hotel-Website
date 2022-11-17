@@ -394,31 +394,8 @@
           <input class="form-control" type="tel" name="phone_nr" id="phone_nr" placeholder="+43 664 8081233" 
             value="<?php echo $phone_nr ?>" required>
         </div>
-        
-        <!-- Checkboxes: Breakfast, animals, parking -->
-        <label class="form-label" for="additional-options">Zusatzoptionen</label>
-        <div class="mb-2" name="additional-options">
-          <div>
-            <input class="form-check-input" type="checkbox" name="breakfast" id="breakfast" 
-              <?php echo ($breakfast) ? 'selected' : '' ?> >
-            <label class="form-label" for="breakfast">Frühstück(+10€/Tag)</label>
-          </div>
 
-          <div>
-            <input class="form-check-input" type="checkbox" name="parking" id="parking" 
-              <?php echo ($parking) ? 'selected' : '' ?> >
-            <label class="form-label" for="parking">Parkplatz (+5€/Tag)</label>
-          </div>
-
-          <div>
-            <input class="form-check-input" type="checkbox" name="animals" id="animals" 
-              <?php echo ($animals) ? 'selected' : '' ?> >
-            <label class="form-label" for="animals">Tiere (bis zu 3 Haustiere)</label>
-          </div>
-        </div>
-
-        <!-- Submit -->
-        <div class="">
+        <div class="mt-3">
           <input class="btn btn-secondary" type="submit" value="Buchung tätigen">
         </div>
       </form>

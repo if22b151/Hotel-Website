@@ -1,5 +1,5 @@
 <?php
-    $current_url = htmlspecialchars($_SERVER['PHP_SELF']);
+    $current_url = $_SERVER['PHP_SELF'];
     $current_page = '';
 
     // So current page can be highlighted in Navbar; a bit overkill for now as there might still be some changes to the navbar

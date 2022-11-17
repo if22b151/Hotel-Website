@@ -1,13 +1,13 @@
 <?php
+// Placeholder data
+$valid_user = array(
+    'usr_id'=>'sampleHex', 
+    'name'=>'admin', 
+    'email'=>'admin', 
+    'pw'=>'admin'
+); 
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    // Placeholder
-    $valid_user = array(
-        'usr_id'=>'sampleHex', 
-        'name'=>'admin', 
-        'email'=>'admin', 
-        'pw'=>'admin'
-    ); 
-    
     $errors = array();
     
     $email = $_POST['email'];
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
 } elseif($_GET['logout']){
     session_destroy();
-    header('location: /login.php');
+    header('location: /login.php');  // Gets stuck on logout page without this
 }
 
 ?>

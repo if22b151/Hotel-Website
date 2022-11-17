@@ -27,7 +27,7 @@
 
     <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
       <?php 
-        foreach ($errors as $err){
+        foreach($errors as $err){
           print($err . "<br>");
         } 
       ?>
@@ -42,21 +42,24 @@
       <!--Vorname-->
       <div class="input-field">
         <label for="first_name" class="form-label">Vorname</label>
-        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Vorname" value="<?php echo $first_name ?>" required>
+        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Vorname" 
+          value="<?php echo $first_name ?>" required>
       </div>
 
 
       <!--Nachname-->
       <div class="input-field mt-3">
         <label for="last_name" class="form-label">Nachname</label>
-        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" value="<?php echo $last_name ?>"required>
+        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" 
+          value="<?php echo $last_name ?>"required>
       </div>
       
 
       <!--Username-->
       <div class="input-field mt-3">
         <label for="username" class="form-label">Nutzername</label>
-        <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" placeholder="Benutzername" value="<?php echo $username ?>" required>
+        <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" placeholder="Benutzername" 
+          value="<?php echo $username ?>" required>
       </div>
 
       <!--E-mail Adresse-->
@@ -64,7 +67,8 @@
         <label for="email" class="form-label">E-Mail Addresse</label>
         <div class="input-group">
           <span class="input-group-text" id="inputGroupPrepend2">@</span>
-          <input type="text" name="email" class="form-control" id="email" placeholder="E-Mail Addresse" value="<?php echo $email ?>" required>
+          <input type="text" name="email" class="form-control" id="email" placeholder="E-Mail Addresse" 
+            value="<?php echo $email ?>" required>
         </div>
       </div>
 
@@ -95,12 +99,14 @@
       
       <!-- Checkboxes -->
       <div class="input-field">
-        <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" <?php echo ($gdpr) ? 'checked':''?> required>
+        <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" 
+          <?php echo ($gdpr) ? 'checked':''?> required>
         <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
       </div>
       
       <div class="input-field">
-        <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" <?php echo ($newsletter) ? 'checked':'' ?>>
+        <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" 
+          <?php echo ($newsletter) ? 'checked':'' ?>>
         <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
       </div>
 

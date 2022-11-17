@@ -77,7 +77,7 @@
         </div>
       </div>
       
-      <div class="col-md-8 mt-3 mt-md-0 col_booking">
+      <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
@@ -108,7 +108,7 @@
         </div>
       </div>
 
-      <div class="col-md-8 mt-3 mt-md-0 col_booking">
+      <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="col-md-8 mt-3 mt-md-0 col_booking">
+      <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>

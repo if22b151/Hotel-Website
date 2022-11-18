@@ -7,7 +7,7 @@
 
 <!-- current_booking.php start -->
 <?php if(empty($bookings)): ?>
-  <p>Noch keine Buchungen getätigt.</p>'
+  <p>Noch keine Buchungen getätigt.</p>
 <?php else: ?>
   <table class="table">
     <thead>

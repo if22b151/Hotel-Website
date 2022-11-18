@@ -53,6 +53,12 @@
             <option value="double" <?php echo ($room == 'double') ? 'selected' : ''?>>Doppelzimmer</option>
             <option value="single" <?php echo ($room == 'single') ? 'selected' : ''?>>Einzelzimmer</option>
           </select>
+
+          <div class="mt-2">
+            <input class="form-check-input" type="checkbox" name="breakfast" id="breakfast" 
+              <?php echo ($breakfast) ? 'selected' : '' ?> >
+            <label class="form-label ms-1" for="breakfast">Frühstück(+10€/Tag)</label>
+          </div>
         </div>
         
         <!-- Booking Start Date-->
@@ -77,7 +83,7 @@
           <div class="mt-2">
             <input class="form-check-input" type="checkbox" name="late_check_out" id="late_check_out" 
               <?php echo ($late_check_out) ? 'selected' : '' ?> >
-            <label class="form-label mx-1" for="late_check_out">Late check-out bis 15 Uhr</label>
+            <label class="form-label ms-1" for="late_check_out">Late check-out bis 15 Uhr</label>
           </div>
         </div>
 
@@ -99,7 +105,7 @@
             </span>
             <span class="col-3">
               <input type="text" class="form-control" id="street_nr" name="street_nr" placeholder="43" 
-                value="<?php echo $street_nr ?>" required>
+              value="<?php echo $street_nr ?>" required>
             </span>
           </div>
         </div>
@@ -108,9 +114,9 @@
         <div class="mb-2">
           <label class="form-label" for="city">Stadt</label>
           <input class="form-control" type="text" name="city" id="city" placeholder="Musterstadt" 
-            value="<?php echo $city ?>" required>
+          value="<?php echo $city ?>" required>
         </div>
-            
+        
         <!-- Post Code & Country -->
         <div class="mb-2">
           <div class="row" role="labels">
@@ -124,7 +130,7 @@
           <div class="row" role="input-fields">
             <span class="col-4">
               <input class="form-control" type="number" name="plz" id="plz" placeholder="1090" 
-                value="<?php echo $plz ?>" required>
+              value="<?php echo $plz ?>" required>
             </span>
             
             <span class="col-8">
@@ -394,8 +400,26 @@
           <input class="form-control" type="tel" name="phone_nr" id="phone_nr" placeholder="+43 664 8081233" 
             value="<?php echo $phone_nr ?>" required>
         </div>
+        
+        <!-- Checkboxes: Animals, parking -->
+        <label class="form-label" for="additional-options">Zusatzoptionen</label>
+        <div class="mb-2" name="additional-options">
 
-        <div class="mt-3">
+          <div>
+            <input class="form-check-input" type="checkbox" name="parking" id="parking" 
+              <?php echo ($parking) ? 'selected' : '' ?> >
+            <label class="form-label" for="parking">Parkplatz (+5€/Tag)</label>
+          </div>
+
+          <div>
+            <input class="form-check-input" type="checkbox" name="animals" id="animals" 
+              <?php echo ($animals) ? 'selected' : '' ?> >
+            <label class="form-label" for="animals">Tiere (bis zu 3 Haustiere)</label>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="">
           <input class="btn btn-secondary" type="submit" value="Buchung tätigen">
         </div>
       </form>

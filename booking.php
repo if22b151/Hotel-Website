@@ -1,3 +1,8 @@
+<?php
+  ini_set('error_reporting', E_ALL);
+  ini_set( 'display_errors', 1 );
+?>
+
 <?php session_start(); ?>
 <?php require 'php/scripts/booking_logic.php' ?>
 
@@ -35,7 +40,6 @@
       <!-- Error banner; shows up if anything in $errors array -->
       <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
         <?php 
-          print $debug;
           foreach ($errors as $err){
             print($err . "<br>");
           } 

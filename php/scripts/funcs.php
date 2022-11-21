@@ -8,4 +8,12 @@ function is_empty_any(...$vars){
 
     return FALSE;
 }
+
+function get_default(&$var, $default=NULL){
+    if(isset($var)){
+        return $var;
+    } else {
+        return $default;
+    }
+}
 ?>

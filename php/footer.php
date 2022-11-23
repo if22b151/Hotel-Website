@@ -1,14 +1,4 @@
-<?php
-  $current_url = $_SERVER["PHP_SELF"];
-
-  if (strpos($current_url, "index.php") || strpos($current_url, "signup.php") || strpos($current_url, "booking.php")){
-    $fixation = '';
-  } else {
-    $fixation = 'fixed-bottom';
-  }
-?>
-
-<footer class="container-fluid py-4 bg-dark <?php print($fixation)?>">
+<footer class="container-fluid py-4 bg-dark">
   <ul class="d-sm-flex justify-content-center">
     <li class="footer-item d-flex justify-content-center d-sm-block">
       <a href="#">Twitter</a>

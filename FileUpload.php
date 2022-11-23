@@ -1,14 +1,3 @@
-<?php
-//echo'<pre>';
-$directoryHandler = opendir("news/");
-$uploadDifi = [];
-while($file=readdir($directoryHandler)){
-    $uploadDifi[]=$file;
-}
-
-/* $uploadDifiglob = glob('uploads/*.*')*/
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +18,7 @@ while($file=readdir($directoryHandler)){
 
     <?php include 'php/navbar.php' ?>
 
-        <div class="flex-container black_background">
+    <div class="flex-container black_background">
         <div class="container pt-3 pb-4 px-3 site_content">
 
      <h1>File Upload</h1>
@@ -39,8 +28,8 @@ while($file=readdir($directoryHandler)){
                 <input class="form-control" type="text" id="desc" name="desc">
             </div>
             <div>
-                <label for="upload">Upload</label>
-                <input class="form-control" type="file" id="upload" name="upload">
+                <label for="image">Upload</label>
+                <input class="form-control" type="file" id="image" name="image" accept="image/png/jpeg/gif">
             </div>
 
             <div>

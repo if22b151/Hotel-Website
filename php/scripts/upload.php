@@ -1,40 +1,58 @@
-<pre>
+<!--<pre>
 <?php
-print_r($_POST);
-print_r($_FILES);
 
-$file = $_FILES['upload'];
+//print_r($_FILES['image']);
 
-// Check if file already exists
-if (file_exists($file)) {
-    echo "Sorry, file already exists.";
-} else {
-    move_uploaded_file($file['tmp_name'],'news/');
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if(empty($_FILES['image'] && empty($_Files['desc']))){
+        echo "Keine Datei hinzugefügt!";
+        header("Location: FileUpload.php");
+
+    } else {
+
+        $uploadedFile = $_FILES['image']['tmp_name'];
+        $ordner = "news/";
+        $success = false;
+        $allowed = strtolower(pathinfo($_FILES['image']['tmp_name'], PATHINFO_EXTENSION));
+
+// Check if the file is of the accepted file type
+        if (isset($_POST["Hochladen"]) && $allowed == "image") {
+
+// Check if the file size is below the maximum limit
+            if ($_FILES['image']['size'] <= 15000000) {
+                $fileupload = true;
+            } else {
+                echo "Datei ist zu groß.";
+                $fileupload = false;
+            }
+
+// Check if the file already exists
+            if (is_file($ordner . $_FILES['image']['tmp_name'])) {
+                echo "Diese Datei existiert.";
+                $fileupload = false;
+            }
+
+// If everything is OK, upload the file
+            if ($fileupload === true) {
+
+                move_uploaded_file($uploadedFile, $ordner . $_FILES['image']['tmp_  name']);
+                $success = true;
+            }
+
+            if ($success === true) {
+                echo "The File $uploadedFile has been uploaded.";
+
+            } else {
+                echo "Sorry, only PDF-files can be accepted!";
+            }
+
+        }
+    }
+
+
+
+
+
 }
-
-//only pictures
-// Allow certain file formats
-if($file != "jpg" && $file != "png" && $file != "jpeg" && $file != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-
-}
-
-//validierung
-$uploadDir = "../news";
-
-if (!opendir($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["upload"])) {
-    $uploadFile = $uploadDir;
-    $uploadFile = $_FILES["upload"]["name"];
-    move_uploaded_file($_FILES["upload"]["tmp_name"], $uploadFile);
-}
-
-
-//move_uploaded_file($file['tmp_name'],'directory/'.$file['name']);
-move_uploaded_file($file['tmp_name'],'news/');
-
-
 ?>

@@ -18,26 +18,21 @@
 
     <?php include 'php/navbar.php' ?>
 
-    <div class="flex-container black_background">
-        <div class="container pt-3 pb-4 px-3 site_content">
+            <h1>File Upload</h1>
+            <form enctype="multipart/form-data" method="post" action="php/scripts/upload.php">
+                <div>
+                    <label for="desc">Beschreibung</label>
+                    <input class="form-control" type="text" id="desc" name="desc">
+                </div>
+                <div>
+                    <label for="image">Upload</label>
+                    <input class="form-control" type="file" id="image" name="image" accept="image/png/jpeg/gif">
+                </div>
 
-     <h1>File Upload</h1>
-        <form enctype="multipart/form-data" method="post" action="php/scripts/upload.php">
-            <div>
-                <label for="desc">Beschreibung</label>
-                <input class="form-control" type="text" id="desc" name="desc">
-            </div>
-            <div>
-                <label for="image">Upload</label>
-                <input class="form-control" type="file" id="image" name="image" accept="image/png/jpeg/gif">
-            </div>
-
-            <div>
-                <input class="btn btn-success" type="submit" value="Hochladen">
-            </div>
-        </form>
-    </div>
-    </div>
+                <div>
+                    <input class="btn btn-success" type="submit" value="Hochladen">
+                </div>
+            </form>
 
     <?php include 'php/footer.php' ?>
 

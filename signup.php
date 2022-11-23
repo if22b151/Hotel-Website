@@ -48,7 +48,7 @@
           
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <!--Vorname-->
-          <div class="input-field">
+          <div class="">
             <label for="first_name" class="form-label">Vorname</label>
             <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Vorname" 
               value="<?php echo $first_name ?>" required>
@@ -56,7 +56,7 @@
           
           
           <!--Nachname-->
-          <div class="input-field mt-3">
+          <div class="mt-3">
             <label for="last_name" class="form-label">Nachname</label>
             <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" 
               value="<?php echo $last_name ?>"required>
@@ -64,14 +64,14 @@
           
           
           <!--Username-->
-          <div class="input-field mt-3">
+          <div class="mt-3">
             <label for="username" class="form-label">Nutzername</label>
             <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" placeholder="Benutzername" 
               value="<?php echo $username ?>" required>
           </div>
           
           <!--E-mail Adresse-->
-          <div class="input-field mt-3">
+          <div class="mt-3">
             <label for="email" class="form-label">E-Mail Addresse</label>
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
@@ -81,19 +81,19 @@
           </div>
           
           <!--Passwort-->
-          <div class="input-field mt-3">
+          <div class="mt-3">
             <label for="password" class="form-label">Passwort</label>
             <input type="password" name="password" class="form-control" id="password" placeholder="Passwort" minlength="8" required>
           </div>
           
           <!--Passwort wiederholen-->
-          <div class="input-field mt-3">
+          <div class="mt-3">
             <label for="password2" class="form-label">Passwort wiederholen</label>
             <input type="password" name="password2" class="form-control" id="password2" placeholder="Passwort wiederholen" minlength="8" required>
           </div>
           
           <!--Geschlecht-->
-          <div class="input-field">
+          <div class="">
             <div class="col-3 mt-3">
             <label for="gender" class="form-label">Geschlecht</label>
             <select class="form-select" name="gender" id="gender" required>
@@ -106,13 +106,13 @@
           </div>
           
           <!-- Checkboxes -->
-          <div class="input-field">
+          <div class="">
             <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" 
               <?php echo ($gdpr) ? 'checked':''?> required>
             <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
           </div>
           
-          <div class="input-field">
+          <div class="">
             <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" 
               <?php echo ($newsletter) ? 'checked':'' ?>>
             <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>

@@ -5,11 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vienna City Hotel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
+  
+  <title>Vienna City Hotel</title>
 </head>
 <body>
   <!-- Header -->
@@ -20,7 +21,7 @@
       <p>Hotel</p>
     </a>
   </header>
-
+  
   <!-- Carousel -->
   <div id="carousel-index" class="carousel slide" data-bs-ride="carousel" data-interval="15000" data-pause="false">
     <div class="carousel-indicators">
@@ -60,25 +61,25 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
-
+  
   <?php echo $randomVar ?>
   
   <!-- Zimmer -->
   <div class="black_background">
-  <div class="container site_content py-5 pt-4 pb-5">
-    <!-- Suite -->
-    <div class="row room">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-          <p class="room_title">Suite</p>
-        </div>
-      </div>
-      <div class="col-md-4">
+    <div class="container site_content py-5 pt-4 pb-5">
+      <!-- Suite -->
+      <div class="row room">
         <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
+            <p class="room_title">Suite</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
           <img src="img/black_square.png" class="img-fluid" alt="">
         </div>
       </div>

@@ -15,6 +15,8 @@
     <style>
     html{ background-color: white; }
     </style>
+
+    <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Navbar -->

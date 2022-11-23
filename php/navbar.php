@@ -2,8 +2,10 @@
     $current_url = $_SERVER['PHP_SELF'];
     $current_page = '';
 
-    // So current page can be highlighted in Navbar; a bit overkill for now as there might still be some changes to the navbar
-    // (Looking at you, login function...)
+    include_once 'scripts/funcs.php';
+    require 'scripts/logout_logic.php';
+
+    // So current page can be highlighted in Navbar
     if (strpos($current_url, 'index.php')) {
         $current_page = 'index';
     } elseif (strpos($current_url, 'login.php')) {
@@ -23,6 +25,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto ">
@@ -53,5 +56,21 @@
           </li>
         </ul>
       </div>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link mx-2" href="#" id="profileDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user profile-button"></i>  
+        </a>
+        <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownMenuLink">
+          <?php if(isset($_SESSION['usr_id'])): ?>
+            <li><a class="dropdown-item" href="login.php">Login</a></li>
+            <li><a class="dropdown-item" href="signup.php">Registrieren</a></li>
+          <?php else: ?>
+            <li><a class="dropdown-item" href="login.php">Profil</a></li>
+            <li><a class="dropdown-item" href="booking.php">Buchungen</a></li>
+            <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
+          <?php endif; ?>
+        </ul>
+      </li>
     </div>
   </nav>

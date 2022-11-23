@@ -31,9 +31,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
     }
     
-} elseif(get_default($_GET['logout'])){
-    session_destroy();
-    header('location: /login.php');  // Gets stuck on logout page without this
 }
 
 ?>

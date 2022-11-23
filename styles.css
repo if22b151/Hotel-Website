@@ -1,9 +1,9 @@
-/* Global */
+/* General site layout */
 html{
-  background-color: rgb(82, 82, 82);
+  background-color: black;
 }
 div.black_background{
-  background-color: rgb(82, 82, 82);
+  background-color: rgb(60, 60, 60);
   padding: 0% 0%; /* Gets expanded in media queries */
 }
 .site_content{
@@ -11,23 +11,33 @@ div.black_background{
   padding: 0% 5%; /* Gets expanded in media queries */
 }
 
-footer{
-  text-align: center;
-  display: flex;
-  justify-content: center;
+/* Navbar */
+.fa-solid{
+  color: rgba(255,255,255,.55)
 }
-footer ul{
-  display: flex;
-  justify-content: center;
+i.profile-button:hover{
+  color: rgba(255,255,255,.75)
+}
+.profile-dropdown{  /* Dropdown would clip into right side of screen if without this */
+  right: 0;
+  left: unset !important;
+}
 
+@media screen and (min-width: 992px){  /* Point at which navbar icon jumps to middle of navbar */
+  div.navbar-collapse{
+    margin-left: 100px;  /* Navbar would otherwise be off-center */
+  }
+}
+
+/* Footer */
+footer ul{
   /* Overwriting some strange defaults */
   margin-bottom: 0px;
   padding-left: 0px;
   list-style: none;
 }
 footer li.footer-item{
-  margin: 0px 1rem;
-  display: inline;
+  margin: 5px 1rem;
 }
 
 footer .text-follow-us{
@@ -40,7 +50,6 @@ footer a{
 footer a:hover{
   color:rgba(255,255,255,.75);
 }
-
 
 /* idk if needed anymore */
 .Header{
@@ -143,10 +152,6 @@ div.btn_booking{
 }
 div.btn_booking p{
   display: inline;
-}
-
-div.black_background{
-  background-color: rgb(82, 82, 82);
 }
 
 header.logo_bar{

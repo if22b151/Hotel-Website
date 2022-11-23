@@ -1,4 +1,7 @@
-<?php include 'php/scripts/signup_logic.php' ?>
+<?php
+  session_start();
+  require 'php/scripts/signup_logic.php'
+?>
 
 <!DOCTYPE html>
 <html lang="en">

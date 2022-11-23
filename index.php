@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +63,8 @@
 
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
+
+  <?php echo $randomVar ?>
   
   <!-- Zimmer -->
   <div class="black_background">

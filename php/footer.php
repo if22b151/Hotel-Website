@@ -9,20 +9,20 @@
 ?>
 
 <footer class="container-fluid py-4 bg-dark <?php print($fixation)?>">
-  <ul class="">
-    <li class="footer-item">
+  <ul class="d-sm-flex justify-content-center">
+    <li class="footer-item d-flex justify-content-center d-sm-block">
       <a href="#">Twitter</a>
     </li>
-    <li class="footer-item">
+    <li class="footer-item  d-flex justify-content-center d-sm-block">
       <a href="#">Facebook</a>
     </li>
-    <li class="footer-item text-follow-us">
+    <li class="footer-item text-follow-us d-flex justify-content-center d-sm-block">
       Social Media
     </li>
-    <li class="footer-item">
+    <li class="footer-item d-flex justify-content-center d-sm-block">
         <a href="#">Instagram</a>
     </li>
-    <li class="footer-item">
+    <li class="footer-item d-flex justify-content-center d-sm-block">
         <a href="#">TikTok</a>
     </li>
   </ul>

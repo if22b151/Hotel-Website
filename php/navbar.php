@@ -66,7 +66,7 @@
             <li><a class="dropdown-item" href="login.php">Login</a></li>
             <li><a class="dropdown-item" href="signup.php">Registrieren</a></li>
           <?php else: ?>
-            <li><a class="dropdown-item" href="login.php">Profil</a></li>
+            <li><a class="dropdown-item" href="profile.php">Profil</a></li>
             <li><a class="dropdown-item" href="booking.php">Buchungen</a></li>
             <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
           <?php endif; ?>

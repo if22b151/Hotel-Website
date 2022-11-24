@@ -1,16 +1,10 @@
-/* Global */
-a{
-  text-decoration: none !important;
-}
-
 /* General site layout */
 .container-site{
   height: 100vh;
   background-color:rgb(60, 60, 60);
-  background-image: url('img/background.jpg');
 }
 div.black_background{
-/*   background-color: rgb(60, 60, 60); */
+  background-color: rgb(60, 60, 60);
   padding: 0% 0%; /* Gets expanded in media queries */
 }
 .site_content{
@@ -19,11 +13,11 @@ div.black_background{
 }
 
 /* Navbar */
-i.icon{
-  color: rgba(255,255,255,.55) !important
+.fa-solid{
+  color: rgba(255,255,255,.55)
 }
-i.icon:hover{
-  color: rgba(255,255,255,.75) !important
+i.profile-button:hover{
+  color: rgba(255,255,255,.75)
 }
 .profile-dropdown{  /* Dropdown would clip into right side of screen if without this */
   right: 0;
@@ -52,6 +46,7 @@ footer .text-follow-us{
 }
 footer a{
   color: rgba(255,255,255,.55);
+  text-decoration: none;
 }
 footer a:hover{
   color:rgba(255,255,255,.75);
@@ -145,6 +140,7 @@ p.room_title{
 }
 
 a.btn_booking{
+  text-decoration: none;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   letter-spacing: 5px;
   color:rgb(187, 159, 0);

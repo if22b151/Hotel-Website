@@ -2,7 +2,7 @@
     $current_url = $_SERVER['PHP_SELF'];
     $current_page = '';
 
-    include_once 'scripts/funcs.php';
+    require_once 'scripts/funcs.php';
     require 'scripts/logout_logic.php';
 
     // So current page can be highlighted in Navbar
@@ -62,13 +62,16 @@
           <i class="fa-solid fa-user profile-button"></i>  
         </a>
         <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownMenuLink">
-          <?php if(isset($_SESSION['usr_id'])): ?>
-            <li><a class="dropdown-item" href="login.php">Login</a></li>
-            <li><a class="dropdown-item" href="signup.php">Registrieren</a></li>
-          <?php else: ?>
+          <?php if(get_default($_SESSION['is_admin'])):?>
+            <li><a class="dropdown-item" href="#">Blog Eintrag erstellen</a></li>            
+          <?php endif; ?>
+          <?php if(isset($_SESSION['id'])): ?>
             <li><a class="dropdown-item" href="profile.php">Profil</a></li>
             <li><a class="dropdown-item" href="booking.php">Buchungen</a></li>
             <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
+          <?php else: ?>
+            <li><a class="dropdown-item" href="login.php">Login</a></li>
+            <li><a class="dropdown-item" href="signup.php">Registrieren</a></li>
           <?php endif; ?>
         </ul>
       </li>

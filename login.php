@@ -25,6 +25,7 @@
       <div class="flex-container black_background">
       <div class="container py-3 px-3 site_content">
         <h1>Login</h1>
+        <p class="text-muted">Noch keinen Account? <a href="register.php">Registrieren</a> Sie sich!</p>
         
         <?php if(isset($_SESSION['name'])): ?>
           <p>

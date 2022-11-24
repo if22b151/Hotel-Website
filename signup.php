@@ -32,6 +32,7 @@
       <div class="container pt-3 pb-4 px-3 site_content">
 
         <h1>Registrieren</h1>
+        <p class="text-muted">Sollten Sie bereits ein Konto haben, <a href="register.php">loggen</a> Sie sich ein!</p>
 
         <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
           <?php 
@@ -94,7 +95,7 @@
           
           <!--Geschlecht-->
           <div class="">
-            <div class="col-3 mt-3">
+            <div class="col-12 col-sm-3 mt-3">
             <label for="gender" class="form-label">Geschlecht</label>
             <select class="form-select" name="gender" id="gender" required>
               <option value="">Auswählen</option>
@@ -109,13 +110,13 @@
           <div class="">
             <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" 
               <?php echo ($gdpr) ? 'checked':''?> required>
-            <label for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
+            <label class="form-label d-inline" for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
           </div>
           
           <div class="">
             <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" 
               <?php echo ($newsletter) ? 'checked':'' ?>>
-            <label for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
+            <label class="form-label d-inline" for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
           </div>
           
           <!--Button-->

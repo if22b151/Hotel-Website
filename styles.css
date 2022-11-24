@@ -7,7 +7,6 @@ a{
 .container-site{
   height: 100vh;
   background-color:rgb(60, 60, 60);
-  background-image: url('img/background.jpg');
 }
 div.black_background{
 /*   background-color: rgb(60, 60, 60); */
@@ -19,11 +18,11 @@ div.black_background{
 }
 
 /* Navbar */
-i.icon{
+i.profile-button{
   color: rgba(255,255,255,.55) !important
 }
-i.icon:hover{
-  color: rgba(255,255,255,.75) !important
+i.profile-button:hover{
+  color: rgba(255,255,255,.75)
 }
 .profile-dropdown{  /* Dropdown would clip into right side of screen if without this */
   right: 0;

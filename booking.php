@@ -167,7 +167,7 @@
           <!-- Current Bookings -->
           <div class="current-bookings">
             <h4 class="mt-3">Aktuelle Buchungen</h3>
-            <?php include 'php/current_bookings.php'; ?>
+            <?php include 'php/templates/current_bookings.php'; ?>
           </div>
 
 

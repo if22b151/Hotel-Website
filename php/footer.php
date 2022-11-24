@@ -1,4 +1,4 @@
-<footer class="container-fluid py-4 bg-dark">
+<footer class="container-fluid py-3 bg-dark">
   <ul class="d-sm-flex justify-content-center">
     <li class="footer-item d-flex justify-content-center d-sm-block">
       <a href="#">Twitter</a>

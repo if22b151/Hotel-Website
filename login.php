@@ -25,15 +25,16 @@
       <div class="flex-container black_background">
       <div class="container py-3 px-3 site_content">
         <h1>Login</h1>
-        <p class="text-muted">Noch keinen Account? <a href="register.php">Registrieren</a> Sie sich!</p>
         
         <?php if(isset($_SESSION['name'])): ?>
           <p>
             Sie sind eingeloggt als <?php echo $_SESSION['name']?>.
           </p>
           <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
-
+          
         <?php else: ?>
+          <p class="text-muted">Noch keinen Account? <a href="register.php">Registrieren</a> Sie sich!</p>
+          
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <!-- Error banner; shows up if anything in $errors array -->
             <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">

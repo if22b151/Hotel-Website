@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
-    <div class="container-navbar-content d-flex flex-column justify-content-between">
+    <div class="container-navbar-content d-flex flex-column">
 
       <!-- Navbar -->
       <?php include 'php/navbar.php' ?>

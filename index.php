@@ -64,41 +64,39 @@
   
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
-  
-  <?php echo $randomVar ?>
-  
+    
   <!-- Zimmer -->
-  <div class="black_background">
+  <div class="black_background" style="background-color: rgb(60, 60, 60);">
     <div class="container site_content py-5 pt-4 pb-5">
       <!-- Suite -->
       <div class="row room">
         <div class="row">
           <div class="col-md-4"></div>
-          <div class="col-md-8">
-            <p class="room_title">Suite</p>
+            <div class="col-md-8">
+              <p class="room_title">Suite</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+            <img src="img/black_square.png" class="img-fluid" alt="">
           </div>
         </div>
-        <div class="col-md-4">
+        
+        <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
           <div class="row">
-          <img src="img/black_square.png" class="img-fluid" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+          </div>
+
+          <div class="row">
+            <a href="#" class="btn_booking">
+              <div class="btn_booking">
+                <p>BUCHEN</p>
+              </div>
+            </a>
+          </div>
+
         </div>
       </div>
-      
-      <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
-        <div class="row">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
-        </div>
-
-        <div class="row">
-          <a href="#" class="btn_booking">
-            <div class="btn_booking">
-              <p>BUCHEN</p>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
 
     <!-- Double Bedroom -->
     <div class="row room mt-5">

@@ -9,8 +9,8 @@ a{
   background-color:rgb(60, 60, 60);
 }
 div.black_background{
-/*   background-color: rgb(60, 60, 60); */
   padding: 0% 0%; /* Gets expanded in media queries */
+  background-color:rgb(60, 60, 60);
 }
 .site_content{
   background-color: white;
@@ -18,20 +18,32 @@ div.black_background{
 }
 
 /* Navbar */
-i.profile-button{
+.profile-icon > i{
   color: rgba(255,255,255,.55) !important
 }
-i.profile-button:hover{
-  color: rgba(255,255,255,.75)
+.profile-icon:hover > i{
+  color: rgba(255,255,255,.75) !important
 }
 .profile-dropdown{  /* Dropdown would clip into right side of screen if without this */
   right: 0;
   left: unset !important;
 }
+a.dropdown-item:hover{
+  background: rgba(0, 0, 0, .05);
+}
 
 @media screen and (min-width: 992px){  /* Point at which navbar icon jumps to middle of navbar */
-  div.navbar-collapse{
-    margin-left: 100px;  /* Navbar would otherwise be off-center */
+  div[id="navbarNavDropdown"]{
+    margin-left: 55px;  /* Main menu would otherwise be off-center */
+  }
+}
+
+/* When at sm: Mobile - These center the god damn menu button */
+@media screen and (max-width: 575px){
+  div.navbar-brand, div.profile-dropdown-mobile{
+    width: 50px;
+    height: 40px;
+    margin: 0px 0px !important;
   }
 }
 

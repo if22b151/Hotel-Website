@@ -8,8 +8,8 @@
     // So current page can be highlighted in Navbar
     if (strpos($current_url, 'index.php')) {
         $current_page = 'index';
-    } elseif (strpos($current_url, 'login.php')) {
-        $current_page = 'login';
+    } elseif (strpos($current_url, 'booking.php')) {
+        $current_page = 'booking';
     } elseif(strpos($current_url, 'news.php')){
         $current_page = 'news';
     }
@@ -51,7 +51,7 @@
     </div>
     
 
-    <div class="collapse navbar-collapse mt-3" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item">
           <a class="nav-link mx-2 text-center <?php print(($current_page == 'index') ? 'active' : '')?>" aria-current="page" href="index.php">Home</a>

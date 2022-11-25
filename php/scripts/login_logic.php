@@ -4,10 +4,11 @@ $valid_user = array(
     'usr_id'=>'sampleHex', 
     'name'=>'admin', 
     'email'=>'admin', 
-    'pw'=>'admin'
+    'pw'=>'admin',
+    'is_admin'=>TRUE
 );
 
-require 'funcs.php';
+require_once 'funcs.php';
 
 $email = get_default($_POST['email']);
 $pw = get_default($_POST['password']);

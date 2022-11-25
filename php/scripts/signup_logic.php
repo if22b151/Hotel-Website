@@ -1,5 +1,5 @@
 <?php
-require 'funcs.php';
+require_once 'funcs.php';
 
 $first_name = get_default($_POST['first_name']);
 $last_name = get_default($_POST['last_name']);

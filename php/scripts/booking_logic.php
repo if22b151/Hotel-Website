@@ -1,5 +1,5 @@
 <?php
-require 'funcs.php';
+require_once 'funcs.php';
 
 $errors = array();
 

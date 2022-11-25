@@ -1,6 +1,7 @@
 <?php
   session_start();
-  require 'php/scripts/signup_logic.php'
+  require 'php/scripts/signup_logic.php';
+  require_once 'php/scripts/funcs.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,20 +33,39 @@
       <div class="container pt-3 pb-4 px-3 site_content">
 
         <h1>Registrieren</h1>
-        <p class="text-muted">Sollten Sie bereits ein Konto haben, <a href="register.php">loggen</a> Sie sich ein!</p>
 
-        <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
-          <?php 
-            foreach($errors as $err){
-              print($err . "<br>");
-            } 
-          ?>
-        </div>
+        <!-- Information and error banners -->
+        <?php if(isset($_SESSION['id'])): ?>
+
+          <div class="alert alert-success mt-3" role="alert">
+            Sie sind bereits eingeloggt!
+          </div>
+
+        <?php else: ?>
+
+          <p class="text-muted">Sollten Sie bereits ein Konto haben, <a href="login.php">loggen</a> Sie sich ein!</p>
           
-        <div class="alert alert-success mt-3 <?php echo ($success) ? '' : 'd-none' ?>" role="alert">
-          Sie sind nun registriert!<br>
-          <a href="/login.php">Hier</a> geht's zum Login.
-        </div>
+          <?php if(!empty($errors)): ?>
+
+            <div class="alert alert-warning mt-3" role="alert">
+              <?php 
+                foreach($errors as $err){
+                  print($err . "<br>");
+                } 
+              ?>
+            </div>
+
+          <?php elseif(get_default($success)): ?>
+          
+            <div class="alert alert-success mt-3" role="alert">
+              Sie sind nun registriert!<br>
+              <a href="/login.php">Hier</a> geht's zum Login.
+            </div>
+
+          <?php endif; ?>
+
+        <?php endif; ?>
+
           
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <!--Vorname-->

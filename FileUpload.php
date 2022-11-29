@@ -21,28 +21,41 @@
 </head>
 
 <body>
+  <div class="container-site d-flex flex-column justify-content-between">
+    
+    <div class="container-navbar-content d-flex flex-column flex-grow-1">
 
-    <?php include 'php/navbar.php' ?>
+      <?php include 'php/navbar.php' ?>
 
-            <h1>File Upload</h1>
-            <form enctype="multipart/form-data" method="post" action="php/scripts/upload.php">
-                <div>
-                    <label for="desc">Beschreibung</label>
-                    <input class="form-control" type="text" id="desc" name="desc">
-                </div>
-                <div>
-                    <label for="image">Upload</label>
-                    <input class="form-control" type="file" id="image" name="image" accept="image/png/jpeg/gif">
-                </div>
+      <div class="content-background flex-grow-1">
+      <div class="container site_content py-5 pt-4 pb-5">
 
-                <div>
-                    <input class="btn btn-success" type="submit" value="Hochladen">
-                </div>
-            </form>
 
-    <?php include 'php/footer.php' ?>
+        <h1>File Upload</h1>
+        <form enctype="multipart/form-data" method="post" action="php/scripts/upload.php">
+          <div>
+            <label for="desc">Beschreibung</label>
+            <input class="form-control" type="text" id="desc" name="desc">
+          </div>
+          <div>
+            <label for="image">Upload</label>
+            <input class="form-control" type="file" id="image" name="image" accept="image/png/jpeg/gif">
+          </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+          <div>
+            <input class="btn btn-success" type="submit" value="Hochladen">
+          </div>
+        </form>
+
+      </div>
+      </div>
+
+    </div>
+  
+  <?php include 'php/footer.php' ?>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

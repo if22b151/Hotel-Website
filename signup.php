@@ -29,7 +29,7 @@
       <!-- Navbar -->
       <?php include 'php/navbar.php' ?>
 
-      <div class="flex-container black_background">
+      <div class="flex-container content-background">
       <div class="container pt-3 pb-4 px-3 site_content">
 
         <h1>Registrieren</h1>

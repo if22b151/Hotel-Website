@@ -14,8 +14,8 @@
 
     <title>FileUpload</title>
     <style>
-        .black_background{
-            background-image: url('img/background.jpg');
+        .content-background{
+            content-background-image: url('img/content-background.jpg');
         }
     </style>
 </head>

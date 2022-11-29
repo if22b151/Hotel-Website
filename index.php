@@ -66,7 +66,7 @@
   <?php include 'php/navbar.php' ?>
     
   <!-- Zimmer -->
-  <div class="black_background" style="background-color: rgb(60, 60, 60);">
+  <div class="content-background" style="content-background-color: rgb(60, 60, 60);">
     <div class="container site_content py-5 pt-4 pb-5">
       <!-- Suite -->
       <div class="row room">
@@ -83,6 +83,7 @@
         </div>
         
         <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+
           <div class="row">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
           </div>
@@ -114,6 +115,7 @@
       </div>
 
       <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
+
         <div class="row">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
         </div>

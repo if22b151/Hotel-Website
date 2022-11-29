@@ -8,7 +8,7 @@ a{
   height: 100vh;
   background-color:rgb(60, 60, 60);
 }
-div.black_background{
+div.content-background{
   padding: 0% 0%; /* Gets expanded in media queries */
   background-color:rgb(60, 60, 60);
 }
@@ -30,6 +30,10 @@ div.black_background{
 }
 a.dropdown-item:hover{
   background: rgba(0, 0, 0, .05);
+}
+
+.navbar_toggler{
+  margin-left: 55px;  /* Centers menu toggle button that appears at mobile size */
 }
 
 @media screen and (min-width: 992px){  /* Point at which hotel logo jumps to middle of navbar */
@@ -195,14 +199,14 @@ table > tbody > tr > .bottom_border_none{
 
 /* When larger than md: Tablet */
 @media screen and (min-width: 768px){
-  div.black_background{
+  div.content-background{
     padding: 0% 15%;
   }
 }
 
 /* When larger than xl: Laptop/Desktop */
 @media screen and (min-width: 1200px){
-  div.black_background{
+  div.content-background{
     padding: 0% 25%;
   }
 }
@@ -214,4 +218,3 @@ table > tbody > tr > .bottom_border_none{
         position: absolute;
     }
 }
-

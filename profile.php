@@ -20,7 +20,7 @@
       
       <?php include 'php/navbar.php'; ?>
 
-      <div class="black_background">
+      <div class="content-background">
       <div class="container site_content py-4">
         
         

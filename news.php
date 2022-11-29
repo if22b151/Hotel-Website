@@ -24,7 +24,7 @@
       <!-- Navbar -->
       <?php include 'php/navbar.php' ?>
         
-      <div class="flex-container black_background">
+      <div class="flex-container content-background">
       <main class="container py-3 px-3 site_content">
         <h1>Neuigkeiten</h1>
         <hr>

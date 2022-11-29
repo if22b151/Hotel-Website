@@ -26,7 +26,7 @@
 
       <?php include 'php/navbar.php' ?>
       
-      <div class="flex-container black_background">
+      <div class="flex-container content-background">
       <div class="container site_content py-2 pb-4">
         <h1>Booking</h1>
 

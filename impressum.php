@@ -14,7 +14,7 @@
   <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
   
   <style>
-      .container-site{ background-color: white; }
+      .container-site{ content-background-color: white; }
   </style>
 
   <title>Impressum</title>
@@ -26,7 +26,7 @@
     <!-- Navbar -->
     <?php include 'php/navbar.php' ?>
 
-    <div class="flex-container black_background">
+    <div class="flex-container content-background">
       <div class="cotainer site_content">
         <h1>Impressum</h1>
 

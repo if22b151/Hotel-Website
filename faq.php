@@ -21,7 +21,7 @@
       <!-- Navbar -->
       <?php include 'php/navbar.php' ?>
       
-      <div class="black_background">
+      <div class="content-background">
       <div class="container site_content py-3">
         <div class="d-flex justify-content-center">
           <h1>FAQ</h1>

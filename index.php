@@ -66,7 +66,7 @@
   <?php include 'php/navbar.php' ?>
     
   <!-- Zimmer -->
-  <div class="content-background" style="content-background-color: rgb(60, 60, 60);">
+  <div class="content-background">
     <div class="container site_content py-5 pt-4 pb-5">
       <!-- Suite -->
       <div class="row room">

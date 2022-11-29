@@ -22,11 +22,11 @@
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
-    <div class="container-navbar-content d-flex flex-column">
+    <div class="container-navbar-content d-flex flex-column flex-grow-1">
 
       <?php include 'php/navbar.php' ?>
       
-      <div class="flex-container content-background">
+      <div class="flex-container content-background flex-grow-1">
       <div class="container site_content py-2 pb-4">
         <h1>Booking</h1>
 

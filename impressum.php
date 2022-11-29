@@ -21,12 +21,12 @@
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
-  <div class="container-navbar-content d-flex flex-column">
+  <div class="container-navbar-content d-flex flex-column flex-grow-1">
 
     <!-- Navbar -->
     <?php include 'php/navbar.php' ?>
 
-    <div class="flex-container content-background">
+    <div class="flex-container content-background flex-grow-1">
       <div class="cotainer site_content">
         <h1>Impressum</h1>
 

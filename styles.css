@@ -12,6 +12,10 @@ div.content-background{
   padding: 0% 0%; /* Gets expanded in media queries */
   background-color:rgb(60, 60, 60);
 }
+div.background-image{
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+}
 .site_content{
   background-color: white;
   padding: 0% 5%; /* Gets expanded in media queries */
@@ -218,3 +222,4 @@ table > tbody > tr > .bottom_border_none{
         position: absolute;
     }
 }
+

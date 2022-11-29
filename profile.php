@@ -16,11 +16,11 @@
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
-    <div class="container-navbar-content d-flex flex-column">
+    <div class="container-navbar-content d-flex flex-column flex-grow-1">
       
       <?php include 'php/navbar.php'; ?>
 
-      <div class="content-background">
+      <div class="content-background flex-grow-1">
       <div class="container site_content py-4">
         
         

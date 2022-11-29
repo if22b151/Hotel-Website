@@ -33,7 +33,7 @@
           <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
           
         <?php else: ?>
-          <p class="text-muted">Noch keinen Account? <a href="register.php">Registrieren</a> Sie sich!</p>
+          <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
           
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <!-- Error banner; shows up if anything in $errors array -->

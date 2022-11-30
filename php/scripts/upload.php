@@ -19,13 +19,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Check if the file is of the accepted file type
         if (isset($_POST["Hochladen"]) && $allowed == "image") {
 
-// Check if the file size is below the maximum limit
-            if ($_FILES['image']['size'] <= 15000000) {
-                $fileupload = true;
-            } else {
-                echo "Datei ist zu groß.";
-                $fileupload = false;
-            }
+// resizing image
+
+
+         /*...*/
+
 
 // Check if the file already exists
             if (is_file($ordner . $_FILES['image']['tmp_name'])) {
@@ -44,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "The File $uploadedFile has been uploaded.";
 
             } else {
-                echo "Sorry, only PDF-files can be accepted!";
+                echo "Sorry, only images can be accepted!";
             }
 
         }

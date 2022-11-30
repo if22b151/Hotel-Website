@@ -16,6 +16,8 @@
 
     <title>Registrierung</title>
 </head>
+<body>
+
 
   <div class="container-site d-flex flex-column justify-content-between">
     <div class="container-navbar-content d-flex flex-column flex-grow-1">
@@ -74,7 +76,7 @@
           <div class="mt-3">
             <label for="last_name" class="form-label">Nachname</label>
             <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" 
-              value="<?php echo $last_name ?>"required>
+              value="<?php echo $last_name ?>" required>
           </div>
           
           

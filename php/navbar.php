@@ -62,7 +62,7 @@
 
     <div class="profile-dropdown order-0 order-sm-2">
       <li class="nav-item dropdown">
-        <a class="nav-link mx-2 profile-icon" href="#" id="profileDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link profile-icon" href="#" id="profileDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-user"></i>  
         </a>
         <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownMenuLink">

@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
@@ -17,7 +19,7 @@
   <header class="container-fluid py-3 bg-dark logo_bar d-none d-xl-block">
     <a href="/index.php">
       <p>Vienna</p>
-      <img src="img/hotel_logo.png" height="30" />
+      <img src="img/hotel_logo.png" height="30" alt="link to homepage" />
       <p>Hotel</p>
     </a>
   </header>
@@ -31,21 +33,21 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img/index_preview_3.jpeg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_3.jpeg" class="d-block w-100" alt="picture of buildings in viennas first district">
         <div class="carousel-caption d-none d-md-block">
           <h5>Erleben Sie die Sights</h5>
           <p>Eine Stadt voller Abenteuer</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/index_preview_2.jpeg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_2.jpeg" class="d-block w-100" alt="picture of the hotels bar with counter and seats">
         <div class="carousel-caption d-none d-md-block">
           <h5>Hauseigene Bar</h5>
           <p>Zur Erfrischung nach einem langen Tag</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="img/index_preview_1.jpeg" class="d-block w-100" alt="...">
+        <img src="img/index_preview_1.jpeg" class="d-block w-100" alt="picture of outside of the hotel with mountains in the winter">
         <div class="carousel-caption d-none d-md-block">
           <h5>Ruhige Lage</h5>
           <p>Zur Entspannung nach der hauseigenen Bar</p>
@@ -64,7 +66,8 @@
   
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
-    
+  
+  <main>
   <!-- Zimmer -->
   <div class="content-background">
     <div class="container site_content py-5 pt-4 pb-5">
@@ -78,7 +81,7 @@
           </div>
           <div class="col-md-4">
             <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="">
+            <img src="img/black_square.png" class="img-fluid" alt="picture of a suite room">
           </div>
         </div>
         
@@ -110,7 +113,7 @@
 
       <div class="col-md-4">
         <div class="row">
-          <img src="img/black_square.png" class="img-fluid" alt="">
+          <img src="img/black_square.png" class="img-fluid" alt="picture of a double bed room">
         </div>
       </div>
 
@@ -142,7 +145,7 @@
 
       <div class="col-md-4">
         <div class="row">
-          <img src="img/black_square.png" class="img-fluid" alt="">
+          <img src="img/black_square.png" class="img-fluid" alt="picture of a single bed room">
         </div>
       </div>
 
@@ -164,7 +167,7 @@
     </div>
   </div>
   </div>
-
+</main>
   <!-- Footer -->
   <?php include 'php/footer.php' ?>
 

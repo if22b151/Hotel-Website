@@ -20,53 +20,57 @@
     <div class="container-navbar-content d-flex flex-column flex-grow-1">
 
       <!-- Navbar -->
-      <?php include 'php/navbar.php' ?>
-        
+      <navigation>
+        <?php include 'php/navbar.php' ?>
+      </navigation>
+
+  
       <div class="flex-container content-background flex-grow-1 background-image">
         <div class="container py-3 px-3 site_content">
-        <h1>Login</h1>
-        
-        <?php if(isset($_SESSION['name'])): ?>
-          <p>
-            Sie sind eingeloggt als <?php echo $_SESSION['name']?>.
-          </p>
-          <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
+        <main>
+          <h1>Login</h1>
           
-        <?php else: ?>
-          <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
-          
-          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            <!-- Error banner; shows up if anything in $errors array -->
-            <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
-            <?php 
-              foreach ($errors as $err){
-                print($err . "<br>");
-              } 
-            ?>
-            </div>
+          <?php if(isset($_SESSION['name'])): ?>
+            <p>
+              Sie sind eingeloggt als <?php echo $_SESSION['name']?>.
+            </p>
+            <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
+            
+          <?php else: ?>
+            <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
+            
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+              <!-- Error banner; shows up if anything in $errors array -->
+              <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
+              <?php 
+                foreach ($errors as $err){
+                  print($err . "<br>");
+                } 
+              ?>
+              </div>
 
-            <!-- E-mail -->
-            <div class="mb-3">
-              <label for="email" class="form-label">E-mail Adresse:</label>
-              <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" required 
-                value="<?php echo $_POST['email'] ?>"
-              >
-            </div>
+              <!-- E-mail -->
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail Adresse:</label>
+                <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com" required 
+                  value="<?php echo $_POST['email'] ?>"
+                >
+              </div>
 
-            <!-- Passwort -->
-            <div class="mb-3">
-              <label for="password" class="form-label">Passwort:</label>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Passwort" required>
-            </div>
+              <!-- Passwort -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Passwort:</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Passwort" required>
+              </div>
 
-            <!-- Submit -->
-            <button class="btn btn-secondary" type="submit">Einloggen</button>
-          </form>
-        <?php endif ?>
+              <!-- Submit -->
+              <button class="btn btn-secondary" type="submit">Einloggen</button>
+            </form>
+          <?php endif ?>
+        </div>
+        </div>
       </div>
-      </div>
-    </div>
-  
+  </main>
 
   <!-- Footer -->
   <?php include 'php/footer.php' ?>

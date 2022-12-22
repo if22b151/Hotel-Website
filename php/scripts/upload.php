@@ -1,56 +1,48 @@
-<!--<pre>
+<pre>
 <?php
 
-//print_r($_FILES['image']);
+print_r($_FILES['image']);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    if(empty($_FILES['image'] && empty($_Files['desc']))){
-        echo "Keine Datei hinzugefügt!";
-        header("Location: FileUpload.php");
+    if(isset($_POST['submit'])){
+        $file = $_FILES['image'];
 
-    } else {
+        $fileName = $_FILES['image']['name'];
+        $fileType = $_FILES['image']['type'];
+        $fileError = $_FILES['image']['error'];
+        $fileTmpName = $_FILES['image']['tmp_name'];
+        $fileSize = $_FILES['iamge']['size'];
 
-        $uploadedFile = $_FILES['image']['tmp_name'];
-        $ordner = "news/";
-        $success = false;
-        $allowed = strtolower(pathinfo($_FILES['image']['tmp_name'], PATHINFO_EXTENSION));
+        //Getting the end of the name ('jpeg', 'png',...)
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+        $allowed = array('jpg', 'jpeg', 'png', 'gif');
+        
 
-// Check if the file is of the accepted file type
-        if (isset($_POST["Hochladen"]) && $allowed == "image") {
-
-// resizing image
-
-
-         /*...*/
+    // Check if the file is of the accepted file type
+        if((in_array($fileActualExt, $allowed))){
+            //Checking if there are errors
+            if($fileError === 0) {
 
 
-// Check if the file already exists
-            if (is_file($ordner . $_FILES['image']['tmp_name'])) {
-                echo "Diese Datei existiert.";
-                $fileupload = false;
-            }
+                 // resizing image
+                     /*...*/
 
-// If everything is OK, upload the file
-            if ($fileupload === true) {
 
-                move_uploaded_file($uploadedFile, $ordner . $_FILES['image']['tmp_  name']);
-                $success = true;
-            }
-
-            if ($success === true) {
-                echo "The File $uploadedFile has been uploaded.";
-
+                // If everything is OK, upload the file
+                        $fileDestination = '../news'.$fileName;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                        header("Location: upload.php?success");
             } else {
-                echo "Sorry, only images can be accepted!";
-            }
-
+                echo "There was an error! Try again.";
+            }   
+        } else {
+            echo "You cannot upload this type of file.";  
         }
-    }
 
 
-
-
+    }  
 
 }
 ?>

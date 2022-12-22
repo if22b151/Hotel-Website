@@ -25,7 +25,7 @@
 
       <div class="flex-container content-background flex-grow-1 background-image">
       <div class="container pt-3 pb-4 px-3 site_content">
-
+      <main>
         <h1>Registrieren</h1>
 
         <!-- Information and error banners -->
@@ -141,7 +141,7 @@
       </div>
       </div>
     </div>
-
+  </main>
     
   <!-- Footer -->
   <?php include 'php/footer.php' ?>

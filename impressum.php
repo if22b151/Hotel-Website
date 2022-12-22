@@ -27,45 +27,44 @@
     <?php include 'php/navbar.php' ?>
 
     <div class="flex-container content-background flex-grow-1">
-      <div class="cotainer site_content">
+      <main class="cotainer site_content">
         <div class="d-flex justify-content-center">
           <h1>Impressum</h1>
         </div>
-        <main>
-          <div class="TableContainer">
-          <table>
-            <tr>
-              <td>Name</td>
-              <td>Hotel Mustermann</td>
-            </tr>
-            <tr>
-              <td>Inhaber</td>
-              <td>Andretsch Adrian <br> Paul Felgitsch</td>
-            </tr>
-            <tr>
-              <td>Firmenart</td>
-              <td>Hotellerie</td>
-            </tr>
-            <tr>
-              <td>Anschrift</td>
-              <td>Mustestraße 9, 1220 Wien</td>
-            </tr>
-            <tr>
-              <td>Tel. Nr.</td>
-              <td>0660 7048700</td>
-            </tr>
-            <tr>
-              <td>E-Mail</td>
-              <td>admin@hotel-mustermann.at</td>
-            </tr>
-            <tr>
-              <td>Privacy</td>
-              <td><a href="/datenschutz.html">Siehe Datenschutzerklärung</a></td>
-            </tr>
-          </table>
+        <div class="TableContainer">
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>Hotel Mustermann</td>
+          </tr>
+          <tr>
+            <td>Inhaber</td>
+            <td>Andretsch Adrian <br> Paul Felgitsch</td>
+          </tr>
+          <tr>
+            <td>Firmenart</td>
+            <td>Hotellerie</td>
+          </tr>
+          <tr>
+            <td>Anschrift</td>
+            <td>Mustestraße 9, 1220 Wien</td>
+          </tr>
+          <tr>
+            <td>Tel. Nr.</td>
+            <td>0660 7048700</td>
+          </tr>
+          <tr>
+            <td>E-Mail</td>
+            <td>admin@hotel-mustermann.at</td>
+          </tr>
+          <tr>
+            <td>Privacy</td>
+            <td><a href="/datenschutz.html">Siehe Datenschutzerklärung</a></td>
+          </tr>
+        </table>
         </div>
 
-      
+    
         <div class="Rowpictures">
           <div class="Fotos">
           <div class="mx-auto" style="width: 110px;">
@@ -74,18 +73,17 @@
           </div>
           </div>
 
-          <div class="Fotos">
-            <div class="mx-auto" style="width: 125px;">
-              <img src="img/adrian.jpg" class="img-fluid" alt="Adrian Andretsch">
-              Adrian Andretsch
-            </div>
+        <div class="Fotos">
+          <div class="mx-auto" style="width: 125px;">
+            <img src="img/adrian.jpg" class="img-fluid" alt="Adrian Andretsch">
+            Adrian Andretsch
           </div>
         </div>
-      </div>
-      </div>
+      </main>
+    </div>
 
     </div>
-  </main>
+    
   <!-- Footer -->
   <?php include 'php/footer.php' ?>
   </div>

@@ -26,8 +26,7 @@
 
   
       <div class="flex-container content-background flex-grow-1 background-image">
-        <div class="container py-3 px-3 site_content">
-        <main>
+        <main class="container py-3 px-3 site_content">
           <h1>Login</h1>
           
           <?php if(isset($_SESSION['name'])): ?>
@@ -67,10 +66,9 @@
               <button class="btn btn-secondary" type="submit">Einloggen</button>
             </form>
           <?php endif ?>
-        </div>
+          </main>
         </div>
       </div>
-  </main>
 
   <!-- Footer -->
   <?php include 'php/footer.php' ?>

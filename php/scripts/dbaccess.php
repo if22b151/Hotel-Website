@@ -10,9 +10,8 @@ function get_db() : mysqli {
 
     // Check connection
     if ($gateway->connect_error) {
-        die("Connection failed: " . $gateway->connect_error);
+        return NULL;
     }
-    
 
     return $gateway; 
 }

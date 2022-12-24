@@ -1,5 +1,4 @@
 <?php
-
 require_once 'funcs.php';
 require 'dbaccess.php';
 
@@ -47,9 +46,14 @@ if(empty($gdpr)){
     array_push($errors, "Datenschutzerklärung muss akzeptiert werden");
 }
 
-// Check against DB to prevent duplicate accounts
+// Connect to DB
 $db = get_db();
+if(!$db){
+    array_push($errors, "Konnte keine Verbindung zur Datenbank herstellen");
+    return;
+}
 
+// Check against DB to prevent duplicate accounts
 $query = $db->prepare('SELECT * FROM user WHERE username LIKE ?');
 $query->bind_param('s', $username);
 $query->execute();
@@ -65,7 +69,6 @@ $query->execute();
 if($query->get_result()->num_rows > 0){
     array_push($errors, "Nutzername bereits vergeben");
 }
-
 
 // Add user to DB
 if(empty($errors)){
@@ -88,7 +91,7 @@ if(empty($errors)){
     $statement_user->bind_param('isss', $fk_person_id, $username, $password_hash, $email);
     $statement_user->execute();
     
-    // Commit changes, check if commit succeeded/failed
+    // Commit changes, check if commit successful
     if(!$db->commit()){
         array_push($errors, 'Fehler bei Verbindung zu Datenbank');
         $db->close();

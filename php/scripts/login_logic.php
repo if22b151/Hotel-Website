@@ -18,9 +18,14 @@ if(empty($email) || empty($password)){
     return;
 }
 
-
+// Connect to DB
 $db = get_db();
+if(!$db){
+    array_push("Konnte keine Verbindung zur Datenbank herstellen");
+    return;
+}
 
+// Check against DB
 $password_hashed = hash('sha512', $password);
 
 $query = $db->prepare("SELECT userid, username FROM user WHERE email LIKE ? AND password = ?");

@@ -25,7 +25,7 @@ if(!$db){
     return;
 }
 
-// Check against DB
+// Check if valid user
 $password_hashed = hash('sha512', $password);
 
 $query = $db->prepare("SELECT userid, username FROM user WHERE email LIKE ? AND password = ?");
@@ -38,8 +38,14 @@ $result = $result->fetch_assoc();
 if(isset($result['userid'])){
     $_SESSION['userid'] = $result['userid'];
     $_SESSION['username'] = $result['username'];
+
+    // Check if admin
+    if($db->query("SELECT fk_userid FROM admin WHERE fk_userid = " . $result['userid'])->num_rows){
+        $_SESSION['is_admin'] = true;
+    }
 } else {
     array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
 }
 
+$db->close();
 ?>

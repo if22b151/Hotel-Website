@@ -20,33 +20,37 @@
     <div class="container-navbar-content d-flex flex-column flex-grow-1">
 
       <!-- Navbar -->
-      <navigation>
-        <?php include 'php/navbar.php' ?>
-      </navigation>
+      <?php include 'php/navbar.php' ?>
 
   
       <div class="flex-container content-background flex-grow-1 background-image">
         <main class="container py-3 px-3 site_content">
           <h1>Login</h1>
           
-          <?php if(isset($_SESSION['name'])): ?>
+          <!-- Show login confirmation if logged in -->
+          <?php if(isset($_SESSION['username'])): ?>
+
             <p>
-              Sie sind eingeloggt als <?php echo $_SESSION['name']?>.
+              Sie sind eingeloggt als <?php echo $_SESSION['username']?>.
             </p>
             <a class="btn btn-secondary" href="login.php?logout=true">Ausloggen</a>
             
+          <!-- Show login form if not logged in --> 
           <?php else: ?>
+
             <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
-            
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+              
               <!-- Error banner; shows up if anything in $errors array -->
-              <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
-              <?php 
-                foreach ($errors as $err){
-                  print($err . "<br>");
-                } 
-              ?>
-              </div>
+              <?php if (!empty($errors)): ?>
+                <div class="alert alert-warning mt-3" role="alert">
+                <?php 
+                  foreach ($errors as $err){
+                    print($err . "<br>");
+                  } 
+                ?>
+                </div>
+              <?php endif; ?>
 
               <!-- E-mail -->
               <div class="mb-3">
@@ -65,10 +69,12 @@
               <!-- Submit -->
               <button class="btn btn-secondary" type="submit">Einloggen</button>
             </form>
+
           <?php endif ?>
-          </main>
-        </div>
+
+        </main>
       </div>
+    </div>
 
   <!-- Footer -->
   <?php include 'php/footer.php' ?>

@@ -39,7 +39,7 @@
           <?php else: ?>
 
             <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form action="" method="post">
               
               <!-- Error banner; shows up if anything in $errors array -->
               <?php if (!empty($errors)): ?>

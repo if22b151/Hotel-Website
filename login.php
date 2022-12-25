@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  require 'php/scripts/login_logic.php';
+  require 'php/scripts/login.php';
 ?>
 
 <!DOCTYPE html>

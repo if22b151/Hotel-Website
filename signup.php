@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require 'php/scripts/signup_logic.php';
+  require 'php/scripts/signup.php';
   require_once 'php/scripts/funcs.php';
 ?>
 

@@ -3,7 +3,7 @@
     $current_page = '';
 
     require_once 'scripts/funcs.php';
-    require 'scripts/logout_logic.php';
+    require 'scripts/logout.php';
 
     // So current page can be highlighted in Navbar
     if (strpos($current_url, 'index.php')) {

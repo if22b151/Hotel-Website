@@ -101,7 +101,7 @@ if(empty($errors)){
     $success = true;
     $db->close();
 
-    // Clear variables so form is blank upon success again
+    // Clear variables so form is blank upon success 
     $first_name = '';
     $last_name = '';
     $username = '';

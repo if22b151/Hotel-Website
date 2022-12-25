@@ -61,12 +61,12 @@
         <?php endif; ?>
 
           
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <form action="<?=htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <!--Vorname-->
           <div class="">
             <label for="first_name" class="form-label">Vorname</label>
             <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Vorname" 
-              value="<?php echo $first_name ?>" required>
+              value="<?=$first_name ?>" required>
           </div>
           
           
@@ -74,7 +74,7 @@
           <div class="mt-3">
             <label for="last_name" class="form-label">Nachname</label>
             <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Nachname" 
-              value="<?php echo $last_name ?>"required>
+              value="<?=$last_name ?>"required>
           </div>
           
           
@@ -82,7 +82,7 @@
           <div class="mt-3">
             <label for="username" class="form-label">Nutzername</label>
             <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" placeholder="Benutzername" 
-              value="<?php echo $username ?>" required>
+              value="<?=$username ?>" required>
           </div>
           
           <!--E-mail Adresse-->
@@ -91,7 +91,7 @@
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
               <input type="text" name="email" class="form-control" id="email" placeholder="E-Mail Addresse" 
-                value="<?php echo $email ?>" required>
+                value="<?=$email ?>" required>
             </div>
           </div>
           
@@ -113,9 +113,9 @@
             <label for="gender" class="form-label">Geschlecht</label>
             <select class="form-select" name="gender" id="gender" required>
               <option value="">Auswählen</option>
-              <option value="male" <?php echo ($gender == 'male') ? 'selected':''?>>Mann</option>
-              <option value="female" <?php echo ($gender == 'female') ? 'selected':''?>>Frau</option>
-              <option value="other" <?php echo ($gender == 'other') ? 'selected':''?>>Divers</option>
+              <option value="male" <?=($gender == 'male') ? 'selected':''?>>Mann</option>
+              <option value="female" <?=($gender == 'female') ? 'selected':''?>>Frau</option>
+              <option value="other" <?=($gender == 'other') ? 'selected':''?>>Divers</option>
             </select>
             </div>
           </div>
@@ -123,13 +123,13 @@
           <!-- Checkboxes -->
           <div class="">
             <input class="mt-4" type="checkbox" name="gdpr" id="gdpr" 
-              <?php echo ($gdpr) ? 'checked':''?> required>
+              <?=($gdpr) ? 'checked':''?> required>
             <label class="form-label d-inline" for="gdpr">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme ihr zu.</label>
           </div>
           
           <div class="">
             <input class="mt-2" type="checkbox" name="newsletter" id="newsletter" 
-              <?php echo ($newsletter) ? 'checked':'' ?>>
+              <?=($newsletter) ? 'checked':'' ?>>
             <label class="form-label d-inline" for="newsletter">Ich möchte per E-Mail über Angebote benachrichtigt werden.</label>
           </div>
           

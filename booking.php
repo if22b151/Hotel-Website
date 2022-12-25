@@ -177,7 +177,7 @@
 
 
             <!-- Error banner; shows up if anything in $errors array -->
-            <div class="alert alert-warning mt-3 <?php echo (empty($errors)) ? 'd-none' : '' ?>" role="alert">
+            <div class="alert alert-warning mt-3 <?=(empty($errors)) ? 'd-none' : '' ?>" role="alert">
               <?php 
                 foreach ($errors as $err){
                   print($err . "<br>");
@@ -192,14 +192,14 @@
                 <label for="form-label">Zimmer</label>
                 <select class="form-select mt-2" name="room" id="room" required>
                   <option value="">Bitte auswählen</option>
-                  <option value="suite" <?php echo ($room == 'suite') ? 'selected' : ''?>>Suite</option>
-                  <option value="double" <?php echo ($room == 'double') ? 'selected' : ''?>>Doppelzimmer</option>
-                  <option value="single" <?php echo ($room == 'single') ? 'selected' : ''?>>Einzelzimmer</option>
+                  <option value="suite" <?=($room == 'suite') ? 'selected' : ''?>>Suite</option>
+                  <option value="double" <?=($room == 'double') ? 'selected' : ''?>>Doppelzimmer</option>
+                  <option value="single" <?=($room == 'single') ? 'selected' : ''?>>Einzelzimmer</option>
                 </select>
 
                 <div class="mt-2">
                   <input class="form-check-input" type="checkbox" name="breakfast" id="breakfast" 
-                    <?php echo ($breakfast) ? 'selected' : '' ?> >
+                    <?=($breakfast) ? 'selected' : '' ?> >
                   <label class="form-label ms-1" for="breakfast">Frühstück(+10€/Tag)</label>
                 </div>
               </div>
@@ -210,7 +210,7 @@
                 <span class="text-muted">check-in ab 9 uhr</span>
                 <div class="col-12">
                   <input class="form-control" type="date" name="date_start" id="date_start"
-                    min="<?php echo date('Y-m-d', time()); ?>" value="<?php echo $date_start?>" required>
+                    min="<?=date('Y-m-d', time()); ?>" value="<?=$date_start?>" required>
                 </div>
               </div>
               
@@ -220,12 +220,12 @@
                 <span class="text-muted">check-out bis 12 uhr</span>
                 <div class="col-12">
                   <input class="form-control" type="date" name="date_end" id="date_end"
-                    min="<?php echo date('Y-m-d', time()); ?>" value="<?php echo $date_end?>" required>
+                    min="<?=date('Y-m-d', time()); ?>" value="<?=$date_end?>" required>
                 </div>
 
                 <div class="mt-2">
                   <input class="form-check-input" type="checkbox" name="late_check_out" id="late_check_out" 
-                    <?php echo ($late_check_out) ? 'selected' : '' ?> >
+                    <?=($late_check_out) ? 'selected' : '' ?> >
                   <label class="form-label ms-1" for="late_check_out">Late check-out bis 15 Uhr</label>
                 </div>
               </div>
@@ -244,11 +244,11 @@
                 <div class="row" role="input-fields">
                   <span class="col-9">
                     <input type="text" class="form-control" name="street" id="street" placeholder="Mustergasse" 
-                      value="<?php echo $street ?>" required>
+                      value="<?=$street ?>" required>
                   </span>
                   <span class="col-3">
                     <input type="text" class="form-control" id="street_nr" name="street_nr" placeholder="43" 
-                    value="<?php echo $street_nr ?>" required>
+                    value="<?=$street_nr ?>" required>
                   </span>
                 </div>
               </div>
@@ -257,7 +257,7 @@
               <div class="mb-2">
                 <label class="form-label" for="city">Stadt</label>
                 <input class="form-control" type="text" name="city" id="city" placeholder="Musterstadt" 
-                value="<?php echo $city ?>" required>
+                value="<?=$city ?>" required>
               </div>
               
               <!-- Post Code & Country -->
@@ -273,12 +273,12 @@
                 <div class="row" role="input-fields">
                   <span class="col-4">
                     <input class="form-control" type="number" name="plz" id="plz" placeholder="1090" 
-                    value="<?php echo $plz ?>" required>
+                    value="<?=$plz ?>" required>
                   </span>
                   
                   <span class="col-8">
                     <select class="form-select" id="country" name="country" value="Austria" 
-                      value="<?php echo $country ?>" required>
+                      value="<?=$country ?>" required>
                       <option>Bitte auswählen</option>
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Aland Islands">Aland Islands</option>
@@ -541,7 +541,7 @@
               <div class="mb-2">
                 <label class="form-label" for="phone_nr">Telefonnummer</label>
                 <input class="form-control" type="tel" name="phone_nr" id="phone_nr" placeholder="+43 664 8081233" 
-                  value="<?php echo $phone_nr ?>" required>
+                  value="<?=$phone_nr ?>" required>
               </div>
               
               <!-- Checkboxes: Animals, parking -->
@@ -550,13 +550,13 @@
 
                 <div>
                   <input class="form-check-input" type="checkbox" name="parking" id="parking" 
-                    <?php echo ($parking) ? 'selected' : '' ?> >
+                    <?=($parking) ? 'selected' : '' ?> >
                   <label class="form-label" for="parking">Parkplatz (+5€/Tag)</label>
                 </div>
 
                 <div>
                   <input class="form-check-input" type="checkbox" name="animals" id="animals" 
-                    <?php echo ($animals) ? 'selected' : '' ?> >
+                    <?=($animals) ? 'selected' : '' ?> >
                   <label class="form-label" for="animals">Tiere (bis zu 3 Haustiere)</label>
                 </div>
               </div>

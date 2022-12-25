@@ -27,4 +27,16 @@ function require_login(){
         die();  // Required as client can choose to ignore the HTTP header that instructs redirection
     }
 }
+
+function is_duplicate($value, $value_type, $mysqli_gateway, $table, $column){
+    // Checks whether entry already exists in a given column of a table
+    $query = $mysqli_gateway->prepare("SELECT * FROM " . $table . " WHERE " . $column . " = ?");
+    $query->bind_param($value_type, $value);
+
+    if($result->num_rows > 0){
+        return True;
+    } else {
+        return False;
+    }
+}
 ?>

@@ -18,4 +18,13 @@ function get_default(&$var, $default=NULL){
         return $default;
     }
 }
+
+function require_login(){
+    // Redirects user to login page with error message if not logged in
+    if(!isset($_SESSION['userid'])){
+        $errors = array("Hierfür müssen Sie eingeloggt sein");
+        header('Location: /login.php?access_denied');
+        die();  // Required as client can choose to ignore the HTTP header that instructs redirection
+    }
+}
 ?>

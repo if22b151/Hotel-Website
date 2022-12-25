@@ -54,30 +54,21 @@ if(!$db){
 }
 
 // Check against DB to prevent duplicate accounts
-$query = $db->prepare('SELECT * FROM user WHERE username LIKE ?');
-$query->bind_param('s', $username);
-$query->execute();
-
-if($query->get_result()->num_rows > 0){
-    array_push($errors, "Es existiert bereits ein Konto mit dieser E-Mail Addresse");
+if(is_duplicate($email, 's', $db, 'user', 'email')){
+    array_push($errors, "Es existiert bereits ein Konto mit dieser E-Mail");
 }
 
-$query = $db->prepare('SELECT * FROM user WHERE username LIKE ?');
-$query->bind_param('s', $username);
-$query->execute();
-
-if($query->get_result()->num_rows > 0){
-    array_push($errors, "Nutzername bereits vergeben");
+if(is_duplicate($username, 's', $db, 'user', 'username')){
+    array_push($errors, "Es existiert bereits ein Konto mit diesem Nutzernamen");
 }
 
 // Add user to DB
 if(empty($errors)){
-    $success = true;
+    $success = True;
 
-    $db->autocommit(False); // Since we have two prepared statements here, with one requiring the foreign key of the other, we 
-                            // can't do both SQL statements at the same time. So it's possible for one to fail while the other
-                            // is committed to the database. We only want full results to be committed, hence why we'll turn
-                            // autocommit off and commit the changes manually at the end of the script.
+    $db->autocommit(False); // Since we have two prepared statements here, if autocommit were turned on,
+                            // it would be possible for one statement to execute while the other fails.
+                            // We prevent this by manually committing both insert statements at the same time. 
 
     $statement_person = $db->prepare('INSERT INTO person(firstname, lastname, gender) VALUES (?, ?, ?)');
     $statement_person->bind_param('sss', $first_name, $last_name, $gender);

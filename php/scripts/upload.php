@@ -44,6 +44,12 @@
     }   
 } */
 
+// Prevent non-admins from accessing the page
+if(!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']){
+    header('Location: /index.php');
+    exit();
+}
+
 require '../php/scripts/dbaccess.php';
 
 $db = get_db();

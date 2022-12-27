@@ -3,7 +3,7 @@ require_once 'funcs.php';
 require 'dbaccess.php';
 
 $email = get_default($_POST['email']);
-$password = get_default($_POST['password']);
+$password = get_default($_POST['password'], $filter_htmlspecialchars=False);
 
 
 $errors = array();

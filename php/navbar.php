@@ -20,7 +20,7 @@
 
 
     <a class="navbar-brand d-block d-lg-none" href="#">
-      <img src="img/hotel_logo.png" height="30"></svg>
+      <img src="/img/hotel_logo.png" height="30"></svg>
     </a>
 
 
@@ -32,28 +32,28 @@
     <div class="collapse navbar-collapse order-1" id="navbarNavDropdown">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item">
-          <a class="nav-link mx-2 text-center <?php print(($current_page == 'index') ? 'active' : '')?>" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link mx-2 text-center <?php print(($current_page == 'index') ? 'active' : '')?>" aria-current="page" href="/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2 text-center <?php print(($current_page == 'booking') ? 'active' : '')?>" href="booking.php">Booking</a>
+          <a class="nav-link mx-2 text-center <?php print(($current_page == 'booking') ? 'active' : '')?>" href="/booking.php">Booking</a>
         </li>
         <li class="nav-item d-none d-lg-block">
-          <a class="nav-link mx-2" href="index.php">
-            <img src="img/hotel_logo.png" height="30" />
+          <a class="nav-link mx-2" href="/index.php">
+            <img src="/img/hotel_logo.png" height="30" />
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mx-2 text-center <?php print(($current_page == 'news') ? 'active' : '')?>" href="news.php">News</a>
+          <a class="nav-link mx-2 text-center <?php print(($current_page == 'news') ? 'active' : '')?>" href="/news.php">News</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link mx-2 text-center dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mehr
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item text-center text-sm-start" href="signup.php">Registrieren</a></li>
-            <li><a class="dropdown-item text-center text-sm-start" href="login.php">Login</a></li>
-            <li><a class="dropdown-item text-center text-sm-start" href="faq.php">FAQ</a></li>
-            <li><a class="dropdown-item text-center text-sm-start" href="impressum.php">Kontakt</a></li>
+            <li><a class="dropdown-item text-center text-sm-start" href="/signup.php">Registrieren</a></li>
+            <li><a class="dropdown-item text-center text-sm-start" href="/login.php">Login</a></li>
+            <li><a class="dropdown-item text-center text-sm-start" href="/faq.php">FAQ</a></li>
+            <li><a class="dropdown-item text-center text-sm-start" href="/impressum.php">Kontakt</a></li>
           </ul>
         </li>
       </ul>
@@ -67,15 +67,15 @@
         </a>
         <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownMenuLink">
           <?php if(get_default($_SESSION['is_admin'])):?>
-            <li><a class="dropdown-item" href="#">Blog Eintrag erstellen</a></li>            
+            <li><a class="dropdown-item" href="/news/upload.php">News Beitrag</a></li>            
           <?php endif; ?>
           <?php if(isset($_SESSION['userid'])): ?>
-            <li><a class="dropdown-item" href="profile.php">Profil</a></li>
-            <li><a class="dropdown-item" href="booking.php">Buchungen</a></li>
+            <li><a class="dropdown-item" href="/profile.php">Profil</a></li>
+            <li><a class="dropdown-item" href="/booking.php">Buchungen</a></li>
             <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
           <?php else: ?>
-            <li><a class="dropdown-item" href="login.php">Login</a></li>
-            <li><a class="dropdown-item" href="signup.php">Registrieren</a></li>
+            <li><a class="dropdown-item" href="/login.php">Login</a></li>
+            <li><a class="dropdown-item" href="/signup.php">Registrieren</a></li>
           <?php endif; ?>
         </ul>
       </li>

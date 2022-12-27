@@ -38,8 +38,8 @@ function html_from_text($text){
     $text = nl2br($text);
 
     // Markdown support for italics and bold
-    $text = preg_replace("/__(.*?)__|\*(.*?)\*/", "<em>$1$2</em>", $text);  // Italics; triggered with __this__ or *this*
     $text = preg_replace("/\*\*(.*?)\*\*/", "<b>$1</b>", $text); // Bold; triggered with **this**
+    $text = preg_replace("/\*(.*?)\*/", "<em>$1</em>", $text);  // Italics; triggered with __this__ or *this*
 
     return $text;
   }

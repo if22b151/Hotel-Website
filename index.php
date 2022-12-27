@@ -5,14 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
-  
+  <?php include 'php/head.php'; ?> 
   <title>Vienna City Hotel</title>
+  <style>.site_content{padding: 0rem 2rem;}</style>
 </head>
 <body>
   <!-- Header -->

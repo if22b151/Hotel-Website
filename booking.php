@@ -11,14 +11,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
-
-    <title>Booking</title>
+  <?php require 'php/head.php'; ?>
+  <title>Booking</title>
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
@@ -30,7 +24,7 @@
       <div class="container site_content py-2 pb-4">
         <h1>Booking</h1>
 
-        <?php if(!isset($_SESSION['id'])): ?>
+        <?php if(!isset($_SESSION['userid'])): ?>
 
 
           <!-- Login Aufforderung -->

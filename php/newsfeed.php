@@ -48,8 +48,8 @@ function html_from_text($text){
 
 <?php foreach($articles as $article):?>
 
-	<article>
-		<h2 class="mb-0"> <?=$article['article_title']?> </h2>
+	<article class="pb-l-4">
+		<h2 class="mb-0"> <?=html_from_text($article['article_title'])?> </h2>
 		<p class="text-muted article-info"> <?=$article['author'] . ', ' . date('d.m.Y', (int)$article['release_date'])?> </p>
 		<?php if($article['image_path']):?>
 		  <img class="article-image mb-2 mb-l-3" href=<?=$article['image_path']?> src="<?=$article['image_path']?>">

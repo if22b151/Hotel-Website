@@ -19,7 +19,6 @@ div.background-image{
 }
 .site_content{
   background-color: white;
-  padding: 0% 5%; /* Gets expanded in media queries */
 }
 
 /* Navbar */

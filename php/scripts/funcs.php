@@ -10,10 +10,11 @@ function is_empty_any(...$vars){
     return False;
 }
 
-function get_default(&$var, $default=NULL){
+function get_default(&$var, $default=NULL, $filter_htmlspecialchars=True){
     // If variable doesn't exist yet, creates the variable and sets it to NULL.
     // Prevents "unknown variable" errors when trying to set value=<?php echo $variable> in html forms
     if(isset($var)){
+        if($filter_htmlspecialchars){$var = htmlspecialchars($var);}
         return $var;
     } else {
         return $default;

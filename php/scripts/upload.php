@@ -56,8 +56,8 @@ $db = get_db();
 $errors = array();
 
 if (isset($_POST['submit'])){
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    $title = htmlspecialchars($_POST['title']);
+    $content = htmlspecialchars($_POST['content']);
     $time = time();
 
     // File handling

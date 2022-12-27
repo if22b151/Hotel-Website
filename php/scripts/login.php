@@ -16,7 +16,8 @@ if(isset($_GET['access_denied'])){
 if($_SERVER['REQUEST_METHOD'] != 'POST'){
     return;
 }
-    
+
+// Server-side check for empty fields
 if(empty($email) || empty($password)){
     array_push($errors, "E-Mail und Passwort Feld müssen ausgefüllt sein!");
     return;
@@ -24,10 +25,6 @@ if(empty($email) || empty($password)){
 
 // Connect to DB
 $db = get_db();
-if(!$db){
-    array_push("Konnte keine Verbindung zur Datenbank herstellen");
-    return;
-}
 
 // Check if valid user
 $password_hashed = hash('sha512', $password);
@@ -39,7 +36,7 @@ $query->execute();
 $result = $query->get_result();
 $result = $result->fetch_assoc();
 
-if($result['userid']){
+if(isset($result['userid'])){
     $_SESSION['userid'] = $result['userid'];
     $_SESSION['username'] = $result['username'];
 
@@ -55,6 +52,4 @@ if($result['userid']){
 } else {
     array_push($errors, "E-Mail oder Passwort stimmen nicht überein!");
 }
-
-$db->close();
 ?>

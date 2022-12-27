@@ -39,19 +39,19 @@
           <?php else: ?>
 
             <p class="text-muted">Noch keinen Account? <a href="signup.php">Registrieren</a> Sie sich!</p>
-            <form action="" method="post">
-              
-              <!-- Error banner; shows up if anything in $errors array -->
-              <?php if (!empty($errors)): ?>
-                <div class="alert alert-warning mt-3" role="alert">
-                <?php 
-                  foreach ($errors as $err){
-                    print($err . "<br>");
-                  } 
-                ?>
-                </div>
-              <?php endif; ?>
 
+            <!-- Error banner; shows up if anything in $errors array -->
+            <?php if (!empty($errors)): ?>
+              <div class="alert alert-warning mt-3" role="alert">
+              <?php 
+                foreach ($errors as $err){
+                  print($err . "<br>");
+                } 
+              ?>
+              </div>
+            <?php endif; ?>
+
+            <form action="" method="post">
               <!-- E-mail -->
               <div class="mb-3">
                 <label for="email" class="form-label">E-mail Adresse:</label>

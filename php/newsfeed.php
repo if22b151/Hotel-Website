@@ -37,9 +37,10 @@ function html_from_text($text){
     $text = preg_replace("/(\n\n)/", "</p><p>", $text);
     $text = nl2br($text);
 
-    // Markdown support for italics and bold
+    // Markdown support for italics, bold, and underline
+    $text = preg_replace("/__(.*?)__/", "<u>$1</u>", $text); // Underline; triggered with __this__
     $text = preg_replace("/\*\*(.*?)\*\*/", "<b>$1</b>", $text); // Bold; triggered with **this**
-    $text = preg_replace("/\*(.*?)\*/", "<em>$1</em>", $text);  // Italics; triggered with __this__ or *this*
+    $text = preg_replace("/\*(.*?)\*/", "<em>$1</em>", $text);  // Italics; triggered with *this*
 
     return $text;
   }

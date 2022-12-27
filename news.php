@@ -15,7 +15,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/88b4eddc80.js" crossorigin="anonymous"></script>
   
-  <title>Login</title>
+  <title>News</title>
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
@@ -34,9 +34,9 @@
         </main>
 
         <div class="news-nav mt-4 pb-2 d-flex justify-content-between">
-          <a <?php echo ($page == 1) ? 'class="text-muted"' : 'href="?p=' . $page-1 . '"' ?>><- Letzte Seite</a>
+          <a <?=($page == 1) ? 'class="text-muted"' : 'href="?p=' . $page-1 . '"'?>><- Letzte Seite</a>
           <span class="text-muted"> <?php echo $page ?> </span>
-          <a href="?p=<?php echo $page+1; ?>">Nächste Seite -></a>
+          <a <?=($page == $max_page) ? 'class="text-muted"' : 'href="?p=' . $page+1 . '"'?>>Nächste Seite -></a>
         </div>
 
       </main>

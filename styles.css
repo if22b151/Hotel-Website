@@ -15,6 +15,7 @@ div.content-background{
 div.background-image{
   background-image: url(img/background.jpg);
   background-repeat: no-repeat;
+  background-position: center center;
 }
 .site_content{
   background-color: white;
@@ -193,6 +194,15 @@ header.logo_bar p{
 /* Booking */
 table > tbody > tr > .bottom_border_none{
   border-bottom: none;
+}
+
+/* News */
+img.article-image{
+  width: 100%;
+  vertical-align: baseline;
+}
+p.article-info{
+  margin-bottom: 0.5rem;
 }
 
 /* Media queries */

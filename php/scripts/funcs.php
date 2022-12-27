@@ -1,12 +1,13 @@
 <?php
 function is_empty_any(...$vars){
+    // Checks if any of the given variables is empty
     foreach($vars as $var){
         if(empty($var)){
-            return true;
+            return True;
         }
     }
 
-    return false;
+    return False;
 }
 
 function get_default(&$var, $default=NULL){
@@ -23,7 +24,7 @@ function require_login(){
     // Redirects user to login page with error message if not logged in
     if(!isset($_SESSION['userid'])){
         $errors = array("Hierfür müssen Sie eingeloggt sein");
-        header('Location: /login.php?access_denied');
+        header('Location: /login.php?access_denied='.$_SERVER['REQUEST_URI']);
         die();  // Required as client can choose to ignore the HTTP header that instructs redirection
     }
 }
@@ -36,10 +37,6 @@ function is_duplicate($value, $value_type, $mysqli_gateway, $table, $column){
 
     $result = $query->get_result();
 
-    if($result->num_rows > 0){
-        return True;
-    } else {
-        return False;
-    }
+    return (bool) $result->num_rows;
 }
 ?>

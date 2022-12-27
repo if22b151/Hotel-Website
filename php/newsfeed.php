@@ -12,23 +12,18 @@
   // then divides it by articles per page to get maximum page. ceil() rounds up, since, if 3.2 pages are needed, we display 4.
   
   // Send user back to proper page if max/min page have been exceeded
-  /* if($page > $max_page){
+  if($page > $max_page){
     header('Location: ?p='.$max_page);
     exit();
   } elseif($page < 1){
     header('Location: ?p=1');
     exit();
-  } */
+  }
 
   // Fetch articles
   $range_articles_end = $page * $ARTICLES_PER_PAGE;
   $range_articles_start = $range_articles_end - $ARTICLES_PER_PAGE; 
-  $sql = "SELECT release_date, image_path, article_title, article_text, CONCAT(person.firstname, \" \", person.lastname) AS author
-          FROM `news` 
-          JOIN `user` ON `news`.`fk_userid` = `user`.`userid` 
-          JOIN `person` ON `user`.`fk_personid` = `person`.`Personid` 
-          ORDER BY `release_date` DESC
-          LIMIT ".$range_articles_start.",".$range_articles_end;
+  $sql = "SELECT * FROM vw_articles LIMIT ".$range_articles_start.",".$range_articles_end;
 
   $articles = $db->query($sql);
 

@@ -220,6 +220,10 @@ p.article-info{
 
 /* When larger than xl: Laptop/Desktop */
 @media screen and (min-width: 1200px){
+  main.news{
+    padding: 2rem 4rem !important;
+  }
+
   div.content-background{
     padding: 0% 25%;
   }

@@ -25,7 +25,7 @@
       <?php include 'php/navbar.php' ?>
         
       <div class="flex-container content-background flex-grow-1">
-      <main class="container py-3 px-3 site_content">
+      <main class="news container py-3 px-4 site_content">
         <h1>Neuigkeiten</h1>
         <hr>
 

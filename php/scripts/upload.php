@@ -108,7 +108,7 @@ if (isset($_POST['submit'])){
         imagedestroy($source);
         imagedestroy($thumbnail);
         
-        $file_path = '/news/'.$filename;
+        $file_path = '/news/'.$filename.$file_extension;
     } else {
         $file_path = NULL;
     }

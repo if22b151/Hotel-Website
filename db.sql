@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 26, 2022 at 02:21 AM
+-- Generation Time: Dec 27, 2022 at 01:34 AM
 -- Server version: 10.6.11-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.9
 
@@ -68,18 +68,21 @@ CREATE TABLE `booking` (
 CREATE TABLE `news` (
   `newsid` int(11) NOT NULL,
   `fk_userid` int(11) NOT NULL,
-  `release_date` date NOT NULL DEFAULT current_timestamp(),
-  `image_path` varchar(127) NOT NULL,
+  `image_path` varchar(127) DEFAULT NULL,
   `article_title` text NOT NULL,
-  `article_text` text NOT NULL
+  `article_text` text NOT NULL,
+  `release_date` int(11) DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`newsid`, `fk_userid`, `release_date`, `image_path`, `article_title`, `article_text`) VALUES
-(2, 0, '2022-12-26', '/news/1672017478.jpg', 'Städte von Morgen', 'Schon heute können Sie in unserem Hotel den Städten der Zukunft nähertreten! \r\n\r\nFestgehalten auf großflächigem Aquarell sind diese über die nächsten 4 Wochen als Teil der Ausstellung \"Städte von Morgen: Eine Visio\" großzügig an den Wänden unseres Interieurs verteilt. \r\nBuchen Sie noch heute und lassen Sie sich von diesen atemberaubenden Zukunftsvisionen inspirieren! \r\n\r\n- Ihr Hotel-Team');
+INSERT INTO `news` (`newsid`, `fk_userid`, `image_path`, `article_title`, `article_text`, `release_date`) VALUES
+(2, 0, '/news/1672017478.jpg', 'Städte von Morgen', 'Schon heute können Sie in unserem Hotel den Städten der Zukunft nähertreten! \n\nFestgehalten auf großflächigem Aquarell sind diese über die nächsten 4 Wochen als Teil der Ausstellung \"Städte von Morgen: Eine Visio\" großzügig an den Wänden unseres Interieurs verteilt. \nBuchen Sie noch heute und lassen Sie sich von diesen atemberaubenden Zukunftsvisionen inspirieren! \n\n- Ihr Hotel-Team', 1672077478),
+(5, 0, '/news/1672066733.jpg', 'Die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten', 'Wien, die Hauptstadt Österreichs, ist voller kultureller Schätze und Sehenswürdigkeiten, die man sich bei einem Aufenthalt in der Stadt nicht entgehen lassen sollte. Wenn Sie im schönen Wiener Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Attraktionen der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten:\r\n\r\n1. Schloss Schönbrunn: Dieses prachtvolle Schloss ist ein wichtiges kulturelles und historisches Symbol Österreichs und eines der beliebtesten Touristenziele Wiens. Es beherbergt zahlreiche prunkvolle Säle, wunderschöne Gärten und die beeindruckende Gloriette, von der aus man einen atemberaubenden Blick über die Stadt genießen kann.\r\n\r\n2. Stephansdom: Diese imposante gotische Kathedrale ist das Wahrzeichen Wiens und eines der bedeutendsten Bauwerke der Stadt. Der Dom ist innen und außen atemberaubend schön und bietet eine Vielzahl von Kunstwerken, die man sich auf keinen Fall entgehen lassen \r\n\r\n3. Hofburg: Dieses prächtige Schloss war einst der Sitz der Habsburger Dynastie und ist heute das Zuhause zahlreicher wichtiger Regierungsbehörden. Es beherbergt auch eine Vielzahl von Museen und Kunstsammlungen, die man sich unbedingt ansehen sollte.\r\n\r\n4. Prater: Dieser große Vergnügungspark im Herzen Wiens bietet eine Vielzahl von Fahrgeschäften, Restaurants und Unterhaltungsmöglichkeiten für die ganze Familie. Der Prater ist besonders bei schönem Wetter ein toller Ort, um einen Nachmittag zu verbringen.\r\n\r\n5. Kunsthistorisches Museum: Dieses herrliche Museum beherbergt eine der weltweit größten Kunstsammlungen und bietet Ausstellungen zu einer Vielzahl von Kunstperioden und -stilen. Es ist ein Muss für alle Kunstliebhaber und eine tolle Möglichkeit, sich über die Kunstgeschichte Wiens und Österreichs zu informieren.', 1672066733),
+(6, 0, '/news/1672067070.jpg', 'Die 3 besten Wiener Kaffeehäuser', 'Wien ist berühmt für seine Kaffeehäuser und die traditionelle Kaffeehauskultur, die in der Stadt verwurzelt ist. Wenn Sie im Vienna City Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Kaffeehäuser der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 3 besten Wiener Kaffeehäuser, die Sie unbedingt besuchen sollten:\n\n1. Café Central: Dieses berühmte Kaffeehaus im Herzen Wiens wurde im 19. Jahrhundert eröffnet und war einst ein Treffpunkt von Intellektuellen und Künstlern. Es beherbergt noch immer eine Vielzahl von Kunstwerken und ist ein toller Ort, um einen Kaffee oder eine Sachertorte zu genießen.\n2. Café Sperl: Dieses Kaffeehaus im Stil der Belle Époque befindet sich im 6. Bezirk und ist ein beliebter Treffpunkt von Einheimischen und Touristen. Es ist bekannt für seine prächtigen Interieurs und seine leckeren Kuchen und Torten.\n3. Café Hawelka: Dieses Kaffeehaus im Herzen Wiens ist ein Treffpunkt von Künstlern und Schriftstellern und beherbergt viele Kunstwerke. Es ist auch berühmt für seine leckeren Gebäckteile und seine gemütliche Atmosphäre.\n\nEin Besuch in einem Wiener Kaffeehaus ist ein Muss, wenn Sie die Stadt besuchen. Die oben genannten Kaffeehäuser sind nur einige der vielen großartigen Optionen, die die Stadt zu bieten hat. Egal, für welches Kaffeehaus Sie sich entscheiden, Sie werden sicherlich eine wunderbare Zeit haben und die wunderbare Kaffeehauskultur Wiens.', 1672067070),
+(7, 0, NULL, 'Wiener Museen', 'Wien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.\r\n\r\nEines der bekanntesten Museen Wiens ist das Kunsthistorische Museum, das sich im Herzen der Stadt befindet. Das Kunsthistorische Museum beherbergt eine umfassende Sammlung von Kunstwerken aus der Antike bis zur Gegenwart. Von griechischen Skulpturen und römischen Mosaiken bis hin zu Gemälden von Meistern wie Rembrandt und Vermeer – das Kunsthistorische Museum hat für jeden Kunstinteressierten etwas zu bieten.\r\n\r\nEin weiteres Highlight in Wien ist das Museum der Moderne, das sich im MuseumsQuartier befindet. Das Museum der Moderne zeigt zeitgenössische Kunst, Fotografie und Design und bietet einen spannenden Einblick in die aktuellen Trends in der Kunstszene. Ein besonderes Highlight ist die Sammlung von Werken des berühmten Wiener Künstlers Gustav Klimt, die im Museum der Moderne ausgestellt wird.\r\n\r\nWer sich für die Geschichte Wiens interessiert, sollte das Hofburgmuseum besuchen. Das Hofburgmuseum befindet sich im Schloss Hofburg, dem ehemaligen Winterpalast der Habsburgermonarchie, und bietet einen umfassenden Einblick in die Geschichte Wiens und der Habsburgermonarchie. Das Hofburgmuseum zeigt auch eine Sammlung von Kunstwerken und Kunsthandwerk aus der Zeit der Habsburgermonarchie.\r\n\r\nEin weiteres empfehlenswertes Museum in Wien ist das Leopold Museum, das sich im MuseumsQuartier befindet. Das Leopold Museum beherbergt eine Sammlung von Kunstwerken der Wiener Moderne, darunter Werke von Künstlern wie Egon Schiele und Gustav Klimt. Das Leopold Museum bietet auch regelmäßig Wechselausstellungen, die die Kunst der Wiener Moderne in den Fokus rücken.\r\n\r\nWien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.', 1672060000);
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,7 @@ INSERT INTO `person` (`Personid`, `firstname`, `lastname`, `gender`) VALUES
 (41, 'Ava', 'Davis', 'female'),
 (42, 'Ava', 'Brown', 'male'),
 (43, 'Emma', 'Garcia', 'other'),
-(44, 'Keluarga1', 'Admanum', 'other');
+(44, 'Admine', 'Admanum', 'other');
 
 -- --------------------------------------------------------
 
@@ -235,8 +238,7 @@ ALTER TABLE `booking`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`newsid`),
-  ADD KEY `news_ibfk_1` (`fk_userid`),
-  ADD KEY `ix_news_date` (`release_date`);
+  ADD KEY `news_ibfk_1` (`fk_userid`);
 
 --
 -- Indexes for table `options`
@@ -285,7 +287,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `newsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `newsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `options`

@@ -58,74 +58,72 @@ $errors = array();
 if (isset($_POST['submit'])){
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $time = time();
 
     // File handling
     $image = $_FILES['image']['tmp_name'];
   
-    // Check whether a file was actually uploaded
-    if (empty($image)){
-        array_push($errors, 'Kein Bild gefunden');
-        exit();
-    }
-
-    echo 1;
+    // Check whether a file was uploaded
+    if (!empty($image)){
+        // Get the file extension
+        $file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
     
-    // Get the file extension
-    $file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-  
-    // Create source image
-    switch ($file_extension) {
-        case 'jpg':
-            case 'jpeg': $source = imagecreatefromjpeg($image); break;
-            case 'png': $source = imagecreatefrompng($image); break;
-            case 'gif': $source = imagecreatefromgif($image); break;
-            default:
-                array_push($errors, 'Nur Bilder des Typs .jpg, .jpeg, .png und .gif erlaubt');
-                exit();
-        }
-        
-    // Create thumbnail
-    $ratio = imagesx($source) / imagesy($source);
-    $height = (int)720 / $ratio;
+        // Create source image
+        switch ($file_extension) {
+            case 'jpg':
+                case 'jpeg': $source = imagecreatefromjpeg($image); break;
+                case 'png': $source = imagecreatefrompng($image); break;
+                case 'gif': $source = imagecreatefromgif($image); break;
+                default:
+                    array_push($errors, 'Nur Bilder des Typs .jpg, .jpeg, .png und .gif erlaubt');
+                    exit();
+            }
+            
+        // Create thumbnail
+        $ratio = imagesx($source) / imagesy($source);
+        $height = (int)720 / $ratio;
 
-    $thumbnail = imagecreatetruecolor(720, $height);
-    imagecopyresized($thumbnail, $source, 0, 0, 0, 0, 720, $height, imagesx($source), imagesy($source));
-  
-    // Save the thumbnail to a file
-    $filename = time().'.'.$file_extension;
-    switch ($file_extension){
-    case 'jpg':
-    case 'jpeg': 
-        imagejpeg($source, $filename); 
-        imagejpeg($thumbnail, $filename.'_thumb'); 
-        break;
-    case 'png': 
-        imagepng($source, $filename); 
-        imagepng($thumbnail, $filename.'_thumb'); 
-        break;
-    case 'gif': 
-        imagegif($source, $filename); 
-        imagegif($thumbnail, $filename.'_thumb'); 
-        break;
+        $thumbnail = imagecreatetruecolor(720, $height);
+        imagecopyresized($thumbnail, $source, 0, 0, 0, 0, 720, $height, imagesx($source), imagesy($source));
+    
+        // Save the thumbnail to a file
+        $filename = $time;
+        switch ($file_extension){
+        case 'jpg':
+        case 'jpeg': 
+            imagejpeg($source, $filename.'.'.$file_extension); 
+            imagejpeg($thumbnail, $filename.'_thumb.'.$file_extension); 
+            break;
+        case 'png': 
+            imagepng($source, $filename.'.'.$file_extension); 
+            imagepng($thumbnail, $filename.'_thumb.'.$file_extension); 
+            break;
+        case 'gif': 
+            imagegif($source, $filename); 
+            imagegif($thumbnail, $filename.'_thumb.'.$file_extension); 
+            break;
+        }
+    
+        // Clean up
+        imagedestroy($source);
+        imagedestroy($thumbnail);
+        
+        $file_path = '/news/'.$filename;
+    } else {
+        $file_path = NULL;
     }
-  
-    // Clean up
-    imagedestroy($source);
-    imagedestroy($thumbnail);
     
     // Add errythang to da database B)
-    $file_path = '/news/'.$filename;
-
-    $statement = $db->prepare("INSERT INTO news(fk_userid, article_title, image_path, article_text) VALUES(?, ?, ?, ?)");
-    $statement->bind_param('isss', $_SESSION['userid'], $title, $file_path, $content);
+    $statement = $db->prepare("INSERT INTO news(fk_userid, release_date, article_title, image_path, article_text) VALUES(?, ?, ?, ?, ?)");
+    $statement->bind_param('iisss', $_SESSION['userid'], $time, $title, $file_path, $content);
 
     // Check whether upload successful; if not, delete image files
     if($statement->execute()){
-        $success = True;
+        header('Location: /news.php');
     } else {
         array_push($errors, 'Upload to database failed');
-        unlink($filename);
-        unlink($filename.'_thumb');
+        unlink($filename.'.'.$file_extension);
+        unlink($filename.'_thumb.'.$file_extension);
     }
 }
 ?>

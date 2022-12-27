@@ -1,6 +1,5 @@
 <?php
   require 'php/scripts/profile.php';
-  print_r($result);
 ?>
 
 <!DOCTYPE html>

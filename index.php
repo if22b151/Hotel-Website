@@ -61,7 +61,7 @@
   
   <!-- Navbar -->
   <?php include 'php/navbar.php' ?>
-  owsihgoswipghiswop
+  
   <!-- Zimmer -->
   <div class="content-background">
     <main class="container site_content py-5 pt-4 pb-5">

@@ -93,15 +93,7 @@ if(empty($errors)){
     $db->close();
 
     // Clear variables so form is blank upon success 
-    $first_name = '';
-    $last_name = '';
-    $username = '';
-    $email = '';
-    $password = '';
-    $password2 = '';
-    $gender = '';
-    $gdpr = '';
-    $newsletter = '';
+    clear_variables($first_name, $last_name, $username, $email, $gender, $gdpr, $newsletter);
 }
 
 ?>

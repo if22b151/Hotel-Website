@@ -1,9 +1,9 @@
-<?php
-  // Placeholder bookings until DB inclusion
-  $debug_booking_a = array('id'=>'AB38FG', 'type'=>'suite', 'begin'=>'18.09.2000', 'end'=>'23.09.2000', 'booked'=>'08.07.2000');
-  $debug_booking_b = array('id'=>'99GD23', 'type'=>'double bedroom', 'begin'=>'24.10.2000', 'end'=>'30.10.2000', 'booked'=>'25.09.2000');
-  $bookings = array($debug_booking_a, $debug_booking_b);
+<?php 
+// For this page to be loaded, $bookings must already be present from scripts/booking_logic.php 
+
+$DATE_FORMAT = 'd.m.Y';
 ?>
+
 
 <!-- current_booking.php start -->
 <?php if(empty($bookings)): ?>
@@ -18,28 +18,42 @@
     <tbody>
       <?php foreach($bookings as $booking): ?>
         <tr>
-          <th class="bottom_border_none" scope="row"><?php echo $booking['id'] ?></th>
+          <th class="bottom_border_none" scope="row"><?='#'.$booking['bookingid'] ?></th>
           <td>Typ</td>
-          <td><?php echo ucwords($booking['type']) ?></td>
+          <td><?php 
+            switch($booking['fk_roomtypeid']){
+              case 1: echo 'Suite'; break;
+              case 2: echo 'Double Bedroom'; break;
+              case 3: echo 'Single Bedroom'; break;
+            } 
+            ?></td>
         </tr>
 
         <tr>
           <td class="bottom_border_none"></td>
           <td>Anfang</td>
-          <td><?php echo $booking['begin'] ?></td>
+          <td><?=date($DATE_FORMAT, $booking['arrive_day'])?></td>
         </tr>
 
         <tr>
           <td class="bottom_border_none"></td>
           <td>Ende</td>
-          <td><?php echo $booking['end'] ?></td>
+          <td><?=date($DATE_FORMAT, $booking['depart_day'])?></td>
+        </tr>
+
+        <tr>
+          <td class="bottom_border_none"></td>
+          <td>Gebucht</td>
+          <td><?=date($DATE_FORMAT, $booking['reservation_date'])?></td>
         </tr>
 
         <tr>
           <td></td>
-          <td>Gebucht</td>
-          <td><?php echo $booking['booked'] ?></td>
+          <td>Status</td>
+          <td><?=$booking['status'] ?></td>
         </tr>
+
+
       <?php endforeach ?>
     </tbody>
   </table>

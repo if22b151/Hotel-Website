@@ -40,4 +40,10 @@ function is_duplicate($value, $value_type, $mysqli_gateway, $table, $column){
 
     return (bool) $result->num_rows;
 }
+
+function clear_variables(...$vars){
+    foreach($vars as $var){
+        $var = '';
+    }
+}
 ?>

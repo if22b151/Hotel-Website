@@ -1,11 +1,7 @@
 <?php
   session_start();
   require 'php/scripts/booking_logic.php';
-?>
-
-<?php
-  ini_set('error_reporting', E_ALL);
-  ini_set( 'display_errors', 1 );
+  print_r($bookings);
 ?>
 
 <!DOCTYPE html>
@@ -159,15 +155,22 @@
 
 
           <!-- Current Bookings -->
-          <div class="current-bookings">
-            <h4 class="mt-3">Aktuelle Buchungen</h3>
+          <div class="mt-3">
+            <div class="d-flex justify-content-between current-bookings">
+              <h4 class="">Aktuelle Buchungen</h3>
+              <a class="" href="user/bookings">Vergangene Buchungen</a>
+            </div>
+
             <?php include 'php/templates/current_bookings.php'; ?>
-          </div>
+
+            <?php if($has_prior_bookings): ?>
+            <?php endif; ?>
+          </div>          
 
 
           <!-- New Booking -->
           <div class="form-new-booking">
-            <h4 class="mt-5">Neue Buchung</h3>
+            <h4 class="mt-4">Neue Buchung</h3>
 
 
             <!-- Error banner; shows up if anything in $errors array -->
@@ -186,9 +189,9 @@
                 <label for="form-label">Zimmer</label>
                 <select class="form-select mt-2" name="room" id="room" required>
                   <option value="">Bitte auswählen</option>
-                  <option value="suite" <?=($room == 'suite') ? 'selected' : ''?>>Suite</option>
-                  <option value="double" <?=($room == 'double') ? 'selected' : ''?>>Doppelzimmer</option>
-                  <option value="single" <?=($room == 'single') ? 'selected' : ''?>>Einzelzimmer</option>
+                  <option value=1 <?=($room == 1) ? 'selected' : ''?>>Suite</option>
+                  <option value=2 <?=($room == 2) ? 'selected' : ''?>>Doppelzimmer</option>
+                  <option value=3 <?=($room == 3) ? 'selected' : ''?>>Einzelzimmer</option>
                 </select>
 
                 <div class="mt-2">
@@ -557,7 +560,7 @@
 
               <!-- Submit -->
               <div class="">
-                <input class="btn btn-secondary" type="submit" value="Buchung tätigen">
+                <input class="btn btn-secondary" type="submit" name="submit" value="Buchung tätigen">
               </div>
             </form>
           </div>

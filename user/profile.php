@@ -12,7 +12,7 @@
   <div class="container-site d-flex flex-column justify-content-between">
     <div class="container-navbar-content d-flex flex-column flex-grow-1">
       
-      <?php include 'php/navbar.php'; ?>
+      <?php include '../php/navbar.php'; ?>
 
       <div class="content-background flex-grow-1">
       <div class="container site_content py-4">
@@ -110,7 +110,7 @@
       </div>
     </div>
     
-    <?php include 'php/footer.php'; ?>
+    <?php include '../php/footer.php'; ?>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

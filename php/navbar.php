@@ -1,4 +1,6 @@
 <?php
+    print_r($_SESSION);
+
     $current_url = $_SERVER['PHP_SELF'];
     $current_page = '';
 
@@ -70,7 +72,7 @@
             <li><a class="dropdown-item" href="/news/upload.php">News Beitrag</a></li>            
           <?php endif; ?>
           <?php if(isset($_SESSION['userid'])): ?>
-            <li><a class="dropdown-item" href="/profile.php">Profil</a></li>
+            <li><a class="dropdown-item" href="/user/profile.php">Profil</a></li>
             <li><a class="dropdown-item" href="/booking.php">Buchungen</a></li>
             <li><a class="dropdown-item" href="?logout=true">Logout</a></li>
           <?php else: ?>

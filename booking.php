@@ -1,7 +1,6 @@
 <?php
   session_start();
   require 'php/scripts/booking_logic.php';
-  print_r($bookings);
 ?>
 
 <!DOCTYPE html>
@@ -158,13 +157,10 @@
           <div class="mt-3">
             <div class="d-flex justify-content-between current-bookings">
               <h4 class="">Aktuelle Buchungen</h3>
-              <a class="" href="user/bookings">Vergangene Buchungen</a>
+              <a class="" href="user/bookings.php">Alle Buchungen</a>
             </div>
 
             <?php include 'php/templates/current_bookings.php'; ?>
-
-            <?php if($has_prior_bookings): ?>
-            <?php endif; ?>
           </div>          
 
 

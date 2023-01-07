@@ -1,6 +1,4 @@
 <?php
-    print_r($_SESSION);
-
     $current_url = $_SERVER['PHP_SELF'];
     $current_page = '';
 

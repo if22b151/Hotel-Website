@@ -20,17 +20,21 @@
         
       <div class="flex-container content-background flex-grow-1">
       <main class="news container py-3 px-4 site_content">
-        <h1>Neuigkeiten</h1>
-        <hr>
-
-        <main>
-         <?php include 'php/newsfeed.php'; ?>
-        </main>
-
+        <h1 class="text-center">Neuigkeiten</h1>
+        
+        <div class="d-flex flex-column">
+          <hr class="article-hr my-3">
+          <?php include 'php/templates/newsfeed.php'; ?>
+        </div>
+        
         <div class="news-nav mt-4 pb-2 d-flex justify-content-between">
-          <a <?=($page == 1) ? 'class="text-muted"' : 'href="?p=' . $page-1 . '"'?>><- Letzte Seite</a>
+          <a <?=($page == 1) ? 'class="disabled"' : 'href="?p='.$page-1 .'" role="button"'?>>
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
           <span class="text-muted"> <?php echo $page ?> </span>
-          <a <?=($page == $max_page) ? 'class="text-muted"' : 'href="?p=' . $page+1 . '"'?>>Nächste Seite -></a>
+          <a <?=($page == $max_page) ? 'class="disabled"' : 'href="?p='.$page+1 .'" role="button"'?>>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
 
       </main>

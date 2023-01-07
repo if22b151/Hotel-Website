@@ -41,16 +41,24 @@ function html_from_text($text){
   }
 ?>
 
-<?php foreach($articles as $article):?>
+<?php 
+foreach($articles as $article):
+  if($article['image_path']){
+    // /news/2730.jpg gets turned into 2730_thumb.jpg
+    $img_thumb = preg_replace("/(.*)(\.\w{3,4})/", "$1_thumb$2", $article['image_path']);
+  }  
+?>
 
 	<article class="pb-l-4">
 		<h2 class="mb-0"> <?=html_from_text($article['article_title'])?> </h2>
 		<p class="text-muted article-info"> <?=$article['author'] . ', ' . date('d.m.Y', (int)$article['release_date'])?> </p>
 		<?php if($article['image_path']):?>
-		  <img class="article-image mb-2 mb-l-3" href=<?=$article['image_path']?> src="<?=$article['image_path']?>">
+      <a href=<?=$article['image_path']?>>
+        <img class="article-image mb-2 mb-l-3" src="<?=$img_thumb?>">
+      </a>
 		<?php endif;?>
-		<p> <?php echo html_from_text($article['article_text']); ?> </p>
+		<p> <?=html_from_text($article['article_text']); ?> </p>
 	</article>
-	<hr>
+	<hr class="article-hr my-3">
 
 <?php endforeach; ?>

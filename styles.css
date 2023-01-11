@@ -2,6 +2,9 @@
 a{
   text-decoration: none !important;
 }
+a.switch-page-button{
+  color: black !important;
+}
 
 /* General site layout */
 .container-site{
@@ -199,9 +202,11 @@ table > tbody > tr > .bottom_border_none{
 img.article-image{
   width: 100%;
   vertical-align: baseline;
+  border-radius: 0.5rem;  /* Rounds image corners */
 }
-p.article-info{
-  margin-bottom: 0.5rem;
+hr.article-hr{
+  align-self: center;
+  width: 60%;
 }
 
 /* Media queries */

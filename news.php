@@ -28,13 +28,9 @@
         </div>
         
         <div class="news-nav mt-4 pb-2 d-flex justify-content-between">
-          <a <?=($page == 1) ? 'class="disabled"' : 'href="?p='.$page-1 .'" role="button"'?>>
-            <i class="fa-solid fa-arrow-left"></i>
-          </a>
+          <?=switch_page_button(-1, $page, $max_page)?>
           <span class="text-muted"> <?php echo $page ?> </span>
-          <a <?=($page == $max_page) ? 'class="disabled"' : 'href="?p='.$page+1 .'" role="button"'?>>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <?=switch_page_button(+1, $page, $max_page)?>
         </div>
 
       </main>

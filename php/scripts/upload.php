@@ -1,49 +1,4 @@
 <?php
-/* if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo '0';
-    if(isset($_POST['submit'])){
-        echo '1';
-        $file = $_FILES['image'];
-        
-        $fileName = $_FILES['image']['name'];
-        $fileType = $_FILES['image']['type'];
-        $fileError = $_FILES['image']['error'];
-        $fileTmpName = $_FILES['image']['tmp_name'];
-        $fileSize = $_FILES['iamge']['size'];
-        
-        //Getting the end of the name ('jpeg', 'png',...)
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-        $allowed = array('jpg', 'jpeg', 'png', 'gif');
-        
-        print_r($fileExt);
-        echo '2';
-        
-
-        // Check if the file is of the accepted file type
-        if((in_array($fileActualExt, $allowed))){
-            //Checking if there are errors
-            if($fileError === 0) {
-                
-                
-                // resizing image
-
-
-                // If everything is OK, upload the file
-                $fileDestination = '../news'.$fileName;
-                move_uploaded_file($fileTmpName, $fileDestination);
-                echo 'wtf??';
-                header("Location: upload.php?success");
-                echo 'wtf??';
-            } else {
-                echo "There was an error! Try again.";
-            }   
-        } else {
-            echo "You cannot upload this type of file.";  
-        }
-    }   
-} */
-
 // Prevent non-admins from accessing the page
 if(!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']){
     header('Location: /index.php');
@@ -52,8 +7,11 @@ if(!isset($_SESSION['is_admin']) || !$_SESSION['is_admin']){
 
 require '../php/scripts/dbaccess.php';
 
-$db = get_db();
 $errors = array();
+$db = get_db();
+if(!$db){
+    array_push($errors, 'Konnte keine Verbindung zu DB herstellen');
+}
 
 if (isset($_POST['submit'])){
     $title = htmlspecialchars($_POST['title']);

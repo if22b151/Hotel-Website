@@ -1,13 +1,13 @@
 <?php
   $ARTICLES_PER_PAGE = 3;
   
-  require('scripts/dbaccess.php');
+  require_once 'php/scripts/dbaccess.php';
   
   // DB connection
   $db = get_db();
   
   // Get some general variables
-  $page = isset($_GET['p']) ? $_GET['p'] : 1;
+  $page = get_default($_GET['p'], 1);
   $max_page = ceil($db->query("SELECT newsid FROM news")->num_rows / $ARTICLES_PER_PAGE);  // First gets total number of articles, 
   // then divides it by articles per page to get maximum page. ceil() rounds up, since, if 3.2 pages are needed, we display 4.
   

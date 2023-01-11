@@ -57,15 +57,15 @@
 
             <table class="table">
               <thead>
-                <th scope="col">#</th>
-                <th scope="col">Nachname</th>
-                <th scope="col">Vorname</th>
-                <th scope="col">Username</th>
-                <th scope="col">
-                  <?=switch_page_button(-1, $page, $max_page);?>
+                <th>#</th>
+                <th>Nachname</th>
+                <th>Vorname</th>
+                <th>Username</th>
+                <th>
+                  <div class="d-flex justify-content-center"> <?=switch_page_button(-1, $page, $max_page);?> </div>
                 </th>
-                <th scope="col">                  
-                  <?=switch_page_button(+1, $page, $max_page);?>
+                <th>                  
+                  <div class="d-flex justify-content-center"> <?=switch_page_button(+1, $page, $max_page);?> </div>
                 </th>
               </thead>
               <tbody>
@@ -76,8 +76,12 @@
                   <td><?=$user['lastname']?></td>
                   <td><?=$user['firstname']?></td>
                   <td><?=$user['username']?></td>
-                  <td><a role="profil" href="<?='/user/profile.php?edit='.$user['userid']?>">P</a></td>
-                  <td><a role="buchungen" href="<?='/admin/bookings.php?user='.$user['userid']?>">B</a></td>
+                  <td class="text-center">
+                    <a role="profil" href="<?='/user/profile.php?edit='.$user['userid']?>">P</a>
+                  </td>
+                  <td class="text-center">
+                    <a role="buchungen" href="<?='/admin/bookings.php?user='.$user['userid']?>">B</a>
+                  </td>
                 </tr>
 
                 <?php endforeach; ?>

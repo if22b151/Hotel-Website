@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 11, 2023 at 06:41 PM
+-- Generation Time: Jan 11, 2023 at 10:30 PM
 -- Server version: 10.6.11-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.9
 
@@ -49,23 +49,23 @@ CREATE TABLE `booking` (
   `bookingid` int(11) NOT NULL,
   `fk_userid` int(11) NOT NULL,
   `fk_roomtypeid` int(11) NOT NULL,
-  `status` varchar(20) NOT NULL,
   `reservation_date` int(10) NOT NULL COMMENT 'UNIX timestamp',
   `arrive_day` int(10) NOT NULL COMMENT 'UNIX timestamp',
   `depart_day` int(10) NOT NULL COMMENT 'UNIX timestamp',
   `address` varchar(255) NOT NULL,
   `country` varchar(40) NOT NULL,
   `plz` varchar(20) NOT NULL,
-  `phone_number` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `phone_number` int(20) NOT NULL,
+  `status` int(1) DEFAULT NULL
+) ;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`bookingid`, `fk_userid`, `fk_roomtypeid`, `status`, `reservation_date`, `arrive_day`, `depart_day`, `address`, `country`, `plz`, `phone_number`) VALUES
-(3, 0, 1, 'neu', 1672769877, 1623979477, 1624670677, 'Mustergasse 43', 'American Samoa', '1090', 29292929),
-(4, 0, 2, 'neu', 1672769940, 1672856340, 1672942740, 'Mustergasse 43', 'Bitte auswählen', '1090', 29292929);
+INSERT INTO `booking` (`bookingid`, `fk_userid`, `fk_roomtypeid`, `reservation_date`, `arrive_day`, `depart_day`, `address`, `country`, `plz`, `phone_number`, `status`) VALUES
+(3, 0, 1, 1672769877, 1623979477, 1624670677, 'Mustergasse 43', 'American Samoa', '1090', 29292929, 1),
+(4, 0, 2, 1672769940, 1672856340, 1672942740, 'Mustergasse 43', 'Bitte auswählen', '1090', 29292929, 1);
 
 -- --------------------------------------------------------
 
@@ -308,7 +308,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bookingid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `bookingid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `news`

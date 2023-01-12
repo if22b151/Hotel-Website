@@ -39,7 +39,7 @@
   // Fetch articles
   $range_articles_end = $page * $ARTICLES_PER_PAGE;
   $range_articles_start = $range_articles_end - $ARTICLES_PER_PAGE; 
-  $sql = "SELECT * FROM vw_articles LIMIT ".$range_articles_start.",".$ARTICLES_PER_PAGE;
+  $sql = "SELECT * FROM news LIMIT ".$range_articles_start.",".$ARTICLES_PER_PAGE;
 
   $articles = $db->query($sql);
 
@@ -69,6 +69,6 @@ foreach($articles as $article):
 
 
 	</article>
-	<hr class="article-hr my-3">
+	<hr class="article-hr mt-1 mb-4">
 
 <?php endforeach; ?>

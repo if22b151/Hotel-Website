@@ -27,12 +27,19 @@
     exit();
   }
 
+  // Check if there should be a filter for a particular user
+  $where_clause = '';
+  if(isset($_GET['user'])){
+    $where_clause = 'WHERE userid = '.$_GET['user'];
+  }
+
   // Get $users from DB
   $user_range_start = $BOOKINGS_PER_PAGE * ($page-1);
   $sql = 'SELECT *
           FROM user 
           JOIN booking ON userid = fk_userid
-          JOIN person ON fk_personid = personid 
+          JOIN person ON fk_personid = personid
+          '.$where_clause.'
           ORDER BY reservation_date ASC
           LIMIT '. $user_range_start . ',' . $BOOKINGS_PER_PAGE;
 

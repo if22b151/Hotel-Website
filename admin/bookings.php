@@ -129,7 +129,7 @@
                         <label class="d-block d-lg-none text-center" for="status"><b>Status</b></label>
                         <span class="d-block text-center" id="status"> <?=$status?> </span>
                       </div>
-                      <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-md-0 accordion-title">
+                      <div class="col-6 col-sm-4 col-lg-2 mt-3 mt-sm-0 accordion-title">
                         <label class="d-block d-lg-none text-center" for="lastname"><b>Nachname</b></label>
                         <span class="d-block text-center" id="lastname"> <?=$booking['lastname']?> </span>
                       </div>

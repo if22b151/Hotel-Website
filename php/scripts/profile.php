@@ -25,28 +25,35 @@ session_start();
 $errors = array();
 
 
+$admin_edit_mode = False;
 // Ensure user has the right permissions
 if(isset($_GET['edit'])){
   // If admin wants to edit a user
   require_admin();
   $userid = $_GET['edit'];
+  $admin_edit_mode = True;
 } else {
   // If user wants to edit themselves
   require_login();
   $userid = $_SESSION['userid'];
 }
 
+print($userid);
+
 // Get current data from DB
 $db = get_db();
-$result = $db->query("SELECT * FROM user, person WHERE user.userid = " . $userid . " AND user.fk_personid = person.personid");
-$result = $result->fetch_assoc();
+$user_details = $db->query("SELECT * FROM user, person WHERE user.userid = " . $userid . " AND user.fk_personid = person.personid");
+$user_details = $user_details->fetch_assoc();
 
-if(empty($result)){
+
+if(empty($user_details)){
   array_push($errors, 'Couldn\'t find user in database');
 }
 
+
+// Only continue if form has been sent
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-  
+  // Prevent input from being lost upon reloading the page; input should stay on form in case of error
   $firstname = $_POST['first_name'];
   $lastname = $_POST['last_name'];
   $username = $_POST['username'];
@@ -56,19 +63,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $current_password = $_POST['current_password'];
   $status = get_default($_POST['status']);  // Since status selection only exist for admins
   
-
-  // Check if correct confirmation password was entered
-  if(get_default($_SESSION['is_admin'])){
-    // If an admin is trying to make a change
+  // Check confirmation password
+  if($admin_edit_mode){
     $admin_password = $db->query("SELECT `password` FROM user WHERE userid = ".$_SESSION['userid'])->fetch_array(MYSQLI_NUM)[0];
     if(hash('sha512', $current_password) != $admin_password){
       array_push($errors, "Falsches Passwort");
       return;
     }
-  } elseif(hash('sha512', $current_password) != $result['password']){
+  } else {
     // If a user is trying to make a change
-    array_push($errors, "Falsches Passwort");
-    return;
+    if(hash('sha512', $current_password) != $user_details['password']){
+      array_push($errors, "Falsches Passwort");
+      return;
+    }
   }
 
   $db->autocommit = False;
@@ -79,8 +86,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   if($username){update_field($username, $db, 'username');}
   if($gender){update_field($gender, $db, 'gender');}
   if($new_password){update_field(hash('sha512', $new_password), $db, 'password');}
-  if(get_default($_SESSION['is_admin'])){
-    update_field($status, $db, 'status', 'i');  // No check whether var is set, as $status is always set
+  if($admin_edit_mode){
+    update_field($status, $db, 'status', 'i');  // No check whether var is set, as dropdown menus are always set to a value
   }
 
   // Check for duplicates where needed
@@ -101,9 +108,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   
   // Commit changes
-  if(empty($errors) && $db->commit() == False){
-    array_push($errors, "Fehler bei Verbindung zur Datenbank");
-    header("Location: /profile.php?success");  
+  if(empty($errors)){
+    $db->commit();
+    
+    if($admin_edit_mode){
+      header("Location: /user/profile.php?success&edit=".$userid);  
+    } else {
+      header("Location: /user/profile.php?success");  
+    }
     return;
     }
   }

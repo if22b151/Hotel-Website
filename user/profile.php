@@ -18,7 +18,7 @@
       <div class="container site_content py-4">
         
         
-        <h1>Kontodaten ändern</h1>
+        <h1>Kontodaten ändern<?php echo ($admin_edit_mode) ? ': '.$user_details['username'] : '' ?></h1>
 
         <?php if(!empty($errors)): ?>
 
@@ -44,7 +44,7 @@
           <div class="input-field">
             <label for="first_name" class="form-label">Vorname</label>
             <input type="text" name="first_name" class="form-control" id="first_name" 
-                   placeholder="<?=get_default($result['firstname'])?>" value="<?=get_default($firstname); ?>">
+                   placeholder="<?=get_default($user_details['firstname'])?>" value="<?=get_default($firstname); ?>">
           </div>
           
           
@@ -52,7 +52,7 @@
           <div class="mt-3">
             <label for="last_name" class="form-label">Nachname</label>
             <input type="text" name="last_name" class="form-control" id="last_name" 
-                   placeholder="<?=get_default($result['lastname'])?>" value="<?=get_default($lastname); ?>">
+                   placeholder="<?=get_default($user_details['lastname'])?>" value="<?=get_default($lastname); ?>">
           </div>
           
           
@@ -60,7 +60,7 @@
           <div class="mt-3">
             <label for="username" class="form-label">Nutzername</label>
             <input type="text" name="username" class="form-control" id="username" maxlength="20" aria-describedby="inputGroupPrepend2" 
-                   placeholder="<?=get_default($result['username'])?>" value="<?=get_default($username); ?>">
+                   placeholder="<?=get_default($user_details['username'])?>" value="<?=get_default($username); ?>">
           </div>
          
           <!--E-mail Adresse-->
@@ -69,7 +69,7 @@
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend2">@</span>
               <input type="text" name="email" class="form-control" id="email" 
-                     placeholder="<?=get_default($result['email'])?>" value="<?=get_default($email); ?>">
+                     placeholder="<?=get_default($user_details['email'])?>" value="<?=get_default($email); ?>">
             </div>
           </div>
           
@@ -80,19 +80,19 @@
               <label for="gender" class="form-label">Geschlecht</label>
               <select class="form-select" name="gender" id="gender">
                 <option value="">Auswählen</option>
-                <option value="male" <?php if(get_default($result['gender']) == 'male'){echo 'selected';} ?>>Mann</option>
-                <option value="female" <?php if(get_default($result['gender']) == 'female'){echo 'selected';} ?>>Frau</option>
-                <option value="other" <?php if(get_default($result['gender']) == 'other'){echo 'selected';} ?>>Divers</option>
+                <option value="male" <?php if(get_default($user_details['gender']) == 'male'){echo 'selected';} ?>>Mann</option>
+                <option value="female" <?php if(get_default($user_details['gender']) == 'female'){echo 'selected';} ?>>Frau</option>
+                <option value="other" <?php if(get_default($user_details['gender']) == 'other'){echo 'selected';} ?>>Divers</option>
               </select>
             </div>
 
-            <?php if(get_default($_SESSION['is_admin'])): ?>
+            <?php if($admin_edit_mode): ?>
               
               <div class="col-6 col-lg-3 mt-3">
                 <label for="status" class="form-label">Status</label>
                 <select class="form-select" name="status" id="status">
-                  <option value="0" <?php if(get_default($result['status']) == 0){echo 'selected';} ?>>Inaktiv</option>
-                  <option value="1" <?php if(get_default($result['status']) == 1){echo 'selected';} ?>>Aktiv</option>
+                  <option value="0" <?php if(get_default($user_details['status']) == 0){echo 'selected';} ?>>Inaktiv</option>
+                  <option value="1" <?php if(get_default($user_details['status']) == 1){echo 'selected';} ?>>Aktiv</option>
                 </select>
               </div>
               
@@ -112,7 +112,7 @@
             <input type="password" name="current_password" class="form-control" id="password2" placeholder="Aktuelles Passwort" minlength="8" required>
           </div>
           
-          <!--Button-->
+          <!--Submit Button-->
           <div class="mt-3">
             <button class="btn btn-secondary" type="submit">Änderungen vornehmen</button>
           </div>

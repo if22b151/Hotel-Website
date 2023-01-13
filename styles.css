@@ -20,6 +20,8 @@ div.background-image{
   background-image: url(img/background.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  
+  background-size: cover;
 }
 .site_content{
   background-color: white;

@@ -27,7 +27,7 @@
           <?php include 'php/templates/newsfeed.php'; ?>
         </div>
         
-        <div class="news-nav mt-4 pb-2 d-flex justify-content-between">
+        <div class="news-nav pb-2 d-flex justify-content-between">
           <?=switch_page_button(-1, $page, $max_page)?>
           <span class="text-muted"> <?php echo $page ?> </span>
           <?=switch_page_button(+1, $page, $max_page)?>

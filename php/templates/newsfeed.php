@@ -39,7 +39,7 @@
   // Fetch articles
   $range_articles_end = $page * $ARTICLES_PER_PAGE;
   $range_articles_start = $range_articles_end - $ARTICLES_PER_PAGE; 
-  $sql = "SELECT * FROM news LIMIT ".$range_articles_start.",".$ARTICLES_PER_PAGE;
+  $sql = "SELECT * FROM vw_articles LIMIT ".$range_articles_start.",".$ARTICLES_PER_PAGE;
 
   $articles = $db->query($sql);
 
@@ -48,7 +48,7 @@
 <?php 
 foreach($articles as $article):
   if($article['image_path']){
-    // /news/2730.jpg gets turned into 2730_thumb.jpg
+    // /news/2730.jpg gets turned into /news/2730_thumb.jpg
     $array = explode('.', $article['image_path']);
     $img_thumb = $array[0].'_thumb.'.$array[1];
   }  

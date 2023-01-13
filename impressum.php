@@ -7,10 +7,6 @@
 <head>
   <?php require 'php/head.php'; ?>
   <title>Impressum</title>
-
-  <style>
-    .container-site{ content-background-color: white; }
-  </style>
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">

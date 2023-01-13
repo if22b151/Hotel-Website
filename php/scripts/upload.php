@@ -45,20 +45,24 @@ if (isset($_POST['submit'])){
         imagecopyresized($thumbnail, $source, 0, 0, 0, 0, 720, $height, imagesx($source), imagesy($source));
     
         // Save the thumbnail to a file
-        $filename = $time;
+        chdir('../news/');
+
+        $file_name = $time.'.'.$file_extension;
+        $file_name_thumb = $time.'_thumb.'.$file_extension;
+
         switch ($file_extension){
         case 'jpg':
         case 'jpeg': 
-            imagejpeg($source, $filename.'.'.$file_extension); 
-            imagejpeg($thumbnail, $filename.'_thumb.'.$file_extension); 
+            imagejpeg($source, $file_name); 
+            imagejpeg($thumbnail, $file_name_thumb); 
             break;
         case 'png': 
-            imagepng($source, $filename.'.'.$file_extension); 
-            imagepng($thumbnail, $filename.'_thumb.'.$file_extension); 
+            imagepng($source, $file_name); 
+            imagepng($thumbnail, $file_name_thumb); 
             break;
         case 'gif': 
-            imagegif($source, $filename); 
-            imagegif($thumbnail, $filename.'_thumb.'.$file_extension); 
+            imagegif($source, $file_name); 
+            imagegif($thumbnail, $file_name_thumb);
             break;
         }
     
@@ -66,7 +70,7 @@ if (isset($_POST['submit'])){
         imagedestroy($source);
         imagedestroy($thumbnail);
         
-        $file_path = '/news/'.$filename.$file_extension;
+        $file_path = '/news/'.$file_name;
     } else {
         $file_path = NULL;
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 11, 2023 at 10:30 PM
+-- Generation Time: Jan 13, 2023 at 10:12 PM
 -- Server version: 10.6.11-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.9
 
@@ -55,7 +55,7 @@ CREATE TABLE `booking` (
   `address` varchar(255) NOT NULL,
   `country` varchar(40) NOT NULL,
   `plz` varchar(20) NOT NULL,
-  `phone_number` int(20) NOT NULL,
+  `phone_number` varchar(16) NOT NULL,
   `status` int(1) DEFAULT NULL
 ) ;
 
@@ -64,8 +64,242 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`bookingid`, `fk_userid`, `fk_roomtypeid`, `reservation_date`, `arrive_day`, `depart_day`, `address`, `country`, `plz`, `phone_number`, `status`) VALUES
-(3, 0, 1, 1672769877, 1623979477, 1624670677, 'Mustergasse 43', 'American Samoa', '1090', 29292929, 1),
-(4, 0, 2, 1672769940, 1672856340, 1672942740, 'Mustergasse 43', 'Bitte auswählen', '1090', 29292929, 1);
+(3, 0, 1, 1672769877, 1623979477, 1624670677, 'Mustergasse 43', 'American Samoa', '1090', '29292929', 0),
+(4, 0, 2, 1672769940, 1672856340, 1672942740, 'Mustergasse 43', 'Bitte auswählen', '1090', '29292929', 0),
+(5, 1, 1, 1673630767, 1674840367, 1675185967, 'Martinsstraße 34', 'Bahamas', '9932', '43', 1),
+(6, 1, 1, 1673630771, 1674840371, 1675185971, 'Martinsstraße 34', 'Bahamas', '9932', '43', 0),
+(7, 9, 1, 1665910978, 1671675835, 1672126172, 'Birch Drive 31', 'Germany', '96335', '153635310117889', 1),
+(8, 27, 1, 1611360542, 1620207556, 1620752583, 'Elm Lane 22', 'Slovakia', '22338', '96739144342155', 1),
+(9, 9, 1, 1625532775, 1642042737, 1642345177, 'Redwood Park 8', 'Slovakia', '62304', '4299345741820', 1),
+(10, 15, 2, 1642826623, 1649983548, 1650459966, 'Willow Court 22', 'Italy', '67685', '83311825099019', 1),
+(11, 15, 1, 1625033561, 1632692890, 1633100637, 'Beech Street 34', 'Austria', '26710', '169457783449814', 2),
+(13, 22, 2, 1670945756, 1672415835, 1672948207, 'Sycamore Terrace 44', 'Slovenia', '83793', '56852926257714', 1),
+(14, 7, 1, 1616179720, 1617727132, 1617840333, 'Oak Avenue 55', 'Afghanistan', '98970', '123911324149478', 2),
+(15, 4, 1, 1666408978, 1671979043, 1672462439, 'Birch Drive 37', 'Hungary', '20949', '117498789221801', 1),
+(16, 9, 1, 1637815730, 1652609469, 1653036552, 'Dogwood Drive 73', 'Germany', '19647', '93413531315285', 1),
+(17, 6, 1, 1661617276, 1662584470, 1662990469, 'Beech Street 16', 'Germany', '36485', '3876667430185', 2),
+(18, 26, 3, 1665159382, 1667939505, 1668317185, 'Apple Street 6', 'Hungary', '48840', '28739191579896', 2),
+(19, 5, 1, 1624700881, 1638494407, 1638983300, 'Birch Drive 49', 'Brunei', '96484', '66030969271087', 1),
+(20, 16, 2, 1599090630, 1603974594, 1604236818, 'Lemon Road 87', 'Afghanistan', '45749', '123247091184943', 1),
+(21, 29, 2, 1636712057, 1651074981, 1651343848, 'Elm Lane 29', 'Germany', '63477', '71980358067604', 1),
+(22, 24, 1, 1606467068, 1614483032, 1614695349, 'Cherry Lane 34', 'Italy', '69972', '43958572887606', 1),
+(23, 27, 3, 1659937561, 1667761211, 1668211063, 'Poplar Circle 20', 'Brunei', '49865', '41875069737835', 1),
+(24, 13, 2, 1608909131, 1618593520, 1619143102, 'Lemon Road 78', 'Afghanistan', '32860', '22710974286210', 2),
+(25, 14, 3, 1658477792, 1662035009, 1662381533, 'Elm Lane 39', 'Hungary', '81319', '133391238442889', 1),
+(26, 2, 1, 1612981596, 1622754497, 1622923197, 'Apple Street 54', 'Switzerland', '11705', '187075176485189', 1),
+(27, 18, 3, 1597157146, 1608569037, 1608685144, 'Cedar Boulevard 37', 'Hungary', '93987', '38053017141647', 1),
+(28, 19, 2, 1660197671, 1663629905, 1664154875, 'Pear Avenue 37', 'Brunei', '23269', '25496322530246', 1),
+(29, 31, 3, 1607004417, 1615411737, 1615920123, 'Pine Road 19', 'Afghanistan', '26823', '185626617832323', 1),
+(30, 32, 3, 1619271092, 1628556976, 1629106033, 'Cypress Square 33', 'Slovakia', '92971', '172611287804072', 1),
+(31, 3, 2, 1620395505, 1635976036, 1636346218, 'Hickory Place 92', 'Switzerland', '69834', '134727914954839', 1),
+(32, 30, 3, 1592145248, 1606036237, 1606633817, 'Cypress Square 88', 'Brunei', '28327', '54131473854930', 1),
+(33, 21, 3, 1612347186, 1628042118, 1628209245, 'Cypress Square 31', 'Hungary', '66632', '157253617596307', 1),
+(34, 4, 1, 1601819512, 1606319866, 1606414574, 'Birch Drive 60', 'Germany', '83626', '126095571475688', 1),
+(35, 13, 3, 1623732087, 1638791129, 1639067656, 'Cedar Boulevard 96', 'Hungary', '44937', '45877904686806', 1),
+(36, 13, 1, 1664576979, 1670438378, 1670835594, 'Redwood Park 90', 'Brunei', '16447', '98859214676511', 2),
+(37, 1, 3, 1610532475, 1627745997, 1628311551, 'Beech Street 15', 'Hungary', '94303', '182696354015853', 1),
+(38, 19, 1, 1641256680, 1652864760, 1653215116, 'Beech Street 25', 'Slovenia', '64867', '188497901655233', 2),
+(39, 7, 3, 1651651999, 1658232097, 1658735751, 'Ash Way 23', 'Switzerland', '79948', '166565255008622', 1),
+(40, 23, 2, 1642552154, 1653852741, 1654334468, 'Cypress Square 86', 'Hungary', '9856', '96015353763460', 2),
+(41, 13, 3, 1612181130, 1622649628, 1622924938, 'Hickory Place 8', 'Switzerland', '35901', '17046945523720', 1),
+(42, 20, 2, 1634744793, 1647461745, 1648037172, 'Sycamore Terrace 10', 'Slovakia', '83880', '116841345231428', 1),
+(43, 10, 1, 1656523154, 1663329690, 1663872003, 'Sycamore Terrace 6', 'Slovakia', '46858', '136690501313923', 1),
+(44, 11, 2, 1646489342, 1651326387, 1651879578, 'Birch Drive 25', 'Hungary', '3545', '173193980323231', 1),
+(45, 23, 3, 1641260441, 1653183867, 1653347633, 'Dogwood Drive 65', 'Switzerland', '20442', '75151218836887', 2),
+(46, 1, 2, 1668161301, 1673486435, 1673585840, 'Elm Lane 30', 'Afghanistan', '82804', '15710477299707', 1),
+(47, 30, 2, 1607505185, 1607872356, 1608317958, 'Apple Street 90', 'Brunei', '64818', '129588845086681', 2),
+(48, 26, 2, 1612250885, 1623949853, 1624132793, 'Cypress Square 62', 'Brunei', '4590', '1268937218305', 1),
+(49, 7, 3, 1626064159, 1633580568, 1633923465, 'Birch Drive 19', 'Italy', '15759', '25266582207615', 1),
+(50, 24, 2, 1596306967, 1610353122, 1610599463, 'Apple Street 36', 'Hungary', '56838', '195535470050897', 1),
+(51, 1, 1, 1609734810, 1618582843, 1619013918, 'Redwood Park 74', 'Italy', '64679', '72774006024671', 2),
+(52, 1, 3, 1634281514, 1635924947, 1636399422, 'Redwood Park 81', 'Italy', '81206', '122250268704212', 1),
+(53, 17, 1, 1590054114, 1601818853, 1602192776, 'Redwood Park 76', 'Switzerland', '86213', '134944936898646', 1),
+(54, 11, 1, 1648159120, 1649627700, 1650035521, 'Willow Court 80', 'Brunei', '2454', '84510064611112', 1),
+(55, 3, 2, 1640070439, 1647450704, 1647825007, 'Pear Avenue 91', 'Afghanistan', '16802', '3474085335959', 2),
+(56, 25, 3, 1602707404, 1609751768, 1610213101, 'Ash Way 39', 'Brunei', '28552', '39698851218785', 1),
+(57, 31, 1, 1618408519, 1634160217, 1634270673, 'Walnut Grove 32', 'Austria', '55526', '151895039916020', 1),
+(58, 12, 3, 1653658250, 1663131686, 1663645539, 'Pine Road 41', 'Slovakia', '85501', '138631695492432', 2),
+(59, 22, 1, 1598826969, 1601070099, 1601597519, 'Beech Street 71', 'Slovenia', '94643', '168768576390404', 1),
+(60, 16, 1, 1624133025, 1637342640, 1637766844, 'Oak Avenue 4', 'Hungary', '55328', '188302602266314', 2),
+(61, 4, 2, 1621750033, 1634471338, 1634938825, 'Walnut Grove 93', 'Italy', '71842', '40614264776699', 1),
+(62, 14, 3, 1630640706, 1641547970, 1642031319, 'Sycamore Terrace 54', 'Austria', '34733', '61223262301163', 2),
+(63, 1, 3, 1594477433, 1610544969, 1610891138, 'Maple Street 42', 'Switzerland', '16010', '138813693643069', 1),
+(64, 5, 1, 1637482890, 1647955322, 1648498345, 'Elm Lane 80', 'Slovakia', '46659', '163867059377080', 1),
+(65, 18, 1, 1620807019, 1632946206, 1633169807, 'Hickory Place 77', 'Germany', '68144', '133855820568405', 1),
+(66, 3, 1, 1600388602, 1617145327, 1617563726, 'Dogwood Drive 62', 'Italy', '57685', '128463780181126', 2),
+(67, 9, 2, 1599251142, 1599794754, 1600189959, 'Pine Road 91', 'Italy', '70611', '157746361385049', 1),
+(68, 1, 3, 1653957423, 1659908027, 1660072633, 'Cherry Lane 6', 'Slovakia', '45674', '85374555889591', 1),
+(69, 26, 1, 1633967746, 1642944600, 1643078587, 'Pine Road 16', 'Switzerland', '28040', '164612868329462', 1),
+(70, 14, 2, 1635851499, 1646377947, 1646950654, 'Pear Avenue 68', 'Brunei', '9069', '137486373925848', 1),
+(71, 19, 1, 1620560692, 1627750201, 1628202333, 'Birch Drive 70', 'Germany', '36746', '115808963650268', 1),
+(72, 10, 3, 1615639177, 1624991252, 1625502467, 'Pear Avenue 90', 'Switzerland', '15365', '76636231651860', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking_options`
+--
+
+CREATE TABLE `booking_options` (
+  `fk_bookingid` int(11) NOT NULL,
+  `fk_optionsid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `booking_options`
+--
+
+INSERT INTO `booking_options` (`fk_bookingid`, `fk_optionsid`) VALUES
+(3, 3),
+(4, 1),
+(4, 2),
+(4, 3),
+(4, 4),
+(5, 1),
+(5, 2),
+(5, 3),
+(6, 2),
+(6, 3),
+(7, 3),
+(8, 2),
+(8, 4),
+(9, 1),
+(9, 4),
+(10, 2),
+(10, 4),
+(13, 3),
+(14, 1),
+(14, 2),
+(15, 1),
+(15, 3),
+(15, 4),
+(16, 1),
+(16, 4),
+(17, 1),
+(18, 3),
+(18, 4),
+(19, 2),
+(19, 3),
+(20, 2),
+(20, 3),
+(21, 4),
+(22, 2),
+(22, 4),
+(23, 1),
+(23, 2),
+(23, 4),
+(24, 4),
+(26, 1),
+(26, 3),
+(26, 4),
+(27, 3),
+(27, 4),
+(28, 2),
+(28, 3),
+(29, 1),
+(29, 2),
+(30, 1),
+(30, 2),
+(30, 4),
+(31, 1),
+(31, 2),
+(31, 3),
+(31, 4),
+(32, 2),
+(32, 4),
+(33, 4),
+(34, 2),
+(34, 3),
+(34, 4),
+(35, 1),
+(35, 3),
+(36, 1),
+(36, 2),
+(36, 3),
+(36, 4),
+(37, 1),
+(37, 2),
+(37, 3),
+(38, 1),
+(38, 2),
+(39, 1),
+(39, 4),
+(40, 1),
+(40, 2),
+(40, 4),
+(41, 1),
+(41, 2),
+(41, 3),
+(42, 1),
+(42, 2),
+(42, 4),
+(43, 3),
+(43, 4),
+(44, 3),
+(44, 4),
+(45, 1),
+(45, 2),
+(45, 3),
+(46, 3),
+(46, 4),
+(47, 1),
+(47, 2),
+(48, 1),
+(48, 2),
+(48, 3),
+(48, 4),
+(49, 1),
+(49, 3),
+(50, 1),
+(50, 2),
+(50, 3),
+(51, 3),
+(52, 2),
+(52, 4),
+(53, 1),
+(53, 2),
+(53, 3),
+(53, 4),
+(55, 2),
+(56, 1),
+(56, 2),
+(57, 1),
+(57, 2),
+(58, 1),
+(58, 3),
+(58, 4),
+(59, 3),
+(59, 4),
+(60, 2),
+(60, 3),
+(61, 1),
+(61, 2),
+(62, 1),
+(62, 2),
+(62, 3),
+(62, 4),
+(63, 1),
+(63, 3),
+(64, 1),
+(64, 4),
+(65, 1),
+(65, 4),
+(66, 1),
+(66, 2),
+(66, 3),
+(67, 1),
+(67, 2),
+(67, 3),
+(68, 3),
+(68, 4),
+(69, 2),
+(69, 3),
+(70, 3),
+(71, 1),
+(71, 2),
+(72, 2),
+(72, 3),
+(72, 4);
 
 -- --------------------------------------------------------
 
@@ -88,9 +322,9 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` (`newsid`, `fk_userid`, `image_path`, `article_title`, `article_text`, `release_date`) VALUES
 (2, 0, '/news/1672017478.jpg', 'Städte von Morgen', 'Schon heute können Sie in unserem Hotel den Städten der Zukunft nähertreten! \n\nFestgehalten auf großflächigem Aquarell sind diese über die nächsten 4 Wochen als Teil der Ausstellung *Städte von Morgen: Eine Vision* großzügig an den Wänden unseres Interieurs verteilt. \nBuchen Sie noch heute und lassen Sie sich von diesen atemberaubenden Zukunftsvisionen inspirieren! \n\n- Ihr Hotel-Team', 1672077478),
-(5, 0, '/news/1672066733.jpg', 'Die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten', 'Wien, die Hauptstadt Österreichs, ist voller kultureller Schätze und Sehenswürdigkeiten, die man sich bei einem Aufenthalt in der Stadt nicht entgehen lassen sollte. Wenn Sie im schönen Wiener Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Attraktionen der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten:\n\n1. **Schloss Schönbrunn**: Dieses prachtvolle Schloss ist ein wichtiges kulturelles und historisches Symbol Österreichs und eines der beliebtesten Touristenziele Wiens. Es beherbergt zahlreiche prunkvolle Säle, wunderschöne Gärten und die beeindruckende Gloriette, von der aus man einen atemberaubenden Blick über die Stadt genießen kann.\n2. **Stephansdom**: Diese imposante gotische Kathedrale ist das Wahrzeichen Wiens und eines der bedeutendsten Bauwerke der Stadt. Der Dom ist innen und außen atemberaubend schön und bietet eine Vielzahl von Kunstwerken, die man sich auf keinen Fall entgehen lassen \n3. **Hofburg**: Dieses prächtige Schloss war einst der Sitz der Habsburger Dynastie und ist heute das Zuhause zahlreicher wichtiger Regierungsbehörden. Es beherbergt auch eine Vielzahl von Museen und Kunstsammlungen, die man sich unbedingt ansehen sollte.\n4. **Prater**: Dieser große Vergnügungspark im Herzen Wiens bietet eine Vielzahl von Fahrgeschäften, Restaurants und Unterhaltungsmöglichkeiten für die ganze Familie. Der Prater ist besonders bei schönem Wetter ein toller Ort, um einen Nachmittag zu verbringen.\n5. **Kunsthistorisches Museum**: Dieses herrliche Museum beherbergt eine der weltweit größten Kunstsammlungen und bietet Ausstellungen zu einer Vielzahl von Kunstperioden und -stilen. Es ist ein Muss für alle Kunstliebhaber und eine tolle Möglichkeit, sich über die Kunstgeschichte Wiens und Österreichs zu informieren.', 1672066733),
-(6, 0, '/news/1672067070.jpg', 'Die 3 besten Wiener Kaffeehäuser', 'Wien ist berühmt für seine Kaffeehäuser und die traditionelle Kaffeehauskultur, die in der Stadt verwurzelt ist. Wenn Sie im Vienna City Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Kaffeehäuser der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 3 besten Wiener Kaffeehäuser, die Sie unbedingt besuchen sollten:\n\n1. **Café Central**: Dieses berühmte Kaffeehaus im Herzen Wiens wurde im 19. Jahrhundert eröffnet und war einst ein Treffpunkt von Intellektuellen und Künstlern. Es beherbergt noch immer eine Vielzahl von Kunstwerken und ist ein toller Ort, um einen Kaffee oder eine Sachertorte zu genießen.\n2. **Café Sperl**: Dieses Kaffeehaus im Stil der Belle Époque befindet sich im 6. Bezirk und ist ein beliebter Treffpunkt von Einheimischen und Touristen. Es ist bekannt für seine prächtigen Interieurs und seine leckeren Kuchen und Torten.\n3. **Café Hawelka**: Dieses Kaffeehaus im Herzen Wiens ist ein Treffpunkt von Künstlern und Schriftstellern und beherbergt viele Kunstwerke. Es ist auch berühmt für seine leckeren Gebäckteile und seine gemütliche Atmosphäre.\n\nEin Besuch in einem Wiener Kaffeehaus ist ein Muss, wenn Sie die Stadt besuchen. Die oben genannten Kaffeehäuser sind nur einige der vielen großartigen Optionen, die die Stadt zu bieten hat. Egal, für welches Kaffeehaus Sie sich entscheiden, Sie werden sicherlich eine wunderbare Zeit haben und die wunderbare Kaffeehauskultur Wiens.', 1672067070),
-(7, 0, NULL, 'Wiener Museen', 'Wien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.\n\nEines der bekanntesten Museen Wiens ist das Kunsthistorische Museum, das sich im Herzen der Stadt befindet. Das Kunsthistorische Museum beherbergt eine umfassende Sammlung von Kunstwerken aus der Antike bis zur Gegenwart. Von griechischen Skulpturen und römischen Mosaiken bis hin zu Gemälden von Meistern wie Rembrandt und Vermeer – das Kunsthistorische Museum hat für jeden Kunstinteressierten etwas zu bieten.\n\nEin weiteres Highlight in Wien ist das Museum der Moderne, das sich im MuseumsQuartier befindet. Das Museum der Moderne zeigt zeitgenössische Kunst, Fotografie und Design und bietet einen spannenden Einblick in die aktuellen Trends in der Kunstszene. Ein besonderes Highlight ist die Sammlung von Werken des berühmten Wiener Künstlers Gustav Klimt, die im Museum der Moderne ausgestellt wird.\n\nWer sich für die Geschichte Wiens interessiert, sollte das Hofburgmuseum besuchen. Das Hofburgmuseum befindet sich im Schloss Hofburg, dem ehemaligen Winterpalast der Habsburgermonarchie, und bietet einen umfassenden Einblick in die Geschichte Wiens und der Habsburgermonarchie. Das Hofburgmuseum zeigt auch eine Sammlung von Kunstwerken und Kunsthandwerk aus der Zeit der Habsburgermonarchie.\n\nEin weiteres empfehlenswertes Museum in Wien ist das Leopold Museum, das sich im MuseumsQuartier befindet. Das Leopold Museum beherbergt eine Sammlung von Kunstwerken der Wiener Moderne, darunter Werke von Künstlern wie Egon Schiele und Gustav Klimt. Das Leopold Museum bietet auch regelmäßig Wechselausstellungen, die die Kunst der Wiener Moderne in den Fokus rücken.\n\nWien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.', 1672060000);
+(5, 0, '/news/1672066733.jpg', 'Die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten', 'Wien, die Hauptstadt Österreichs, ist voller kultureller Schätze und Sehenswürdigkeiten, die man sich bei einem Aufenthalt in der Stadt nicht entgehen lassen sollte. Wenn Sie im schönen Wiener Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Attraktionen der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 5 besten Sehenswürdigkeiten Wiens, die Sie sich nicht entgehen lassen sollten:\n\n1. **Schloss Schönbrunn**: Dieses prachtvolle Schloss ist ein wichtiges kulturelles und historisches Symbol Österreichs und eines der beliebtesten Touristenziele Wiens. Es beherbergt zahlreiche prunkvolle Säle, wunderschöne Gärten und die beeindruckende Gloriette, von der aus man einen atemberaubenden Blick über die Stadt genießen kann.\n2. **Stephansdom**: Diese imposante gotische Kathedrale ist das Wahrzeichen Wiens und eines der bedeutendsten Bauwerke der Stadt. Der Dom ist innen und außen atemberaubend schön und bietet eine Vielzahl von Kunstwerken, die man sich auf keinen Fall entgehen lassen \n3. **Hofburg**: Dieses prächtige Schloss war einst der Sitz der Habsburger Dynastie und ist heute das Zuhause zahlreicher wichtiger Regierungsbehörden. Es beherbergt auch eine Vielzahl von Museen und Kunstsammlungen, die man sich unbedingt ansehen sollte.\n4. **Prater**: Dieser große Vergnügungspark im Herzen Wiens bietet eine Vielzahl von Fahrgeschäften, Restaurants und Unterhaltungsmöglichkeiten für die ganze Familie. Der Prater ist besonders bei schönem Wetter ein toller Ort, um einen Nachmittag zu verbringen.\n5. **Kunsthistorisches Museum**: Dieses herrliche Museum beherbergt eine der weltweit größten Kunstsammlungen und bietet Ausstellungen zu einer Vielzahl von Kunstperioden und -stilen. Es ist ein Muss für alle Kunstliebhaber und eine tolle Möglichkeit, sich über die Kunstgeschichte Wiens und Österreichs zu informieren.', 1671336733),
+(6, 0, '/news/1672067070.jpg', 'Die 3 besten Wiener Kaffeehäuser', 'Wien ist berühmt für seine Kaffeehäuser und die traditionelle Kaffeehauskultur, die in der Stadt verwurzelt ist. Wenn Sie im Vienna City Hotel übernachten, sind Sie nur wenige Minuten von einigen der besten Kaffeehäuser der Stadt entfernt. Hier sind unsere Top-Empfehlungen für die 3 besten Wiener Kaffeehäuser, die Sie unbedingt besuchen sollten:\n\n1. **Café Central**: Dieses berühmte Kaffeehaus im Herzen Wiens wurde im 19. Jahrhundert eröffnet und war einst ein Treffpunkt von Intellektuellen und Künstlern. Es beherbergt noch immer eine Vielzahl von Kunstwerken und ist ein toller Ort, um einen Kaffee oder eine Sachertorte zu genießen.\n2. **Café Sperl**: Dieses Kaffeehaus im Stil der Belle Époque befindet sich im 6. Bezirk und ist ein beliebter Treffpunkt von Einheimischen und Touristen. Es ist bekannt für seine prächtigen Interieurs und seine leckeren Kuchen und Torten.\n3. **Café Hawelka**: Dieses Kaffeehaus im Herzen Wiens ist ein Treffpunkt von Künstlern und Schriftstellern und beherbergt viele Kunstwerke. Es ist auch berühmt für seine leckeren Gebäckteile und seine gemütliche Atmosphäre.\n\nEin Besuch in einem Wiener Kaffeehaus ist ein Muss, wenn Sie die Stadt besuchen. Die oben genannten Kaffeehäuser sind nur einige der vielen großartigen Optionen, die die Stadt zu bieten hat. Egal, für welches Kaffeehaus Sie sich entscheiden, Sie werden sicherlich eine wunderbare Zeit haben und die wunderbare Kaffeehauskultur Wiens.', 1651327070),
+(7, 0, NULL, 'Wiener Museen', 'Wien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.\n\nEines der bekanntesten Museen Wiens ist das Kunsthistorische Museum, das sich im Herzen der Stadt befindet. Das Kunsthistorische Museum beherbergt eine umfassende Sammlung von Kunstwerken aus der Antike bis zur Gegenwart. Von griechischen Skulpturen und römischen Mosaiken bis hin zu Gemälden von Meistern wie Rembrandt und Vermeer – das Kunsthistorische Museum hat für jeden Kunstinteressierten etwas zu bieten.\n\nEin weiteres Highlight in Wien ist das Museum der Moderne, das sich im MuseumsQuartier befindet. Das Museum der Moderne zeigt zeitgenössische Kunst, Fotografie und Design und bietet einen spannenden Einblick in die aktuellen Trends in der Kunstszene. Ein besonderes Highlight ist die Sammlung von Werken des berühmten Wiener Künstlers Gustav Klimt, die im Museum der Moderne ausgestellt wird.\n\nWer sich für die Geschichte Wiens interessiert, sollte das Hofburgmuseum besuchen. Das Hofburgmuseum befindet sich im Schloss Hofburg, dem ehemaligen Winterpalast der Habsburgermonarchie, und bietet einen umfassenden Einblick in die Geschichte Wiens und der Habsburgermonarchie. Das Hofburgmuseum zeigt auch eine Sammlung von Kunstwerken und Kunsthandwerk aus der Zeit der Habsburgermonarchie.\n\nEin weiteres empfehlenswertes Museum in Wien ist das Leopold Museum, das sich im MuseumsQuartier befindet. Das Leopold Museum beherbergt eine Sammlung von Kunstwerken der Wiener Moderne, darunter Werke von Künstlern wie Egon Schiele und Gustav Klimt. Das Leopold Museum bietet auch regelmäßig Wechselausstellungen, die die Kunst der Wiener Moderne in den Fokus rücken.\n\nWien ist eine Stadt voller Kunst und Kultur und bietet zahlreiche Museen, die einen Besuch wert sind. Als Hotelgast in Wien haben Sie die Möglichkeit, einige der berühmtesten Museen der Stadt zu besuchen und sich von der vielfältigen Kunstsammlung inspirieren zu lassen.', 1631000000);
 
 -- --------------------------------------------------------
 
@@ -241,6 +475,29 @@ INSERT INTO `user` (`userid`, `fk_personid`, `username`, `password`, `email`, `s
 (31, 42, 'AvaBrown13', '2ae54b86291b6c67be6b0467f6fbf236d4305efe67c44581f1a4b0da3f9c1126f3748cbe7a1b941e528a3ab24492365568211cecb0d2a0dafb39dc7812d6de6d', 'AvaBrown13@imaginary.com', 1),
 (32, 43, 'EmmaGarcia85', 'e25c40ee4dc5238b154feea241e98e929c777f3d74c6c08c8cd1936c54c9531b81d853733547ad13a39403b5acfd24ac982087540f484cce4f5a9e99b411c61e', 'EmmaGarcia85@imaginary.com', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `vw_articles`
+-- (See below for the actual view)
+--
+CREATE TABLE `vw_articles` (
+`release_date` int(10)
+,`image_path` varchar(127)
+,`article_title` text
+,`article_text` text
+,`author` varchar(511)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `vw_articles`
+--
+DROP TABLE IF EXISTS `vw_articles`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_articles`  AS SELECT `news`.`release_date` AS `release_date`, `news`.`image_path` AS `image_path`, `news`.`article_title` AS `article_title`, `news`.`article_text` AS `article_text`, concat(`person`.`firstname`,' ',`person`.`lastname`) AS `author` FROM ((`news` join `user` on(`news`.`fk_userid` = `user`.`userid`)) join `person` on(`user`.`fk_personid` = `person`.`Personid`)) ORDER BY `news`.`release_date` DESC ;
+
 --
 -- Indexes for dumped tables
 --
@@ -259,6 +516,14 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`bookingid`),
   ADD KEY `booking_ibfk_1` (`fk_userid`),
   ADD KEY `booking_ibfk_4` (`fk_roomtypeid`);
+
+--
+-- Indexes for table `booking_options`
+--
+ALTER TABLE `booking_options`
+  ADD PRIMARY KEY (`fk_bookingid`,`fk_optionsid`) USING BTREE,
+  ADD KEY `fk_optionsid` (`fk_optionsid`),
+  ADD KEY `fk_bookingid` (`fk_bookingid`);
 
 --
 -- Indexes for table `news`
@@ -314,7 +579,7 @@ ALTER TABLE `booking`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `newsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `newsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `options`
@@ -356,6 +621,13 @@ ALTER TABLE `admin`
 ALTER TABLE `booking`
   ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`fk_userid`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `booking_ibfk_4` FOREIGN KEY (`fk_roomtypeid`) REFERENCES `room_type` (`roomtypeID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `booking_options`
+--
+ALTER TABLE `booking_options`
+  ADD CONSTRAINT `booking_options_ibfk_1` FOREIGN KEY (`fk_bookingid`) REFERENCES `booking` (`bookingid`),
+  ADD CONSTRAINT `booking_options_ibfk_2` FOREIGN KEY (`fk_optionsid`) REFERENCES `options` (`optionsid`);
 
 --
 -- Constraints for table `news`

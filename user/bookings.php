@@ -1,15 +1,14 @@
 <?php
-  // All bookings
   require '../php/scripts/funcs.php';
   require '../php/scripts/dbaccess.php';
-  
-  $errors = array();
   
   
   session_start();
   require_login();
   
+  // Connect to DB
   $db = get_db();
+
   $sql = "SELECT * FROM booking WHERE fk_userid = " . $_SESSION['userid'];
   $bookings = $db->query($sql)->fetch_all(MYSQLI_ASSOC);  // Return all rows as an array of associative arrays
 ?>

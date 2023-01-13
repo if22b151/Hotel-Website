@@ -6,6 +6,7 @@ a.switch-page-button{
   color: black !important;
 }
 
+
 /* General site layout */
 .container-site{
   height: 100vh;
@@ -23,6 +24,7 @@ div.background-image{
 .site_content{
   background-color: white;
 }
+
 
 /* Navbar */
 .profile-icon > i{
@@ -56,6 +58,7 @@ a.dropdown-item:hover{
   }
 }
 
+
 /* Footer */
 footer ul{
   /* Overwriting some strange defaults */
@@ -76,6 +79,7 @@ footer a{
 footer a:hover{
   color:rgba(255,255,255,.75);
 }
+
 
 /* idk if needed anymore */
 .Header{
@@ -139,6 +143,7 @@ footer a:hover{
   align-items: center;
 }
 
+
 /* FAQ */
 #RegistrierungFAQ{
   border: 3px solid grey;
@@ -152,6 +157,7 @@ footer a:hover{
 #RegistrierungbearbeitenFAQ{
   border: 3px solid grey;
 }
+
 
 /* Index */
 header > a{
@@ -193,10 +199,12 @@ header.logo_bar p{
   font-size: 20px;
 }
 
+
 /* Booking */
 table > tbody > tr > .bottom_border_none{
   border-bottom: none;
 }
+
 
 /* News */
 img.article-image{
@@ -208,6 +216,34 @@ hr.article-hr{
   align-self: center;
   width: 60%;
 }
+
+@media screen and (min-width: 1200px){ /* When larger than xl: Laptop/Desktop */
+  main.news{
+    padding: 2rem 4rem !important;
+  }
+}
+
+
+/* Admin */
+div.admin-bookings-submit-button{
+  padding-left: 0px;
+}
+
+@media screen and (min-width: 1200px){ /* XL */
+  div.content-background.admin-bookings{
+    padding: 0% 20%;
+  }
+
+  .accordion-title{
+    border-right: #ddd 1px solid;
+  }
+
+  .lg-switch-page-buttons{ /* trashy way of showing buttons on right side of table head */
+    position: relative;
+    left: 18px;
+  }
+}
+
 
 /* Media queries */
 
@@ -224,10 +260,6 @@ hr.article-hr{
 
 /* When larger than xl: Laptop/Desktop */
 @media screen and (min-width: 1200px){
-  main.news{
-    padding: 2rem 4rem !important;
-  }
-
   div.content-background{
     padding: 0% 25%;
   }

@@ -66,9 +66,13 @@
           <i class="fa-solid fa-user"></i>  
         </a>
         <ul class="dropdown-menu profile-dropdown" aria-labelledby="profileDropdownMenuLink">
+          
           <?php if(get_default($_SESSION['is_admin'])):?>
-            <li><a class="dropdown-item" href="/news/upload.php">News Beitrag</a></li>            
+            <li><a class="dropdown-item" href="/admin/upload.php">News Beitrag erstellen</a></li>            
+            <li><a class="dropdown-item" href="/admin/users.php">Nutzer verwalten</a></li>            
+            <li><a class="dropdown-item" href="/admin/bookings.php">Buchungen verwalten</a></li>            
           <?php endif; ?>
+          
           <?php if(isset($_SESSION['userid'])): ?>
             <li><a class="dropdown-item" href="/user/profile.php">Profil</a></li>
             <li><a class="dropdown-item" href="/booking.php">Buchungen</a></li>

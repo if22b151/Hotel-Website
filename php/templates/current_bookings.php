@@ -1,5 +1,6 @@
 <?php 
-// For this page to be loaded, $bookings must already be present from scripts/booking_logic.php 
+// For this page to be loaded, a valid $bookings variable must already be present
+// See scripts/booking_logic.php 
 
 $DATE_FORMAT = 'd.m.Y';
 ?>
@@ -7,7 +8,7 @@ $DATE_FORMAT = 'd.m.Y';
 
 <!-- current_booking.php start -->
 <?php if(empty($bookings)): ?>
-  <p>Noch keine Buchungen getätigt.</p>
+  <p>Keine Buchung gefunden</p>
 <?php else: ?>
   <table class="table">
     <thead>

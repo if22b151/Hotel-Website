@@ -49,7 +49,8 @@
 foreach($articles as $article):
   if($article['image_path']){
     // /news/2730.jpg gets turned into 2730_thumb.jpg
-    $img_thumb = preg_replace("/(.*)(\.\w{3,4})/", "$1_thumb$2", $article['image_path']);
+    $array = explode('.', $article['image_path']);
+    $img_thumb = $array[0].'_thumb.'.$array[1];
   }  
 ?>
 

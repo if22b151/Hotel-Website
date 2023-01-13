@@ -2,7 +2,7 @@
 require_once 'funcs.php';
 require 'dbaccess.php';
 
-$DEFAULT_STATUS = 'Neu';
+$DEFAULT_STATUS = 0;
 
 
 function get_option_sql($booking_id, $option){
@@ -22,13 +22,16 @@ if(!$db){
     return;
 }
 
-// Get current bookings
-$sql = "SELECT * FROM booking 
+// Load current bookings
+$sql = "SELECT `bookingid`, `firstname`, `lastname`, `fk_roomtypeid`, `reservation_date`, `arrive_day`, `depart_day`, `address`, `plz`, `country`, `phone_number`, booking.`status`
+        FROM booking
+        JOIN user ON fk_userid = userid
+        JOIN person ON fk_personid = personid
         WHERE fk_userid = " . $_SESSION['userid'] . " 
         AND depart_day > " . time() - 86400;  // 86400s = 24h
-        $bookings = $db->query($sql)->fetch_all(MYSQLI_ASSOC);  // Return all rows as an array of associative arrays
+$bookings = $db->query($sql)->fetch_all(MYSQLI_ASSOC);  // Return all rows as an array of associative arrays
         
-// Check for prior bookings
+// Check for prior bookings ("All Bookings" button won't show up if there aren't any)
 $has_prior_bookings = False;
 
 $sql = "SELECT count(bookingid) FROM booking WHERE fk_userid = " . $_SESSION['userid'];
@@ -60,7 +63,7 @@ if (!isset($_POST['submit'])){
     return;
 }
 
-// Error checking
+// Input validation
 if(is_empty_any($room, $date_start, $date_end, $street, $street_nr, $city, $plz, $country, $phone_nr)){
     array_push($errors, 'Alle Felder müssen ausgefüllt sein');
     return;
@@ -75,6 +78,13 @@ if(strtotime($date_end) < strtotime($date_start)){
     array_push($errors, 'Letzter Tag der Buchung liegt vor erstem Tag');
 }
 
+// Remove whitespace from $phone_nr, turn leading + into a 0
+$phone_nr_formatted = preg_replace('/^\+/', '0', $phone_nr);
+$phone_nr_formatted = preg_replace('/[^\d]/', '', $phone_nr_formatted);
+if(!is_int($phone_nr_formatted) || strlen($phone_nr_formatted) > 16 || strlen($phone_r) < 10){
+    array_push($errors, 'Telefonnummer ist nicht korrekt');
+}
+
 if(!empty($errors)){
     // Errors found, so throw user back to fill-out
     return;
@@ -86,7 +96,7 @@ $db->autocommit(False);
 $sql = 'INSERT INTO booking(fk_userid, fk_roomtypeid, `status`, reservation_date, arrive_day, depart_day, `address`, country, plz, phone_number) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 $stmt_booking = $db->prepare($sql);
-$stmt_booking->bind_param('iisiiisssi', $_SESSION['userid'], $room, $DEFAULT_STATUS, $reservation_date, $date_start, $date_end, $address, $country, $plz, $phone_nr);
+$stmt_booking->bind_param('iisiiissss', $_SESSION['userid'], $room, $DEFAULT_STATUS, $reservation_date, $date_start, $date_end, $address, $country, $plz, $phone_nr_formatted);
 
 // Some necessary transformations before execution of prepared statement
 $room = (int) $room; 
@@ -125,6 +135,5 @@ if(!$db->commit()){
     return;
 }
 
-$success = True;
-clear_variables($room, $date_start, $date_end, $late_check_out, $street, $street_nr, $city, $plz, $country, $phone_nr, $breakfast, $parking, $animals);
+header('Location: /booking.php');
 ?>

@@ -44,45 +44,46 @@
           LIMIT '. $user_range_start . ',' . $BOOKINGS_PER_PAGE;
 
   $bookings = $db->query($sql)->fetch_all(MYSQLI_ASSOC);  // Return all rows as an array of associative arrays
-
+          
+  
   // Change reservation status
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     print_r($_POST);
     // $_POST['status] is a string akin to the format "2-34"; with 2 being the selected status and 34 the bookingid
     // that the selected status is meant to be applied to. It's exploded so as to get both individual parts out of it.
     $array = explode('-', $_POST['status']);
-
+    
     $new_status = $array[0];
     $bookingid = $array[1];
 
     print($new_status . ' ' . $bookingid);
-
+    
     $stmt = $db->prepare('UPDATE booking SET `status` = ? WHERE bookingid = ?');
     $stmt->bind_param('ii', $new_status, $bookingid);
     $stmt->execute();
-
+    
     // Reload page so changes can take visible effect
     header('Location: '.$_SERVER['REQUEST_URI']);
   }
-?>
+  ?>
 
 
 <!DOCTYPE html>
 <html lang="de">
-<head>
+  <head>
   <?php require '../php/head.php'; ?>
   <title>Alle Buchungen</title>
 </head>
 <body>
   <div class="container-site d-flex flex-column justify-content-between">
     <div class="container-navbar-content d-flex flex-column flex-grow-1">
-
+      
       <?php include '../php/navbar.php' ?>
       
       <div class="flex-container content-background admin-bookings flex-grow-1">
-      <div class="container site_content py-2 pb-4">
-        <h1>Buchungen</h1>
-
+        <div class="container site_content py-2 pb-4">
+          <h1>Buchungen</h1>
+          
           <div class="mt-2 container-fluid row text-center">
             <span class="d-none d-lg-inline col-lg-1 accordion-title">ID</span>
             <span class="d-none d-lg-inline col-lg-2 accordion-title">Status</span>
@@ -97,24 +98,36 @@
           </div>          
           
           <div class="accordion mt-2" id="accordionPanelsStayOpenExample">
-
-          
+            
+            
             <?php
               foreach($bookings as $booking): 
                 $id = $booking['bookingid'];
-
+                
                 switch($booking['status']){
                   case 0: $status = 'Neu'; break;
                   case 1: $status = 'Bestätigt'; break;
                   case 2: $status = 'Storniert'; break;
                 }
-
+                
                 switch($booking['fk_roomtypeid']){
                   case 1: $roomtype = 'Suite'; break;
                   case 2: $roomtype = 'Double Bedroom'; break;
                   case 3: $roomtype = 'Single Bedroom'; break;
                 } 
-              ?>            
+                
+                // Get selected options
+                $options = array();
+
+                $sql = 'SELECT `name` 
+                        FROM booking_options JOIN options ON fk_optionsid = optionsid
+                        WHERE fk_bookingid = '.$id;
+                $results = $db->query($sql)->fetch_all();
+                
+                foreach($results as $result){
+                  array_push($options, $result[0]);
+                }
+            ?>            
             
             
               <div class="accordion-item">
@@ -191,6 +204,22 @@
                         <tr>
                           <td>Telefonnummer</td>
                           <td> <?=$booking['phone_number']?> </td>
+                        </tr>
+                        <tr>
+                          <td>Parkplatz</td>
+                          <td> <?=(in_array('Parking', $options)) ? 'Ja' : 'Nein'?> </td>
+                        </tr>
+                        <tr>
+                          <td>Frühstück</td>
+                          <td> <?=(in_array('Breakfast', $options)) ? 'Ja' : 'Nein'?> </td>
+                        </tr>
+                        <tr>
+                          <td>Late Check-Out</td>
+                          <td> <?=(in_array('Late Checkout', $options)) ? 'Ja' : 'Nein'?> </td>
+                        </tr>
+                        <tr>
+                          <td>Tiere</td>
+                          <td> <?=(in_array('Pets', $options)) ? 'Ja' : 'Nein'?> </td>
                         </tr>
                       </tbody>
                     </table>

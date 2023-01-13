@@ -81,7 +81,9 @@ if(strtotime($date_end) < strtotime($date_start)){
 // Remove whitespace from $phone_nr, turn leading + into a 0
 $phone_nr_formatted = preg_replace('/^\+/', '0', $phone_nr);
 $phone_nr_formatted = preg_replace('/[^\d]/', '', $phone_nr_formatted);
-if(!is_int($phone_nr_formatted) || strlen($phone_nr_formatted) > 16 || strlen($phone_r) < 10){
+$is_only_numbers = preg_match('/^\d+$/', $phone_nr_formatted);
+
+if(!$is_only_numbers || strlen($phone_nr_formatted) > 16 || strlen($phone_nr_formatted) < 10){
     array_push($errors, 'Telefonnummer ist nicht korrekt');
 }
 

@@ -32,7 +32,7 @@ function require_login(){
 
 function require_admin(){
     // Redirects user to login page with error message if not logged in
-    if(!isset($_SESSION['userid'])){
+    if(!get_default($_SESSION['is_admin'])){
         $errors = array("Sie haben auf diese Seite keinen Zugriff");
         header('Location: /login.php');
         die();  // Required as client can choose to ignore the HTTP header that instructs redirection
@@ -65,6 +65,8 @@ function switch_page_button($int_up_or_down){
     // All other GET variables except for ?p= are retained in the URL
 
     GLOBAL $page, $max_page, $min_page;
+
+    // Ensure necessary global variables actually exist
     if(!isset($min_page)){
         $min_page = 1;
     }

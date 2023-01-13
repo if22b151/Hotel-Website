@@ -1,4 +1,5 @@
 <?php
+  // Show all of user's bookings
   $BOOKINGS_PER_PAGE = 1;
   $DATE_FORMAT = 'd.m.Y';
   
@@ -18,8 +19,6 @@
   $page = get_default($_GET['p'], 1);
   $max_page = ceil($db->query("SELECT * FROM booking WHERE fk_userid = ".$_SESSION['userid'])->num_rows / $BOOKINGS_PER_PAGE);  // First gets total number of articles, 
   // then divides it by articles per page to get maximum page. ceil() rounds up, since, if 3.2 pages are needed, we display 4. 
-
-  print_r($max_page);
 
   if($page > $max_page){
     header('Location: ?p='.$max_page);

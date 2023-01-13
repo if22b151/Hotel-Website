@@ -5,7 +5,9 @@ a{
 a.switch-page-button{
   color: black !important;
 }
-
+div.switch-page-container{
+  width: 45px;
+}
 
 /* General site layout */
 .container-site{
@@ -238,11 +240,6 @@ div.admin-bookings-submit-button{
 
   .accordion-title{
     border-right: #ddd 1px solid;
-  }
-
-  .lg-switch-page-buttons{ /* trashy way of showing buttons on right side of table head */
-    position: relative;
-    left: 18px;
   }
 }
 

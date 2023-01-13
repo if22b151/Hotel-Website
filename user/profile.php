@@ -18,7 +18,10 @@
       <div class="container site_content py-4">
         
         
-        <h1>Kontodaten ändern<?php echo ($admin_edit_mode) ? ': '.$user_details['username'] : '' ?></h1>
+        <h1 class="mb-1">Kontodaten ändern</h1>
+        <?php if($admin_edit_mode): ?>
+          <p class="text-muted"> <?='Nutzer: '.$user_details['username']?> </p> 
+        <?php endif; ?>
 
         <?php if(!empty($errors)): ?>
 

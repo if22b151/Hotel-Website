@@ -69,7 +69,7 @@
               <div class="mt-2">
                 <input class="form-check-input" type="checkbox" name="breakfast" id="breakfast" 
                   <?=($breakfast) ? 'selected' : '' ?> >
-                <label class="form-label ms-1" for="breakfast">Frühstück(+10€/Tag)</label>
+                <label class="form-label ms-1" for="breakfast">Frühstück (+10€/Tag)</label>
               </div>
             </div>
             
@@ -148,7 +148,7 @@
                 <span class="col-8">
                   <select class="form-select" id="country" name="country" value="Austria" 
                     value="<?=$country ?>" required>
-                    <option>Bitte auswählen</option>
+                    <option value="">Bitte auswählen</option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Aland Islands">Aland Islands</option>
                     <option value="Albania">Albania</option>

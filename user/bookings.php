@@ -56,7 +56,7 @@
           <!-- Past Bookings -->
           <div class="mt-3 d-flex justify-content-between current-bookings">
             <h4 class="">Alle Buchungen</h3>
-            <a class="" href="/booking.php">Buchungen</a>
+            <a class="" href="/booking.php">Neue Buchung</a>
           </div>
 
           <?php if(empty($bookings)): ?>

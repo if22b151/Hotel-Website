@@ -38,8 +38,6 @@ if(isset($_GET['edit'])){
   $userid = $_SESSION['userid'];
 }
 
-print($userid);
-
 // Get current data from DB
 $db = get_db();
 $user_details = $db->query("SELECT * FROM user, person WHERE user.userid = " . $userid . " AND user.fk_personid = person.personid");

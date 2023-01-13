@@ -205,7 +205,7 @@
                       </tr>
                       <tr>
                         <td>Nachname</td>
-                        <td> <?=$booking['firstname']?> </td>
+                        <td> <?=$booking['lastname']?> </td>
                       </tr>
                       <tr>
                         <td>Addresse</td>

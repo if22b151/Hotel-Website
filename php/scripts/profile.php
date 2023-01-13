@@ -78,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
   }
 
-  $db->autocommit = False;
+  $db->autocommit(False);
 
   // Update fields
   if($firstname){update_field($firstname, $db, 'firstname');}

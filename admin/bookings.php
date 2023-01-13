@@ -16,7 +16,7 @@
 
   // Ensure user is on correct ?p= page
   $page = get_default($_GET['p'], 1);
-  $max_page = ceil($db->query("SELECT * FROM user")->num_rows / $BOOKINGS_PER_PAGE);  // First gets total number of articles, 
+  $max_page = ceil($db->query("SELECT * FROM booking")->num_rows / $BOOKINGS_PER_PAGE);  // First gets total number of articles, 
   // then divides it by articles per page to get maximum page. ceil() rounds up, since, if 3.2 pages are needed, we display 4. 
 
   if($page > $max_page){
@@ -54,6 +54,7 @@
     $stmt->bind_param('ii', $new_status, $bookingid);
     $stmt->execute();
 
+    // Reload page so changes can take visible effect
     header('Location: '.$_SERVER['REQUEST_URI']);
   }
 ?>
@@ -144,18 +145,23 @@
                 </div>
                 <div id="panelsStayOpen-collapse<?=$id?>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading<?=$id?>">
                   <div class="accordion-body col-md-8">
+
                     <table class="table">
                       <tbody>
                         <tr>
                           <td>Status</td>
                           <td>
-                            <form action="" method="post">
-                              <select name="status" id="status" aria-label="Status">
-                                <option value="0-<?=$id?>" <?=($booking['status'] == 0 ? 'selected' : '')?>>Neu</option>
-                                <option value="1-<?=$id?>" <?=($booking['status'] == 1 ? 'selected' : '')?>>Bestätigt</option>
-                                <option value="2-<?=$id?>" <?=($booking['status'] == 2 ? 'selected' : '')?>>Storniert</option>
-                              </select>
-                              <button type="submit"><b>-></b></button>
+                            <form class="row" action="" method="post">
+                              <div class="col-8">
+                                <select class="form-select col-8" name="status" id="status" aria-label="Status">
+                                  <option value="0-<?=$id?>" <?=($booking['status'] == 0 ? 'selected' : '')?>>Neu</option>
+                                  <option value="1-<?=$id?>" <?=($booking['status'] == 1 ? 'selected' : '')?>>Bestätigt</option>
+                                  <option value="2-<?=$id?>" <?=($booking['status'] == 2 ? 'selected' : '')?>>Storniert</option>
+                                </select>
+                              </div>
+                              <div class="col-4 admin-bookings-submit-button">
+                                <button class="btn btn-secondary" type="submit">-></button>
+                              </div>
                             </form>
                           </td>
                         </tr>
@@ -181,6 +187,7 @@
                         </tr>
                       </tbody>
                     </table>
+
                   </div>
                 </div>
               </div>

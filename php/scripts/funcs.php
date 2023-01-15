@@ -60,7 +60,7 @@ function switch_page_button($int_up_or_down){
     // Ugly-ass function to generate switch page buttons
     // $int_up_down = -1 shifts a page down, +1 shifts one page up
     //
-    // Buttons that would land in pages whose number exeeds $max- or $min_page
+    // Buttons that would land in pages whose number exeeds $max_page or $min_page
     // are made invisible via text-white class
     // All other GET variables except for ?p= are retained in the URL
 

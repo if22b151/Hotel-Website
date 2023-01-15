@@ -8,7 +8,7 @@ $DATE_FORMAT = 'd.m.Y';
 <div class="accordion mt-2" id="accordionPanelsStayOpen">
 
   <?php
-  foreach($bookings as $booking): 
+  foreach($bookings as $booking):
     $id = $booking['bookingid'];
     
     switch($booking['status']){
@@ -71,7 +71,7 @@ $DATE_FORMAT = 'd.m.Y';
       </button>
     </div>
     <div id="panelsStayOpen-collapse<?=$id?>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading<?=$id?>">
-      <div class="accordion-body col-md-8">
+      <div class="accordion-body col-md-6">
 
         <table class="table">
           <tbody>

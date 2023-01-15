@@ -15,10 +15,10 @@
     <!-- Navbar -->
     <?php include 'php/navbar.php' ?>
 
-    <div class="flex-container content-background flex-grow-1">
+    <div class="flex-container content-background flex-grow-1" style="background-color: #ffffff">
       <main class="cotainer site_content">
         <div class="d-flex justify-content-center">
-          <h1>Impressum</h1>
+          <h1 class="mt-4">Impressum</h1>
         </div>
         <div class="TableContainer">
         <table>
@@ -54,18 +54,18 @@
         </div>
 
     
-        <div class="Rowpictures">
-          <div class="Fotos">
-          <div class="mx-auto" style="width: 110px;">
+        <div class="d-flex justify-content-center mt-5">
+          <div class="img-fluid">
+          <div class="mx-5">
             <img src="img/paul.jpeg" class="img-fluid" alt="Paul Felgitsch">
-            Paul Felgitsch
+            <p>Paul Felgitsch</p>
           </div>
           </div>
 
-        <div class="Fotos">
-          <div class="mx-auto" style="width: 125px;">
+        <div class="img-fluid">
+          <div class="mx-5">
             <img src="img/adrian.jpg" class="img-fluid" alt="Adrian Andretsch">
-            Adrian Andretsch
+            <p>Adrian Andretsch</p>
           </div>
         </div>
       </main>

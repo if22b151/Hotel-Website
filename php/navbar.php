@@ -19,7 +19,7 @@
   <div class="container-fluid">
 
 
-    <a class="navbar-brand d-block d-lg-none" href="#">
+    <a class="navbar-brand d-block d-lg-none" href="/index.php">
       <img src="/img/hotel_logo.png" height="30"></svg>
     </a>
 

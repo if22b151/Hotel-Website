@@ -204,9 +204,18 @@ header.logo_bar p{
 }
 
 img.img-fluid{
-  width: 400px;
-  height: 250px;
+  width: 90vw;
+  max-height: 40vh;
   object-fit: cover;
+}
+
+/* When larger than md: Tablet */
+@media screen and (min-width: 768px){
+  img.img-fluid{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
 }
 
 

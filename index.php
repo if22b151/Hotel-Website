@@ -82,13 +82,13 @@
         <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
 
           <div class="row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+            <p>Unsere Suite bietet Ihnen luxuriöse Unterkunft in Wien. Sie verfügt über ein geräumiges Schlafzimmer mit einem Kingsize-Bett, einen separaten Wohnbereich mit Sofa und Sesseln, einen Schreibtisch, einen Flachbild-TV und kostenfreies WLAN. Das Badezimmer ist mit einer großen Badewanne und einer separaten Dusche ausgestattet. Durch die Fenster genießen Sie einen atemberaubenden Blick auf die Stadt. Erleben Sie den ultimativen Luxus und entspannen Sie in privater Atmosphäre.</p>
           </div>
 
           <div class="row">
-            <a href="#" class="btn_booking">
+            <a href="booking.php?room=1" class="btn_booking">
               <div class="btn_booking">
-                <p>BUCHEN</p>
+                <p>NUR 250€/NACHT</p>
               </div>
             </a>
           </div>
@@ -114,13 +114,13 @@
         <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
 
           <div class="row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+            <p>Unser geräumiges Doppelzimmer bietet Ihnen eine komfortable Unterkunft für Ihren Aufenthalt in Wien. Es verfügt über ein großes Doppelbett, einen Schreibtisch, einen Flachbild-TV und kostenfreies WLAN. Das Bad ist mit einer Badewanne ausgestattet. Durch die Fenster des Zimmers genießen Sie einen schönen Blick auf die Stadt. Ob Sie alleine oder zu zweit unterwegs sind, unser Doppelzimmer bietet Ihnen einen perfekten Rückzugsort.</p>
           </div>
 
           <div class="row">
-            <a href="#" class="btn_booking">
+            <a href="booking.php?room=2" class="btn_booking">
               <div class="btn_booking">
-                <p>BUCHEN</p>
+                <p>NUR 150€/NACHT</p>
               </div>
             </a>
           </div>
@@ -145,13 +145,13 @@
 
         <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
           <div class="row">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ducimus quasi odit autem debitis. Neque nobis nam ipsa, harum assumenda nesciunt corporis veniam porro non sequi. Dolores quasi </p>
+            <p>Unser Einzelzimmer in Wien bietet Ihnen eine komfortable Unterkunft für Ihren Aufenthalt. Es verfügt über ein komfortables Bett, einen Schreibtisch, einen Flachbild-TV und kostenfreies WLAN. Das Bad ist mit einer Dusche ausgestattet. Durch die Fenster des Zimmers genießen Sie einen schönen Blick auf die Stadt. Erholen Sie sich in privater Atmosphäre und starten Sie erfrischt in den Tag.</p>
           </div>
 
           <div class="row">
-            <a href="#" class="btn_booking">
+            <a href="booking.php?room=3" class="btn_booking">
               <div class="btn_booking">
-                <p>BUCHEN</p>
+                <p>NUR 130€/Nacht</p>
               </div>
             </a>
           </div>

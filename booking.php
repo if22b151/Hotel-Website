@@ -1,6 +1,10 @@
 <?php
   session_start();
-  require 'php/scripts/booking_logic.php';
+  require 'php/scripts/booking.php';
+
+  if(isset($_GET['room'])){
+    $room = $_GET['room'];
+  }
 ?>
 
 <!DOCTYPE html>

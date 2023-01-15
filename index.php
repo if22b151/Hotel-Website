@@ -75,14 +75,14 @@
           </div>
           <div class="col-md-4">
             <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a suite room">
+            <img src="img/room1.jpg" class="img-fluid" alt="picture of a suite room">
           </div>
         </div>
         
         <div class="col-md-8 mt-3 mt-md-0 d-flex flex-column justify-content-between">
 
           <div class="row">
-            <p>Unsere Suite bietet Ihnen luxuriöse Unterkunft in Wien. Sie verfügt über ein geräumiges Schlafzimmer mit einem Kingsize-Bett, einen separaten Wohnbereich mit Sofa und Sesseln, einen Schreibtisch, einen Flachbild-TV und kostenfreies WLAN. Das Badezimmer ist mit einer großen Badewanne und einer separaten Dusche ausgestattet. Durch die Fenster genießen Sie einen atemberaubenden Blick auf die Stadt. Erleben Sie den ultimativen Luxus und entspannen Sie in privater Atmosphäre.</p>
+            <p>Unsere Suite bietet Ihnen eine luxuriöse Unterkunft in Wien. Sie verfügt über ein geräumiges Schlafzimmer mit einem Kingsize-Bett, einen separaten Wohnbereich mit Sofa und Sesseln, einen Schreibtisch, einen Flachbild-TV und kostenfreies WLAN. Das Badezimmer ist mit einer großen Badewanne und einer separaten Dusche ausgestattet. Durch die Fenster genießen Sie einen atemberaubenden Blick auf die Stadt. Erleben Sie den ultimativen Luxus und entspannen Sie in privater Atmosphäre.</p>
           </div>
 
           <div class="row">
@@ -107,7 +107,7 @@
 
         <div class="col-md-4">
           <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a double bed room">
+            <img src="img/room2.jpg" class="img-fluid" alt="picture of a double bed room">
           </div>
         </div>
 
@@ -139,7 +139,7 @@
 
         <div class="col-md-4">
           <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a single bed room">
+            <img src="img/room3.jpg" class="img-fluid" alt="picture of a single bed room">
           </div>
         </div>
 

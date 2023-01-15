@@ -75,7 +75,7 @@
           </div>
           <div class="col-md-4">
             <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a suite room">
+            <img src="img/room1.jpg" class="img-fluid" alt="picture of a suite room">
           </div>
         </div>
         
@@ -107,7 +107,7 @@
 
         <div class="col-md-4">
           <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a double bed room">
+            <img src="img/room2.jpg" class="img-fluid" alt="picture of a double bed room">
           </div>
         </div>
 
@@ -139,7 +139,7 @@
 
         <div class="col-md-4">
           <div class="row">
-            <img src="img/black_square.png" class="img-fluid" alt="picture of a single bed room">
+            <img src="img/room3.jpg" class="img-fluid" alt="picture of a single bed room">
           </div>
         </div>
 

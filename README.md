@@ -1,5 +1,5 @@
 ###Vor Nutzung:
-
+- Datenbank über db.sql laden
 - Name/Nutzer/Passwort der Datenbank einstellen in /php/scripts/dbaccess.php
 
 ###Nutzerkonten

@@ -1,8 +1,11 @@
-###Vor Nutzung:
-- Datenbank über db.sql laden
-- Name/Nutzer/Passwort der Datenbank einstellen in /php/scripts/dbaccess.php
+# <center>Hotel-Website</center>
+## !!!
+    Not a real website!!
+    No payments can be made!!
+## !!!
 
-###Nutzerkonten
-- email: admin@admin.admin,
-  pw: adminadmin
-- Login für alle anderen Nutzer: Passwort = username
+
+```
+A Hotel Website where you can book a room, get news from the city vienna, create and edit a profile.
+As admin you can see from when to where a person has booked a room, edit the news feed and can see all users 
+```
